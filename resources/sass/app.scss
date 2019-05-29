@@ -1,6 +1,11 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+@font-face {
+font-family: "Verlag Book";
+src: url("/public/css/fonts/Verlag-Book.otf") format("opentype");
+}
+
 // Variables
 @import 'variables';
 

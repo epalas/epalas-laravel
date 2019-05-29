@@ -11,6 +11,12 @@
 |
 */
 
+
+
+Route::get('/template', function () {
+    return view('template');
+});
+
 Route::get('/', ['as' => 'accueil', function () {
     return view('accueil');
 }]);
@@ -50,3 +56,4 @@ Route::get('panier', ['as' => 'panier', function () {
 Route::get('wishlist', ['as' => 'wishlist', function () {
     return view('accueil');
 }]);
+

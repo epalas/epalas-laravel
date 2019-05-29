@@ -3,3 +3,10 @@
 }
 
 
+#cart {
+	border-right: 0.05rem solid white;
+}
+
+#icon {
+	font-size: 2rem !important;
+}

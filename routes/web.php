@@ -31,6 +31,19 @@ Route::get('/map', function () {
     return view('map');
 });
 
+
+
+
+/*
+Route de Lucien pour tester les pages implémentés
+*/
+
+Route::get('/cgv', function () {
+    return view('cgv');
+});
+
+
+
 /*
 Route de base de Pedro
 */
@@ -51,7 +64,7 @@ Route::get('a-propos', ['as' => 'a-propos', function () {
     return view('accueil');
 }]);
 
-Route::get('contact', ['as' => 'contact', function () {
+Route::get('contacted', ['as' => 'contacted', function () {
     return view('accueil');
 }]);
 

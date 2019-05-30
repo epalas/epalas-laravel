@@ -2,7 +2,16 @@
 
 @font-face {
   font-family: "Verlag Book";
-  src: url("/public/css/fonts/Verlag-Book.otf") format("opentype");
+  src: url("/public/css/fonts/Verlag-Book/Verlag-Book.eot?#iefix") format("embedded-opentype"), url("/public/css/fonts/Verlag-Book/Verlag-Book.otf") format("opentype"), url("/public/css/fonts/Verlag-Book/Verlag-Book.woff") format("woff"), url("/public/css/fonts/Verlag-Book/Verlag-Book.ttf") format("truetype"), url("/public/css/fonts/Verlag-Book/Verlag-Book.svg#Verlag-Book") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Verlag Bold";
+  src: url("/public/css/fonts/Verlag-Bold/Verlag-Bold.eot?#iefix") format("embedded-opentype"), url("/public/css/fonts/Verlag-Bold/Verlag-Bold.otf") format("opentype"), url("/public/css/fonts/Verlag-Bold/Verlag-Bold.woff") format("woff"), url("/public/css/fonts/Verlag-Bold/Verlag-Bold.ttf") format("truetype"), url("/public/css/fonts/Verlag-Bold/Verlag-Bold.svg#Verlag-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*!

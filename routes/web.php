@@ -42,6 +42,10 @@ Route::get('/cgv', function () {
     return view('cgv');
 });
 
+Route::get('/newsletter', function () {
+    return view('newsletter');
+});
+
 
 
 /*

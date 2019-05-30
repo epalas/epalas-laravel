@@ -107,17 +107,23 @@
             </p>
           </div>
         {{-- infos et adresse --}}
-          <div class="col-6 mt-1">
+          <div class="col-5 mt-1">
             <address class="text-white">
-              <i class="fas fa-phone text-white pb-2 pr-4"></i>021 691 86 71</br>
-              <i class="fas fa-map-marker-alt text-white pr-4"></i>Elie Gazzar S.A. Chemin du Dévent  1024 Ecublens • Suisse</p>
+              <i class="fas fa-phone pb-2 pr-4"></i>021 691 86 71</br>
+              <i class="fas fa-map-marker-alt pr-4"></i>Elie Gazzar S.A. Chemin du Dévent  1024 Ecublens • Suisse</p>
             </address>
+          </div>
+         {{-- payments --}}
+          <div class="col-2 text-white fa-2x pl-5"> 
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
           </div> 
-
-          <div class="col-3 text-right">
+            
+           
+          {{-- logo --}}
+          <div class="col-2 text-right">
             <a href="#"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
           </div>
-
         </div>
     </div>
 </footer>

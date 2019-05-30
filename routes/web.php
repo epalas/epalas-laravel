@@ -18,3 +18,15 @@ Route::get('/', function () {
 Route::get('/template', function () {
     return view('template');
 });
+
+Route::get('/produit', function () {
+    return view('produit');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/map', function () {
+    return view('map');
+});

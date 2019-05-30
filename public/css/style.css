@@ -2,11 +2,69 @@
 	width: 10rem;
 }
 
-
 #cart {
-	border-right: 0.05rem solid white;
+ border-right: 0.05rem solid white;
 }
 
-#icon {
-	font-size: 2rem !important;
+#background-grey {
+	background-color: black;
 }
+
+#titre {
+	text-transform: uppercase;
+	color: #a51c2a;
+}
+
+    /* pour le rating */
+
+.rating {
+      float:left;
+    }
+
+
+    .rating:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+        clip:rect(0,0,0,0);
+    }
+
+    .rating:not(:checked) > label {
+        float:right;
+        width:1.5rem;
+        /* padding:0 .1em; */
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        
+        /* line-height:1.2; */
+        color:#ddd;
+    }
+
+
+    .rating > input:checked ~ label {
+        color: #a51c2a;
+        
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #a51c2a;
+        
+    }
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #a51c2a;
+        
+    }
+
+    .rating > label:active {
+        position:relative;
+        top:2px;
+        left:2px;
+    }
+
+

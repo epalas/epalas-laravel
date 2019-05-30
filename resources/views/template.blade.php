@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Gazzar</title>
+    <title>@yield('titre')</title>
     <link href="/public/css/style.css" rel="stylesheet">
     <link href="/public/css/app.css" rel="stylesheet">
     <link href="/vendor/components/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
@@ -90,21 +90,23 @@
     </div>
   </nav>
 
+@yield('contenu')
+
  <footer class="sticky bg-primary p-3 mt-5">
     <div class="container">
         <div class="row">
-        <div class="col-lg-3 mt-3">
-    <p class="text-white">
-        <i class="fab fa-facebook fa-2x"></i>
-        <i class="fab fa-instagram fa-2x"></i>
-        <i class="fab fa-twitter-square fa-2x"></i>
-        <i class="fab fa-linkedin fa-2x"></i>
-    </p>
-    
-        </div>
+            <div class="col-lg-3 mt-3">
+                <p class="text-white">
+                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </p>
+            </div>
         </div>
     </div>
 </footer>
+
   <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
   <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
 </body>

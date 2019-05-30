@@ -1,3 +1,10 @@
+/* General settings */
+
+h1 {
+	font-family: 'Verlag Bold';
+}
+
+
 /* nav */
 
 #logo-top {
@@ -17,7 +24,15 @@
 	color: #a51c2a;
 }
 
+/* CGV */
 
+.titres_CGV {
+	color: #a51c2a;
+	font-family: 'Verlag Bold';
+	font-size: 1.3rem;
+	margin-bottom: 0.8rem;
+	margin-top: 3rem;
+}
 
 /* footer */
 #link-reseaux{
@@ -32,7 +47,7 @@
 	width: 10rem;
 	max-width: none;
 }
-=======
+
     /* pour le rating */
 
 .rating {

@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+Route de Steve pour tester les pages implémentés
+*/
 
 Route::get('/template', function () {
     return view('template');
@@ -30,3 +30,47 @@ Route::get('/contact', function () {
 Route::get('/map', function () {
     return view('map');
 });
+
+/*
+Route de base de Pedro
+*/
+
+Route::get('/', ['as' => 'accueil', function () {
+    return view('accueil');
+}]);
+
+Route::get('nos-vins', ['as' => 'nos-vins', function () {
+    return view('accueil');
+}]);
+
+Route::get('actualites', ['as' => 'actualites', function () {
+    return view('accueil');
+}]);
+
+Route::get('a-propos', ['as' => 'a-propos', function () {
+    return view('accueil');
+}]);
+
+Route::get('contact', ['as' => 'contact', function () {
+    return view('accueil');
+}]);
+
+Route::get('compte', ['as' => 'compte', function () {
+    return view('accueil');
+}]);
+
+Route::get('inscription', ['as' => 'inscription', function () {
+    return view('accueil');
+}]);
+
+Route::get('connexion', ['as' => 'connexion', function () {
+    return view('accueil');
+}]);
+
+Route::get('panier', ['as' => 'panier', function () {
+    return view('accueil');
+}]);
+
+Route::get('wishlist', ['as' => 'wishlist', function () {
+    return view('accueil');
+}]);

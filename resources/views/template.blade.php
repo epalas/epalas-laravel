@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Gazzar</title>
+    <title>@yield('titre')</title>
     <link href="/public/css/style.css" rel="stylesheet">
     <link href="/public/css/app.css" rel="stylesheet">
     <link href="/vendor/components/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
@@ -90,6 +90,9 @@
         </div>
     </div>
   </nav>
+
+@yield('contenu')
+
 {{-- Footer --}}
  <footer class="sticky bg-primary p-3 mt-5">
     <div class="container">
@@ -114,11 +117,11 @@
           <div class="col-3 text-right">
             <a href="#"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
           </div>
-      
-        
+
         </div>
     </div>
 </footer>
+
   <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
   <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
 </body>

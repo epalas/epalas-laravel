@@ -11,11 +11,29 @@
 |
 */
 
-
+/*
+Route de Steve pour tester les pages implémentés
+*/
 
 Route::get('/template', function () {
     return view('template');
 });
+
+Route::get('/produit', function () {
+    return view('produit');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/map', function () {
+    return view('map');
+});
+
+/*
+Route de base de Pedro
+*/
 
 Route::get('/', ['as' => 'accueil', function () {
     return view('accueil');
@@ -56,4 +74,3 @@ Route::get('panier', ['as' => 'panier', function () {
 Route::get('wishlist', ['as' => 'wishlist', function () {
     return view('accueil');
 }]);
-

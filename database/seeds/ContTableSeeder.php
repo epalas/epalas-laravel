@@ -9,27 +9,27 @@ class ContTableSeeder extends Seeder {
         DB::table('conts')->delete();
         DB::table('conts')->insert([
             'label' => 'Bouteille',
-            'volumeEnL' => 0.75,
+            'volume' => 0.75,
         ]);
         DB::table('conts')->insert([
             'label' => 'Magnum',
-            'volumeEnL' => 1.5,
+            'volume' => 1.5,
         ]);
         DB::table('conts')->insert([
             'label' => 'Jéroboam',
-            'volumeEnL' => 3,
+            'volume' => 3,
         ]);
         DB::table('conts')->insert([
             'label' => 'Réhoboam',
-            'volumeEnL' => 4.5,
+            'volume' => 4.5,
         ]);
         DB::table('conts')->insert([
             'label' => 'Réhoboam',
-            'volumeEnL' => 4.5,
+            'volume' => 4.5,
         ]);
         DB::table('conts')->insert([
             'label' => 'Mathusalem',
-            'volumeEnL' => 6,
+            'volume' => 6,
         ]);
     }
 }

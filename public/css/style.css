@@ -4,6 +4,11 @@ h1 {
 	font-family: 'Verlag Bold';
 }
 
+.hr-titre {
+	border-top: 3px solid #a51c2a;
+	margin: 0 8rem 0 8rem;
+}
+
 
 /* nav */
 
@@ -33,6 +38,23 @@ h1 {
 	margin-bottom: 0.8rem;
 	margin-top: 3rem;
 }
+
+/* Newsletter*/
+
+.space {
+	margin-top: 8rem;
+	margin-bottom: 8rem;
+}
+
+.titres_CGV {
+	color: #a51c2a;
+	font-family: 'Verlag Bold';
+	font-size: 1.3rem;
+	margin-bottom: 0.8rem;
+	margin-top: 3rem;
+}
+
+
 
 /* footer */
 #link-reseaux{

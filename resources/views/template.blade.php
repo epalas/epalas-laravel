@@ -26,6 +26,7 @@
             </div>
         </div>
     </div>
+    {{-- Navigation --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
         <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,17 +93,31 @@
 
 @yield('contenu')
 
+{{-- Footer --}}
  <footer class="sticky bg-primary p-3 mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 mt-3">
-                <p class="text-white">
-                    <i class="fab fa-facebook fa-2x"></i>
-                    <i class="fab fa-instagram fa-2x"></i>
-                    <i class="fab fa-twitter-square fa-2x"></i>
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </p>
-            </div>
+          <div class="col-3 mt-3">
+            {{-- icones réseaux sociaux --}}
+            <p id="link-reseaux">
+                <a href="#"><i  class="fab fa-facebook fa-2x pr-4 text-white " ></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x pr-4 text-white" ></i></a>
+                <a href="#"><i class="fab fa-twitter-square fa-2x pr-4 text-white"></i></a>
+                <a href="#"><i class="fab fa-linkedin fa-2x pr-4 text-white"></i></a>
+            </p>
+          </div>
+        {{-- infos et adresse --}}
+          <div class="col-6 mt-1">
+            <address class="text-white">
+              <i class="fas fa-phone text-white pb-2 pr-4"></i>021 691 86 71</br>
+              <i class="fas fa-map-marker-alt text-white pr-4"></i>Elie Gazzar S.A. Chemin du Dévent  1024 Ecublens • Suisse</p>
+            </address>
+          </div> 
+
+          <div class="col-3 text-right">
+            <a href="#"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
+          </div>
+
         </div>
     </div>
 </footer>

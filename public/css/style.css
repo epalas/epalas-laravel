@@ -1,3 +1,5 @@
+/* nav */
+
 #logo-top {
 	width: 10rem;
 }
@@ -15,6 +17,22 @@
 	color: #a51c2a;
 }
 
+
+
+/* footer */
+#link-reseaux{
+	border-right: 0.05rem solid white;
+}
+
+#link-reseaux > a:hover{
+    opacity: 0.5;
+}
+
+#logo-bottom {
+	width: 10rem;
+	max-width: none;
+}
+=======
     /* pour le rating */
 
 .rating {
@@ -66,5 +84,6 @@
         top:2px;
         left:2px;
     }
+
 
 

@@ -56,7 +56,13 @@ Route::get('/newsletter', function () {
     return view('newsletter');
 });
 
+/*
+Route d'Adrien pour tester les pages implémentés
+*/
 
+Route::get('/filtres', function () {
+    return view('filtres');
+});
 
 /*
 Route de base de Pedro

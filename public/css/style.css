@@ -78,13 +78,22 @@ h5 {
 	margin-bottom: 8rem;
 }
 
-.titres_CGV {
+/* presse*/
+
+.titres-articles {
 	color: #a51c2a;
 	font-family: 'Verlag Bold';
-	font-size: 1.3rem;
-	margin-bottom: 0.8rem;
-	margin-top: 3rem;
+	font-size: 2rem;
 }
+
+
+/* customer account*/
+
+#align-user {
+	margin-top: 6.2rem;
+	margin-left: 3rem;
+}
+
 
 
 

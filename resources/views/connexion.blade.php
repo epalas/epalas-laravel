@@ -9,7 +9,7 @@ Gazzar - Connexion
   <div class="row">
     <div class="space bg-white col-12 col-sm-8 offset-sm-2 rounded text-center">
       <p class="mt-2">
-        <a href="#">Vous n'avez pas encore de compte ? ></a>
+        <a href="creation">Vous n'avez pas encore de compte ? ></a>
       </p>
       <h1 class="mt-3">Se connecter</h1>
       <hr class="hr-titre">

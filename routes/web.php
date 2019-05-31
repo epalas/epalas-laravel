@@ -76,6 +76,9 @@ Route::get('/customer-account', function () {
     return view('customer-account');
 });
 
+Route::get('/galerie', function () {
+    return view('galerie');
+});
 
 
 

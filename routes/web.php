@@ -57,6 +57,23 @@ Route::get('/newsletter', function () {
 });
 
 
+Route::get('/carton-decouverte', function () {
+    return view('carton-decouverte');
+});
+
+Route::get('/presse', function () {
+    return view('presse');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+
+
+
+
+
 
 /*
 Route de base de Pedro

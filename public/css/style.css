@@ -6,13 +6,17 @@ h1 {
 
 .hr-titre {
 	border-top: 3px solid #a51c2a;
-	margin: 0 8rem 0 8rem;
+	margin: 0 10rem 3rem 10rem;
 }
 
 h2 {
     font-family: 'Verlag Bold';
     font-size: 1.5rem !important;
     margin-left: .5rem;
+}
+
+h5 {
+	font-size: 2rem !important;
 }
 
 #point {

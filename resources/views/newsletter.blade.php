@@ -10,7 +10,7 @@ Gazzar - Newsletter
     <div class="space bg-white col-8 offset-2 rounded text-center">
       <h1 class="mt-5">Newsletter</h1>
       <hr class="hr-titre">
-        <h2 class="text-uppercase mt-5 mb-5 pb-3">Ne ratez aucune nouveauté !</h2>
+        <h5 class="text-uppercase mt-5 mb-5 pb-3">Ne ratez aucune nouveauté !</h5>
           <p>Afin de rester informé, inscrivez votre e-mail ci-dessous</p>
           
           {{-- formulaire pour envoie de l'adresse mail--}}

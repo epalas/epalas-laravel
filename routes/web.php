@@ -31,7 +31,17 @@ Route::get('/map', function () {
     return view('map');
 });
 
+Route::get('/creation', function () {
+    return view('inscription');
+});
 
+Route::get('/login', function () {
+    return view('connexion');
+});
+
+Route::get('/valeurs', function () {
+    return view('valeurs');
+});
 
 
 /*

@@ -72,6 +72,11 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
+Route::get('/customer-account', function () {
+    return view('customer-account');
+});
+
+
 
 
 

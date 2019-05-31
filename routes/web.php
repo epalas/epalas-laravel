@@ -65,6 +65,7 @@ Route::get('/newsletter', function () {
 });
 
 
+
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
 });
@@ -86,6 +87,14 @@ Route::get('/galerie', function () {
 });
 
 
+/*
+Route d'Adrien pour tester les pages implémentés
+*/
+
+
+Route::get('/filtres', function () {
+    return view('filtres');
+});
 
 
 

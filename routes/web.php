@@ -43,6 +43,9 @@ Route::get('/valeurs', function () {
     return view('valeurs');
 });
 
+Route::get('/home', function () {
+    return view('accueil2');
+});
 
 /*
 Route de Lucien pour tester les pages implémentés

@@ -18,9 +18,9 @@
         <img class="col-lg-2 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top">
             <div class="col-lg-3 mt-3">
                         
-                            <a href="#">Créer un compte</a>
+                            <a href="creation">Créer un compte</a>
                             <span> | </span>
-                            <a href="#">Connexion</a>
+                            <a href="login">Connexion</a>
                              
                 <div class="input-group mb-3">
                 <input type="search" class="form-control" placeholder="Recherche" aria-label="Recherche" aria-describedby="basic-addon2">
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil 
+                    <a class="nav-link" href="home">Accueil 
                     <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -57,30 +57,30 @@
                         <a class="dropdown-item" href="#">Promotions</a>
                         <a class="dropdown-item" href="#">Fins de séries</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Carton découverte</a>
+                        <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Blog</a>
-                            <a class="dropdown-item" href="#">Galerie</a>
-                            <a class="dropdown-item" href="#">Presse</a>
-                            <a class="dropdown-item" href="#">Newsletter</a>
+                            <a class="dropdown-item" href="blog">Blog</a>
+                            <a class="dropdown-item" href="galerie">Galerie</a>
+                            <a class="dropdown-item" href="presse">Presse</a>
+                            <a class="dropdown-item" href="newsletter">Newsletter</a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Nos valeurs</a>
-                        <a class="dropdown-item" href="#">Conditions générales de ventes</a>
+                        <a class="dropdown-item" href="valeurs">Nos valeurs</a>
+                        <a class="dropdown-item" href="cgv">Conditions générales de ventes</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Formulaire de contact</a>
-                        <a class="dropdown-item" href="#">Où nous trouver ?</a>
+                        <a class="dropdown-item" href="contact">Formulaire de contact</a>
+                        <a class="dropdown-item" href="map">Où nous trouver ?</a>
                     </div>
                 </li>
                 </ul>

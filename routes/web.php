@@ -47,6 +47,11 @@ Route::get('/home', function () {
     return view('accueil2');
 });
 
+Route::get('/', function () {
+    return view('accueil2');
+});
+
+
 /*
 Route de Lucien pour tester les pages implémentés
 */
@@ -88,7 +93,7 @@ Route::get('/galerie', function () {
 
 /*
 Route de base de Pedro
-*/
+
 
 Route::get('/', ['as' => 'accueil', function () {
     return view('accueil');
@@ -129,3 +134,4 @@ Route::get('panier', ['as' => 'panier', function () {
 Route::get('wishlist', ['as' => 'wishlist', function () {
     return view('accueil');
 }]);
+*/

@@ -13,8 +13,10 @@ Fiche Produit (mettre le nom du produit en variable)
         <img src="/public/img/test-vin.jpg" alt="test vin" class="img-fluid">
       </div>
       <div class="col-9">
-        <h1 id="titre">Château Coller-la-petite</h1>
-        <h2 id="titre">2002 - 1er grand cru classé</h2>
+        <div id="titre">
+          <h1>Château Coller-la-petite</h1>
+          <h2>2002 - 1er grand cru classé</h2>
+        </div>
         <p>
           Bordeaux - France<br>
           Haut-Médoc<br>

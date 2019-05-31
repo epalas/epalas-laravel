@@ -15,7 +15,7 @@ class DetcomdeTableSeeder extends Seeder {
                 'idUtilComde' => 1,
                 'quantite' => 6,
                 'prixUnite' => $n,
-                'prixInterm' => null
+                'prixInterm' => $n - 10
             ]);
         }
     }

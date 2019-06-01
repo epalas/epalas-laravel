@@ -39,12 +39,19 @@
         </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="home">Accueil 
-                    <span class="sr-only">(current)</span>
-                    </a>
+
+                @if (Request::is('home'))
+                <li class="nav-item dropdown active">
+                @else
+                 <li class="nav-item dropdown">
+                @endif 
+                    <a class="nav-link" href="home">Accueil</a>
                 </li>
-                <li class="nav-item dropdown">
+                @if (Request::is('carton-decouverte'))
+                <li class="nav-item dropdown active">
+                @else
+                 <li class="nav-item dropdown">
+                @endif 
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Rouge</a>
@@ -60,7 +67,11 @@
                         <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                @if (Request::is('blog') | Request::is('galerie') | Request::is('presse') | Request::is('newsletter'))
+                <li class="nav-item dropdown active">
+                @else
+                 <li class="nav-item dropdown">
+                @endif    
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="blog">Blog</a>
@@ -69,14 +80,22 @@
                             <a class="dropdown-item" href="newsletter">Newsletter</a>
                         </div>
                 </li>
-                <li class="nav-item dropdown">
+                @if (Request::is('valeurs') | Request::is('cgv'))
+                <li class="nav-item dropdown active">
+                @else
+                 <li class="nav-item dropdown">
+                @endif   
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="valeurs">Nos valeurs</a>
                         <a class="dropdown-item" href="cgv">Conditions générales de ventes</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                @if (Request::is('contact') | Request::is('map'))
+                <li class="nav-item dropdown active">
+                @else
+                 <li class="nav-item dropdown">
+                @endif 
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="contact">Formulaire de contact</a>
@@ -132,7 +151,6 @@
         </div>
     </div>
 </footer>
-
   <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
   <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
 </body>

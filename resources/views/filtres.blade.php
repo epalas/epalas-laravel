@@ -11,7 +11,7 @@ Gazzar - Catalogue
     }
 </style>
 <div class="container">
-    <div class="row">
+    <div class="row mt-5 mb-4 mx-auto">
     <div class="col-10 offset-1">
         <div class="btn-group" role="group">
         <button type="button" class="btn btn-light active"><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouge</button>
@@ -29,7 +29,7 @@ Gazzar - Catalogue
     <div id="row">
     <div class="col-10 offset-1">
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-light active">Pays</button>
+            <button type="button" class="btn btn-secondary" disabled>Pays</button>
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les pays
@@ -43,7 +43,7 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group" role="group" >
-            <button type="button" class="btn btn-light active">Régions</button>
+            <button type="button" class="btn btn-secondary" disabled>Régions</button>
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les Régions
@@ -57,7 +57,7 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group" role="group" >
-            <button type="button" class="btn btn-light active">Prix croissant</button>
+            <button type="button" class="btn btn-secondary" disabled>Prix croissant</button>
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Prix croissant
@@ -94,4 +94,3 @@ Gazzar - Catalogue
 --}}
 
 @endsection
-

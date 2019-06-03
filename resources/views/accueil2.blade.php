@@ -72,6 +72,7 @@ Gazzar - Accueil
   {{$data->nom}} - {{$data->annee}}  {{$data->idCondi}} <br>
   {{$data->pays}} - {{$data->region}} <br>
   {{$data->prodNom}} {{$data->prix}} <br>
+  {{$data->nbrEtoiles}}
 @endforeach
 
 

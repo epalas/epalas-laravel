@@ -117,16 +117,25 @@ Gazzar - Catalogue
 </div>
 
 
-@foreach($produits as $produit)
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{$produit.title}}</h5>
-    <p class="card-text">{{$produit.descr}}</p>
-    <a href="#" class="btn btn-primary">ratings</a>
-    <a href="#" class="btn btn-primary">favorit</a>
-  </div>
-</div>
+<?php echo '<pre>' , var_dump($results) , '</pre>'; ?>
+@foreach($results as $result)
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{$result['nom']}}</h5>
+            <p class="card-text">{{$result['annee']}}</p>
+            <p class="card-text">{{$result['prod']['nom']}}</p>
+            <p class="card-text">{{$result['prod']['pays']}}</p>
+            <p class="card-text">{{$result['prod']['region']}}</p>
+            <p class="card-text">{{$result['cepage']}}</p>
+            <p class="card-text">{{$result['condi']}}</p>
+            <p class="card-text">{{$result['date']}}</p>
+            <p class="card-text">{{$result['cotas']}}</p>
+
+            <a href="#" class="btn btn-primary">ratings</a>
+            <a href="#" class="btn btn-primary">favorit</a>
+        </div>
+    </div>
 @endforeach
 
 @endsection

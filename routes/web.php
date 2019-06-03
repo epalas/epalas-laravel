@@ -107,6 +107,15 @@ Route::get('/produit', 'ProductController@index');
 
 Route::get('home', 'HomeController@index');
 
+Auth::routes();
+
+Route::get('/customer', function () {
+    return view('customer-account');
+})->middleware('auth');
+
+Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/', function(){
     return redirect('home');
 });
+

@@ -28,19 +28,22 @@
                   <a href="#">EN</a>
                   <span> | </span>
                   <a href="#">IT</a>
-                </div>
-                
+                </div>  
 
+              @if(Auth::check())
+                <div class="col-sm-8">
+                            <a href="customer-account">Accéder à votre profil</a>
+                              <span> | </span>
+                            <a href="login">Logout</a>
+              @else 
 
-              
+      
               <div class="col-sm-8">
-
- 
                         
                             <a href="creation">Créer un compte</a>
                             <span> | </span>
                             <a href="login">Connexion</a>
-
+              @endif
                 <div class="input-group mb-3">
                 <input type="search" class="form-control" placeholder="Recherche" aria-label="Recherche" aria-describedby="basic-addon2">
                     <div class="input-group-append">

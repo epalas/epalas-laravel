@@ -115,27 +115,50 @@ Gazzar - Catalogue
     </div>
     </div>
 </div>
+@endsection
 
+@section('article')
 
-<?php echo '<pre>' , var_dump($results) , '</pre>'; ?>
+{{-- @yield('carte') <- Ca marche pas mdr --}}
+
 @foreach($results as $result)
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{$result['nom']}}</h5>
-            <p class="card-text">{{$result['annee']}}</p>
-            <p class="card-text">{{$result['prod']['nom']}}</p>
-            <p class="card-text">{{$result['prod']['pays']}}</p>
-            <p class="card-text">{{$result['prod']['region']}}</p>
-            <p class="card-text">{{$result['cepage']}}</p>
-            <p class="card-text">{{$result['condi']}}</p>
-            <p class="card-text">{{$result['date']}}</p>
-            <p class="card-text">{{$result['cotas']}}</p>
+{{-- Template pour chaque card --}}
+    <div class="card" style="width: 16rem;">
 
-            <a href="#" class="btn btn-primary">ratings</a>
-            <a href="#" class="btn btn-primary">favorit</a>
+        <div class="card-body p-3">
+
+            <div  class="row" id="carte">
+                <a href="produit/{{$result["id"]}}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                            </div>
+                            <div class="col-9">
+                                <h4 class="card-title">{{$result["nom"]}}</h4>
+                                <p class="card-text">
+                                <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                <p>{{$result["prod"]["nom"]}}</p>
+                                <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
+                                <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
         </div>
-    </div>
+
+        <div class="card-header">
+            <div class="row justify-content-between">
+                <a class="nav-link" href="#">
+</a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+</div>
+</div>
+
+</div>
 @endforeach
 
 @endsection
+

@@ -53,6 +53,11 @@ class Vin extends Model
         return $this->hasMany('App\Photo', 'idVin', 'id');
     }
 
+    public function prixprods(){
+        return $this->hasMany('App\Prixprod', 'idVin', 'id');
+    }
+
+
     /* Bordel de Audric */
 
     public static function getData($order){
@@ -61,7 +66,12 @@ class Vin extends Model
 
         //->orderBy('vins.nom','asc');
 
-        $results->load('stock','condi','type','prod','cepa','cont','met','util','cotas', 'photos', 'notes');
+        $results->load( 'stock','condi',
+                                'type','prod',
+                                'cepa','cont',
+                                'met','util',
+                                'cotas','photos',
+                                'notes','prixprods');
 
         return $results;
 

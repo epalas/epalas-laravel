@@ -11,6 +11,6 @@ class Note extends Model
     }
 
     public function vin() {
-        return $this->belongsTo('App\Note');
+        return $this->belongsTo('App\Vin');
     }
 }

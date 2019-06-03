@@ -28,6 +28,10 @@ class HomeController extends Controller
                                     vins.finDeSerie,
                                     vins.estBio,
                                     vins.estPrimeur,
+
+                                    cotas.nom as cotaNom,
+                                    cotas.echelle,
+                                    cotas.note,
                                     
                                     condis.nbrUnite,
                                     condis.type,
@@ -47,6 +51,7 @@ class HomeController extends Controller
                                     
                                     notes.nbrEtoiles')
 
+                ->join('cotas', 'vins.id', '=', 'cotas.idVin')
                 ->join('condis', 'vins.idCondi', '=', 'condis.id')
                 ->join('prods', 'vins.idProd', '=', 'prods.id')
                 ->join('types', 'vins.idType', '=', 'types.id')

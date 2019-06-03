@@ -9,7 +9,7 @@ class ArtutilTableSeeder extends Seeder {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('artutils')->truncate();
         for ($i=1; $i < 26; $i++) { 
-            $n = rand(5, 6);
+            $n = rand(1, 2);
             DB::table('artutils')->insert([
                 'idArt' => $i,
                 'idUtil' => $n,

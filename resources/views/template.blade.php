@@ -143,6 +143,7 @@
 
 @yield('contenu')
 
+@yield('article')
 {{-- Footer --}}
  <footer class="sticky bg-primary p-3 mt-5">
     <div class="container">
@@ -182,3 +183,4 @@
   <script src="/public/js/index.js"></script>
 </body>
 </html>
+

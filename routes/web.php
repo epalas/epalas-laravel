@@ -97,7 +97,7 @@ Route::get('/{filtre}', function ($url) {
 Route d'Adrien pour tester les pages implémentés
 */
 
-Route::get('/filtres', 'Catalogue@afficheCatalogue');
+Route::get('/catalogue', 'Catalogue@afficheCatalogue');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');

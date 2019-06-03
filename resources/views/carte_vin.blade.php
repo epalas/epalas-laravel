@@ -1,3 +1,5 @@
+@extends('filtres')
+
 @section('carte')
 
 <style>
@@ -7,31 +9,31 @@ img{width: 40px;}
 <div class="card" style="width: 16rem;">
 
   <div class="card-body p-3">
-    
+
     <div class="row" id="carte">
       <div class="container">
         <div class="row">
           <div class="col-3">
-            <img src="{{$data->url}}" alt="{{$data->nom}}">
+            <img src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
           </div>
           <div class="col-9">
-            <h4 class="card-title">{{$data->nom}}</h4>
+            <h4 class="card-title">{{$result["nom"]}}</h4>
             <p class="card-text">
-              <p>{{$data->region}} - {{$data->pays}}</p> 
-              <p>{{$data->prodNom}}</p> 
-              <p>{{$data->idCondi}} / <span class="annee">{{$data->annee}}</span></p> 
-              <span class="prix"><b>{{$data->prix}}</b></span> <span>CHF</span>
+            <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+            <p>{{$result["prod"]["nom"]}}</p>
+            <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
+            <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
             </p>
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
   </div>
 
-    <div class="card-header">
-      <div class="row justify-content-between">
-        <a class="nav-link" href="#">
+  <div class="card-header">
+    <div class="row justify-content-between">
+      <a class="nav-link" href="#">
 {{--
 @switch($data->nbrEtoiles)
 		@case(1)
@@ -70,10 +72,10 @@ img{width: 40px;}
 			@endfor
 @endswitch
 --}}
-			
-			</a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
-      </div>
+
+      </a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
     </div>
+  </div>
 
 </div>
 @endsection

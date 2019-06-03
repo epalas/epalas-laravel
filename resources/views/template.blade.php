@@ -60,12 +60,6 @@
         </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
-<<<<<<< HEAD
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('accueil') }}">Accueil
-                    <span class="sr-only">(current)</span>
-                    </a>
-=======
 
                 @if (Request::is('home'))
                 <li class="nav-item dropdown active">
@@ -73,7 +67,6 @@
                  <li class="nav-item dropdown">
                 @endif 
                     <a class="nav-link" href="home">Accueil</a>
->>>>>>> 95192bcee17827426bee840bbda8a0dfc5fea8f9
                 </li>
                 @if (Request::is('carton-decouverte'))
                 <li class="nav-item dropdown active">
@@ -115,13 +108,8 @@
                 @endif   
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="#">Nos valeurs</a>
-                        <a class="dropdown-item" href="{{ route('cgv') }}">Conditions générales de ventes</a>
-=======
                         <a class="dropdown-item" href="valeurs">Nos valeurs</a>
                         <a class="dropdown-item" href="cgv">Conditions générales de ventes</a>
->>>>>>> 95192bcee17827426bee840bbda8a0dfc5fea8f9
                     </div>
                 </li>
                 @if (Request::is('contact') | Request::is('map'))

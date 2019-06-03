@@ -43,6 +43,14 @@ Route::get('/valeurs', function () {
     return view('valeurs');
 });
 
+Route::get('/home', function () {
+    return view('accueil2');
+});
+
+Route::get('/', function () {
+    return view('accueil2');
+});
+
 
 /*
 Route de Lucien pour tester les pages implémentés
@@ -58,9 +66,43 @@ Route::get('/newsletter', function () {
 
 
 
+Route::get('/carton-decouverte', function () {
+    return view('carton-decouverte');
+});
+
+Route::get('/presse', function () {
+    return view('presse');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/customer-account', function () {
+    return view('customer-account');
+});
+
+Route::get('/galerie', function () {
+    return view('galerie');
+});
+
+
+/*
+Route d'Adrien pour tester les pages implémentés
+*/
+
+
+Route::get('/filtres', function () {
+    return view('filtres');
+});
+
+
+
+
+
 /*
 Route de base de Pedro
-*/
+
 
 Route::get('/', ['as' => 'accueil', function () {
     return view('accueil');
@@ -101,3 +143,4 @@ Route::get('panier', ['as' => 'panier', function () {
 Route::get('wishlist', ['as' => 'wishlist', function () {
     return view('accueil');
 }]);
+*/

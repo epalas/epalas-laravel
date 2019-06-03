@@ -11,7 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         //$this->call(DetcomdeTableSeeder::class);
+=======
+        $this->call(VinTableSeeder::class);
+>>>>>>> 95192bcee17827426bee840bbda8a0dfc5fea8f9
         $this->call(AssembTableSeeder::class);
         $this->call(ContvinTableSeeder::class);
         $this->call(FavoTableSeeder::class);
@@ -26,6 +30,12 @@ class DatabaseSeeder extends Seeder
         $this->call(ArtutilTableSeeder::class);
         $this->call(ComdeTableSeeder::class);
         $this->call(DetcomdeTableSeeder::class);
+<<<<<<< HEAD
         $this->call(VinTableSeeder::class);
+=======
+        $this->call(PaimTableSeeder::class);
+        $this->call(ReducomdeTableSeeder::class);
+
+>>>>>>> 95192bcee17827426bee840bbda8a0dfc5fea8f9
     }
 }

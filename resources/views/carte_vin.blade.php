@@ -1,10 +1,4 @@
-@extends('template')
-
-@section('titre')
-Gazzar - Carte vins
-@endsection
-
-@section('contenu')
+@section('carte')
 
 <style>
 img{width: 40px;}

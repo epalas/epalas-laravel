@@ -96,9 +96,9 @@ Route::get('/filtres', function () {
     return view('filtres');
 });
 
-
-
-
+Route::get('/carte_vin', function () {
+    return view('carte_vin');
+});
 
 /*
 Route de base de Pedro

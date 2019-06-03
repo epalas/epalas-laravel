@@ -15,8 +15,12 @@ h2 {
     margin-left: .5rem;
 }
 
+h4{
+    color: #a51c2a;
+}
+
 h5 {
-	font-size: 2rem !important;
+    font-size: 2rem !important;
 }
 
 #point {
@@ -73,6 +77,16 @@ h5 {
 	font-size: 1.3rem;
 	margin-bottom: 0.8rem;
 	margin-top: 3rem;
+}
+
+/* Cartes produit */
+
+.prix{
+    font-size:1.4rem;
+}
+
+.annee{
+    color: #a51c2a;
 }
 
 /* Newsletter*/

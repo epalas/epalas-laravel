@@ -87,6 +87,12 @@ Route::get('/galerie', function () {
 });
 
 
+Route::get('/{filtre}', function ($url) {
+
+    return view('filtres');
+
+})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
+
 /*
 Route d'Adrien pour tester les pages implémentés
 */

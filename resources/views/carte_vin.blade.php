@@ -18,28 +18,66 @@ img{width: 40px;}
       <div class="container">
         <div class="row">
           <div class="col-3">
-            <img src="img/bouteille.jpg" alt="Card image cap">
+            <img src="{{$data->url}}" alt="{{$data->nom}}">
           </div>
           <div class="col-9">
-            <h4 class="card-title">Château leJaaJ</h4>
+            <h4 class="card-title">{{$data->nom}}</h4>
             <p class="card-text">
-              <p>Bordeaux - France</p> 
-              <p>Haut médoc</p> 
-              <p>75cl / <span class="annee">2015</span></p> 
-              <span class="prix"><b>17,23</b></span> <span>CHF</span>
+              <p>{{$data->region}} - {{$data->pays}}</p> 
+              <p>{{$data->prodNom}}</p> 
+              <p>{{$data->idCondi}} / <span class="annee">{{$data->annee}}</span></p> 
+              <span class="prix"><b>{{$data->prix}}</b></span> <span>CHF</span>
             </p>
           </div>
         </div>
       </div>
-
   </div>
 
-  
   </div>
 
     <div class="card-header">
       <div class="row justify-content-between">
-        <a class="nav-link" href="#"><i class="far fa-star"></i></a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+        <a class="nav-link" href="#">
+{{--
+@switch($data->nbrEtoiles)
+		@case(1)
+			@for ($i = 0; $i < 1; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+    @break
+
+    @case(2)
+			@for ($i = 0; $i < 2; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+		@break
+				
+		@case(3)
+			@for ($i = 0; $i < 3; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+		@break
+				
+		@case(4)
+			@for ($i = 0; $i < 4; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+		@break
+				
+		@case(5)
+			@for ($i = 0; $i < 5; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+		@break		
+
+    @default
+			@for ($i = 0; $i < 5; $i++)
+				<i class="far fa-star"></i>
+			@endfor
+@endswitch
+--}}
+			
+			</a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
       </div>
     </div>
 

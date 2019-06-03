@@ -102,52 +102,10 @@ Route::get('/filtres', 'Catalogue@afficheCatalogue');
 Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
-/*
-Route de base de Pedro
 
+Route::get('/produit', 'ProductController@index');
 
-Route::get('/', ['as' => 'accueil', function () {
-    return view('accueil');
-}]);
-
-Route::get('nos-vins', ['as' => 'nos-vins', function () {
-    return view('accueil');
-}]);
-
-Route::get('actualites', ['as' => 'actualites', function () {
-    return view('accueil');
-}]);
-
-Route::get('a-propos', ['as' => 'a-propos', function () {
-    return view('accueil');
-}]);
-
-Route::get('contacted', ['as' => 'contacted', function () {
-    return view('accueil');
-}]);
-
-Route::get('compte', ['as' => 'compte', function () {
-    return view('accueil');
-}]);
-
-Route::get('inscription', ['as' => 'inscription', function () {
-    return view('accueil');
-}]);
-
-Route::get('connexion', ['as' => 'connexion', function () {
-    return view('accueil');
-}]);
-
-Route::get('panier', ['as' => 'panier', function () {
-    return view('accueil');
-}]);
-
-Route::get('wishlist', ['as' => 'wishlist', function () {
-    return view('accueil');
-}]);
-*/
-
-Route::get('home', 'HomeController@index')->name('produit');
+Route::get('home', 'HomeController@index');
 
 Auth::routes();
 
@@ -156,3 +114,8 @@ Route::get('/customer', function () {
 })->middleware('auth');
 
 Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/', function(){
+    return redirect('home');
+});
+

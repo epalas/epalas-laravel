@@ -14,15 +14,21 @@ Fiche Produit (mettre le nom du produit en variable)
       </div>
       <div class="col-9">
         <div id="titreProduit">
-          <h1>Château Coller-la-petite</h1>
-          <h2>2002 - 1er grand cru classé</h2>
+          <h1>{{ $vins[$id]->nom }}</h1>
+          <h2>
+            @if($vins[$id]->titre)
+              {{ $vins[$id]->annee }} - {{ $vins[$id]->titre }}
+            @else
+              {{ $vins[$id]->annee }}
+            @endif
+          </h2>
         </div>
         <p>
           Bordeaux - France<br>
           Haut-Médoc<br>
-          75 cl<br>
+          {{ $contVin }}<br>
         </p>
-        <h2>17.90 CHF</h2>
+        <h2>{{ $prix[$id]->prix }}</h2>
         <div class="row mt-4">
           <div class="input-group col-3 col-sm-2">
             <select class="custom-select" id="inputCart">

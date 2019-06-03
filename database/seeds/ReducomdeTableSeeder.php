@@ -8,7 +8,7 @@ class ReducomdeTableSeeder extends Seeder {
     public function run() {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('reducomdes')->truncate();
-        for ($i=10; $i < 14; $i++) {
+        for ($i=1; $i < 5; $i++) {
             DB::table('reducomdes')->insert([
                 'idRedu'=> $i,
                 'idComde' => 1,

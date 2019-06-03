@@ -32,15 +32,15 @@
 
               @if(Auth::check())
                 <div class="col-sm-8">
-                            <a href="customer-account">Accéder à votre profil</a>
-                              <span> | </span>
-                            <a href="login">Logout</a>
+                    <a href="customer-account">Accéder à votre profil</a>
+                      <span> | </span>
+                    <a href="deconnexion">Se déconnecter</a>
               @else 
 
       
               <div class="col-sm-8">
                         
-                            <a href="creation">Créer un compte</a>
+                            <a href="register">Créer un compte</a>
                             <span> | </span>
                             <a href="login">Connexion</a>
               @endif

@@ -91,11 +91,6 @@ Route::get('/{filtre}', function ($url) {
 
     return view('filtres');
 
-});
-
-
-
-
 })->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
 
 /*

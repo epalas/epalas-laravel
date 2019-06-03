@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vin extends Model
 {
+
+    protected $table = 'vins';
+
     public function stock() {
         return $this->belongsTo('App\Stock');
     }
@@ -41,4 +44,5 @@ class Vin extends Model
     public function cotas(){
         return $this->hasMany('App\Cota');
     }
+
 }

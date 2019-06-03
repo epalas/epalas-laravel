@@ -68,11 +68,11 @@ Gazzar - Accueil
 
 {{-- Mettre petite encarte de vin --}}
 @foreach($datas as $data)
-  <img src="{{$data->url}}" alt="{{$data->nom}}">
-  {{$data->nom}} - {{$data->annee}} - {{$data->contLabel}}  {{$data->idCondi}} <br>
-  {{$data->pays}} - {{$data->region}} - {{$data->cotaNom}} : {{$data->note}}/{{$data->echelle}}<br>
-  {{$data->prodNom}} {{$data->prix}} <br>
-  {{$data->nbrEtoiles}}
+<img src="{{$data['photos'][0]['url']}}" alt="{{$data['nom']}}">
+{{$data['nom']}} - {{$data['annee']}} - {{$data['label']}} 
+{{$data['condi']['type']}} - {{$data['prod']['region']}} - {{$data['prod']['pays']}} - {{$data['prod']['nom']}}
+{{$data['cotas'][0]['nom']}} : {{$data['cotas'][0]['note']}} / {{$data['cotas'][0]['echelle']}}
+{{$data['notes'][0]['nbrEtoiles']}}
 @endforeach
 
 

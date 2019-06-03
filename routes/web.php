@@ -91,14 +91,7 @@ Route::get('/galerie', function () {
 Route d'Adrien pour tester les pages implémentés
 */
 
-
-Route::get('/filtres', function () {
-    return view('filtres');
-});
-
-
-
-
+Route::get('/filtres', 'Catalogue@afficheCatalogue');
 
 /*
 Route de base de Pedro

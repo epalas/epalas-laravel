@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class ProdTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('prods')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('prods')->truncate();
         DB::table('prods')->insert([
             'nom' => 'Château Respide-Médeville',
             'pays' => 'France',

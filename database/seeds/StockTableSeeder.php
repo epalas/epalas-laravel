@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class StockTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('stocks')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('stocks')->truncate();
         DB::table('stocks')->insert([
             'nbrUnite' => 3
         ]);

@@ -6,7 +6,9 @@ use Carbon\Carbon;
 class CepaTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('cepas')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('cepas')->truncate();
+
         DB::table('cepas')->insert([
             'label' => 'Merlot'
         ]);

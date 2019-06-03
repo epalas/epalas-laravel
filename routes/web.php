@@ -87,57 +87,26 @@ Route::get('/galerie', function () {
 });
 
 
+Route::get('/{filtre}', function ($url) {
+
+    return view('filtres');
+
+})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
+
 /*
 Route d'Adrien pour tester les pages implémentés
 */
 
 Route::get('/filtres', 'Catalogue@afficheCatalogue');
 
-/*
-Route de base de Pedro
-
-
-Route::get('/', ['as' => 'accueil', function () {
-    return view('accueil');
-}]);
-
-Route::get('nos-vins', ['as' => 'nos-vins', function () {
-    return view('accueil');
-}]);
-
-Route::get('actualites', ['as' => 'actualites', function () {
-    return view('accueil');
-}]);
-
-Route::get('a-propos', ['as' => 'a-propos', function () {
-    return view('accueil');
-}]);
-
-Route::get('contacted', ['as' => 'contacted', function () {
-    return view('accueil');
-}]);
-
-Route::get('compte', ['as' => 'compte', function () {
-    return view('accueil');
-}]);
-
-Route::get('inscription', ['as' => 'inscription', function () {
-    return view('accueil');
-}]);
-
-Route::get('connexion', ['as' => 'connexion', function () {
-    return view('accueil');
-}]);
-
-Route::get('panier', ['as' => 'panier', function () {
-    return view('accueil');
-}]);
-
-Route::get('wishlist', ['as' => 'wishlist', function () {
-    return view('accueil');
-}]);
-*/
-
-Route::get('home', 'HomeController@index')->name('produit');
+Route::get('/carte_vin', function () {
+    return view('carte_vin');
+});
 
 Route::get('/produit', 'ProductController@index');
+
+Route::get('home', 'HomeController@index');
+
+Route::get('/', function(){
+    return redirect('home');
+});

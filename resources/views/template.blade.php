@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil 
+                    <a class="nav-link" href="{{ route('accueil') }}">Accueil
                     <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -73,7 +73,7 @@
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Nos valeurs</a>
-                        <a class="dropdown-item" href="#">Conditions générales de ventes</a>
+                        <a class="dropdown-item" href="{{ route('cgv') }}">Conditions générales de ventes</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

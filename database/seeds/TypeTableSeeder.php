@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class TypeTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('types')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('types')->truncate();
         DB::table('types')->insert([
             'label' => 'Rouge'
         ]);

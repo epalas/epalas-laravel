@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class CondiTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('condis')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('condis')->truncate();
         DB::table('condis')->insert([
             'nbrUnite' => 3,
             'type' => 'Caisse en bois'

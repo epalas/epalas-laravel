@@ -45,4 +45,18 @@ class Vin extends Model
         return $this->hasMany('App\Cota');
     }
 
+    /* Bordel de Audric */
+
+    public static function getData($order){
+
+        if($order == "asc"){
+            /*Faire que ça s'ordonne sur le prix avec la foreign*/
+            $value=DB::table('vins')->orderBy('id', 'asc')->get();
+        }else{
+            /*Faire que ça s'ordonne sur le prix avec la foreign*/
+            $value=DB::table('vins')->orderBy('id', 'desc')->get();
+        }
+        return $value;
+    }
+
 }

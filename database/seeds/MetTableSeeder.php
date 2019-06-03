@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class MetTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('mets')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('mets')->truncate();
         DB::table('mets')->insert([
             'label' => 'Viande rouge'
         ]);

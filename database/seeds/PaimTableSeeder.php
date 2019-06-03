@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class PaimTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('paims')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('paims')->truncate();
             $n = rand(10, 300);
             DB::table('paims')->insert([
                 'idComde' => 1,

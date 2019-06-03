@@ -36,6 +36,7 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <?php /* recherche en BD sur les pays disponibles */?>
                     <a class="dropdown-item" href="#">Suisse</a>
                     <a class="dropdown-item" href="#">Italie</a>
                     <a class="dropdown-item" href="#">Espagne</a>
@@ -50,6 +51,7 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <?php /* recherche en BD sur les régions disponibles */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -64,6 +66,7 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <?php /* recharge les articles en ASC ou DESC*/ ?>
                     <a class="dropdown-item" href="#">Prix croissant</a>
                     <a class="dropdown-item" href="#">Prix décroissant</a>
                 </div>
@@ -79,8 +82,8 @@ Gazzar - Catalogue
     </div>
 </div>
 
-{{-- 
-@foreach ($produits as $produit)  
+
+@foreach($produits as $produit)
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
@@ -91,6 +94,5 @@ Gazzar - Catalogue
   </div>
 </div>
 @endforeach
---}}
 
 @endsection

@@ -15,19 +15,40 @@
 <body>
     <div class="container">
         <div class="row justify-content-between">
-        <img class="col-lg-2 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top">
-            <div class="col-lg-3 mt-3">
+        <a href="home"><img class=" ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+
+            <div class="col-lg-6 mt-3">
+              <div class="row">
+
+                <div class="col-sm-4 mt-sm-5 langues text-sm-right">        
+                  <a class="active" href="#">FR</a>             
+                  <span> | </span>
+                  <a href="#">DE</a>
+                  <span> | </span>
+                  <a href="#">EN</a>
+                  <span> | </span>
+                  <a href="#">IT</a>
+                </div>
+                
+
+
+              
+              <div class="col-sm-8">
+
+ 
                         
                             <a href="creation">Créer un compte</a>
                             <span> | </span>
                             <a href="login">Connexion</a>
-                             
+
                 <div class="input-group mb-3">
                 <input type="search" class="form-control" placeholder="Recherche" aria-label="Recherche" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+                   <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
+              </div>
+              </div>
             </div>
         </div>
     </div>
@@ -146,7 +167,7 @@
            
           {{-- logo --}}
           <div class="col-2 text-right">
-            <a href="#"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
+            <a href="home"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
           </div>
         </div>
     </div>

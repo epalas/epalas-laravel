@@ -56,9 +56,9 @@ Route::get('/', function () {
 Route de Lucien pour tester les pages implémentés
 */
 
-Route::get('/cgv', function () {
+Route::get('/cgv', ['as' => 'cgv', function () {
     return view('cgv');
-});
+}]);
 
 Route::get('/newsletter', function () {
     return view('newsletter');

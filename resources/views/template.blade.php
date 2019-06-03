@@ -47,23 +47,25 @@
                 @endif 
                     <a class="nav-link" href="home">Accueil</a>
                 </li>
-                @if (Request::is('carton-decouverte'))
+                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin'))
                 <li class="nav-item dropdown active">
                 @else
                  <li class="nav-item dropdown">
                 @endif 
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Rouge</a>
-                        <a class="dropdown-item" href="#">Blanc</a>
-                        <a class="dropdown-item" href="#">Rosé</a>
-                        <a class="dropdown-item" href="#">Mousseux</a>
-                        <a class="dropdown-item" href="#">Bio</a>
-                        <a class="dropdown-item" href="#">Recommendations</a>
-                        <a class="dropdown-item" href="#">Nouveautés</a>
-                        <a class="dropdown-item" href="#">Promotions</a>
-                        <a class="dropdown-item" href="#">Fins de séries</a>
+                        <a class="dropdown-item" href="tous">Tous les vins</a>
+                        <a class="dropdown-item" href="rouge">Rouges</a>
+                        <a class="dropdown-item" href="blanc">Blancs</a>
+                        <a class="dropdown-item" href="rose">Rosés</a>
+                        <a class="dropdown-item" href="mousseux">Mousseux</a>
+                        <a class="dropdown-item" href="bio">Bio</a>
+                        <a class="dropdown-item" href="primeur">Primeurs</a>
+                        <a class="dropdown-item" href="promotions">Promotions</a>
+                        <a class="dropdown-item" href="nouveautes">Nouveautés</a>
+                        <a class="dropdown-item" href="fin">Fins de série</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Recommendations</a>
                         <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
                     </div>
                 </li>
@@ -153,5 +155,6 @@
 </footer>
   <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
   <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
+  <script src="/public/js/index.js"></script>
 </body>
 </html>

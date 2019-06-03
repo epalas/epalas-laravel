@@ -61,9 +61,20 @@ h5 {
     }
 }
 
+
+.langues {
+	font-size: 0.9rem;
+}
+
+/*
+.form-icon-color {
+	background-color: #a51c2a;
+	color: #FFFFFF;
+}
+
 /* page produit */
 
-#titre {
+#titreProduit {
 	text-transform: uppercase;
 	color: #a51c2a;
 	font-family: 'Verlag Bold';

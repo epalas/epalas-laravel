@@ -56,9 +56,9 @@ Route::get('/', function () {
 Route de Lucien pour tester les pages implémentés
 */
 
-Route::get('/cgv', function () {
+Route::get('/cgv', ['as' => 'cgv', function () {
     return view('cgv');
-});
+}]);
 
 Route::get('/newsletter', function () {
     return view('newsletter');
@@ -87,19 +87,26 @@ Route::get('/galerie', function () {
 });
 
 
+Route::get('/{filtre}', function ($url) {
+
+    return view('filtres');
+
+});
+
+
+
+
+})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
+
 /*
 Route d'Adrien pour tester les pages implémentés
 */
 
-
-Route::get('/filtres', function () {
-    return view('filtres');
-});
+Route::get('/filtres', 'Catalogue@afficheCatalogue');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
-
 /*
 Route de base de Pedro
 
@@ -144,3 +151,5 @@ Route::get('wishlist', ['as' => 'wishlist', function () {
     return view('accueil');
 }]);
 */
+
+Route::get('home', 'HomeController@index')->name('produit');

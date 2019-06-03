@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class ReduTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('redus')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('redus')->truncate();
         DB::table('redus')->insert([
             'nom' => 'Saint Valentin',
             'pourcentage' => 14

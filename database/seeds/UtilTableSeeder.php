@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class UtilTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('utils')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('utils')->truncate();
         DB::table('utils')->insert([
             'nom' => 'Bobby',
             'prenom' => 'Bob',

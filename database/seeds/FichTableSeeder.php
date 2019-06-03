@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class FichTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('fichs')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('fichs')->truncate();
         for ($i=1; $i < 26; $i++) { 
             $n = rand(5, 6);
             DB::table('fichs')->insert([

@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class ContTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('conts')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('conts')->truncate();
         DB::table('conts')->insert([
             'label' => 'Bouteille',
             'volume' => 0.75,

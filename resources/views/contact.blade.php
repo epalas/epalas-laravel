@@ -29,23 +29,23 @@ Gazzar - Contact
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3">
+      <div class="col-sm-3">
         <input name="nom" type="text" class="form-control" placeholder="Nom">
       </div>
-      <div class="col-3">
+      <div class="col-sm-3">
         <input name="prenom" type="text" class="form-control" placeholder="Prénom">
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-3">
+      <div class="col-sm-3">
         <input name="telephone" type="text" class="form-control" placeholder="Téléphone">
       </div>
-      <div class="col-3">
+      <div class="col-sm-3">
         <input name="mail" type="email" class="form-control" placeholder="E-mail">
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-6">
+      <div class="col-sm-6">
         <div class="form-group">
           <textarea name="message" class="form-control" id="message" rows="8" placeholder="Votre message..."></textarea>
         </div>

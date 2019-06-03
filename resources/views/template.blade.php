@@ -15,19 +15,43 @@
 <body>
     <div class="container">
         <div class="row justify-content-between">
-        <img class="col-lg-2 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top">
-            <div class="col-lg-3 mt-3">
+        <a href="home"><img class=" ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+
+            <div class="col-lg-6 mt-3">
+              <div class="row">
+
+                <div class="col-sm-4 mt-sm-5 langues text-sm-right">        
+                  <a class="active" href="#">FR</a>             
+                  <span> | </span>
+                  <a href="#">DE</a>
+                  <span> | </span>
+                  <a href="#">EN</a>
+                  <span> | </span>
+                  <a href="#">IT</a>
+                </div>  
+
+              @if(Auth::check())
+                <div class="col-sm-8">
+                            <a href="customer-account">Accéder à votre profil</a>
+                              <span> | </span>
+                            <a href="login">Logout</a>
+              @else 
+
+      
+              <div class="col-sm-8">
                         
                             <a href="creation">Créer un compte</a>
                             <span> | </span>
                             <a href="login">Connexion</a>
-                             
+              @endif
                 <div class="input-group mb-3">
                 <input type="search" class="form-control" placeholder="Recherche" aria-label="Recherche" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+                   <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
+              </div>
+              </div>
             </div>
         </div>
     </div>
@@ -47,23 +71,25 @@
                 @endif 
                     <a class="nav-link" href="home">Accueil</a>
                 </li>
-                @if (Request::is('carton-decouverte'))
+                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin'))
                 <li class="nav-item dropdown active">
                 @else
                  <li class="nav-item dropdown">
                 @endif 
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Rouge</a>
-                        <a class="dropdown-item" href="#">Blanc</a>
-                        <a class="dropdown-item" href="#">Rosé</a>
-                        <a class="dropdown-item" href="#">Mousseux</a>
-                        <a class="dropdown-item" href="#">Bio</a>
-                        <a class="dropdown-item" href="#">Recommendations</a>
-                        <a class="dropdown-item" href="#">Nouveautés</a>
-                        <a class="dropdown-item" href="#">Promotions</a>
-                        <a class="dropdown-item" href="#">Fins de séries</a>
+                        <a class="dropdown-item" href="tous">Tous les vins</a>
+                        <a class="dropdown-item" href="rouge">Rouges</a>
+                        <a class="dropdown-item" href="blanc">Blancs</a>
+                        <a class="dropdown-item" href="rose">Rosés</a>
+                        <a class="dropdown-item" href="mousseux">Mousseux</a>
+                        <a class="dropdown-item" href="bio">Bio</a>
+                        <a class="dropdown-item" href="primeur">Primeurs</a>
+                        <a class="dropdown-item" href="promotions">Promotions</a>
+                        <a class="dropdown-item" href="nouveautes">Nouveautés</a>
+                        <a class="dropdown-item" href="fin">Fins de série</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Recommendations</a>
                         <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
                     </div>
                 </li>
@@ -146,12 +172,13 @@
            
           {{-- logo --}}
           <div class="col-2 text-right">
-            <a href="#"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
+            <a href="home"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
           </div>
         </div>
     </div>
 </footer>
   <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
   <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
+  <script src="/public/js/index.js"></script>
 </body>
 </html>

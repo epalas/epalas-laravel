@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class ArtutilTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('artutils')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('artutils')->truncate();
         for ($i=1; $i < 26; $i++) { 
             $n = rand(5, 6);
             DB::table('artutils')->insert([

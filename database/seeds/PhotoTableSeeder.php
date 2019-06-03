@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class PhotoTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('photos')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('photos')->truncate();
             DB::table('photos')->insert([
                 'url' => 'https://www.gazzar.ch/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/S/y/Syrah-Grand-Metral-Provins.png.png',
                 'idVin' => 1,

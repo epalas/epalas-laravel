@@ -6,7 +6,8 @@ use Carbon\Carbon;
 class ContvinTableSeeder extends Seeder {
 
     public function run() {
-        DB::table('contvins')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('contvins')->truncate();
         for ($i=1; $i < 26; $i++) { 
             $n = rand(15, 20);
             DB::table('contvins')->insert([

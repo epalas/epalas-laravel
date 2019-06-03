@@ -139,3 +139,5 @@ Route::get('wishlist', ['as' => 'wishlist', function () {
 */
 
 Route::get('home', 'HomeController@index')->name('produit');
+
+Route::get('/produit', 'ProductController@index');

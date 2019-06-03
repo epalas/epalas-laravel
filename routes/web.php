@@ -147,4 +147,7 @@ Route::get('wishlist', ['as' => 'wishlist', function () {
 }]);
 */
 
-Route::get('/', 'HomeController@index')->name('produit');
+Route::get('home', 'HomeController@index');
+Route::get('/', function(){
+    return redirect('home');
+});

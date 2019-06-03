@@ -9,7 +9,7 @@ class AssembTableSeeder extends Seeder {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('assembs')->truncate();
         for ($i=1; $i < 26; $i++) {
-        $n = rand(18, 25); 
+        $n = rand(1, 8); 
             DB::table('assembs')->insert([
                 'idCepa' => $n,
                 'idVin' => $i

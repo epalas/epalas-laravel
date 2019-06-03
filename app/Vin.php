@@ -10,35 +10,35 @@ class Vin extends Model
     protected $table = 'vins';
 
     public function stock() {
-        return $this->belongsTo('App\Stock');
+        return $this->belongsTo('App\Stock','idStock');
     }
 
     public function condi() {
-        return $this->belongsTo('App\Condi');
+        return $this->belongsTo('App\Condi','idCondi');
     }
 
     public function type() {
-        return $this->belongsTo('App\Type');
+        return $this->belongsTo('App\Type','idType');
     }
 
     public function prod() {
-        return $this->belongsTo('App\Prod');
+        return $this->belongsTo('App\Prod','idProd');
     }
 
     public function cepa() {
-        return $this->belongsToMany('App\Cepa');
+        return $this->belongsToMany('App\Cepa', 'assembs','idVin', 'idCepa');
     }
 
     public function cont() {
-        return $this->belongsToMany('App\Cont');
+        return $this->belongsToMany('App\Cont','contvins', 'idVin','idCont');
     }
 
     public function met() {
-        return $this->belongsToMany('App\Met');
+        return $this->belongsToMany('App\Met','metvins','idVin','idMet');
     }
 
     public function util() {
-        return $this->belongsToMany('App\Util');
+        return $this->belongsToMany('App\Util','favos','idVin','idUtil');
     }
 
     public function cotas(){
@@ -49,14 +49,14 @@ class Vin extends Model
 
     public static function getData($order){
 
-        if($order == "asc"){
-            /*Faire que ça s'ordonne sur le prix avec la foreign*/
-            $value=DB::table('vins')->orderBy('id', 'asc')->get();
-        }else{
-            /*Faire que ça s'ordonne sur le prix avec la foreign*/
-            $value=DB::table('vins')->orderBy('id', 'desc')->get();
+        $results=Vin::all();
+
+        //->orderBy('vins.nom','asc');
+
+        $results->load('stock','condi','type','prod','cepa','cont','met','util','cotas');
+
+        return $results;
+
         }
-        return $value;
-    }
 
 }

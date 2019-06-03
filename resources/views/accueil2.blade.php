@@ -67,9 +67,11 @@ Gazzar - Accueil
   </div>  
 
 {{-- Mettre petite encarte de vin --}}
-@foreach($vins as $vin)
-  <img src="https://www.gazzar.ch/media/catalog/product/cache/1/thumbnail/80x322/9df78eab33525d08d6e5fb8d27136e95/C/h/Chateau_Cambon_la_Pelouse.png_3.png" alt="test">
-  {{$vin->nom}} - {{$vin->annee}} - {{$vin->idCondi}} 
+@foreach($datas as $data)
+  <img src="{{$data->url}}" alt="{{$data->nom}}">
+  {{$data->nom}} - {{$data->annee}}  {{$data->idCondi}} <br>
+  {{$data->pays}} - {{$data->region}} <br>
+  {{$data->prodNom}} {{$data->prix}} <br>
 @endforeach
 
 

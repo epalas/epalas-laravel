@@ -91,6 +91,11 @@ Route::get('/{filtre}', function ($url) {
 
     return view('filtres');
 
+});
+
+
+
+
 })->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
 
 /*
@@ -99,6 +104,9 @@ Route d'Adrien pour tester les pages implémentés
 
 Route::get('/filtres', 'Catalogue@afficheCatalogue');
 
+Route::get('/carte_vin', function () {
+    return view('carte_vin');
+});
 /*
 Route de base de Pedro
 

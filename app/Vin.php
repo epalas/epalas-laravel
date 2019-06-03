@@ -42,7 +42,7 @@ class Vin extends Model
     }
 
     public function cotas(){
-        return $this->hasMany('App\Cota');
+        return $this->hasMany('App\Cota', 'idVin', 'id');
     }
 
     /* Bordel de Audric */

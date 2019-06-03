@@ -43,7 +43,9 @@ class HomeController extends Controller
                                     
                                     photos.url,
                                     
-                                    prixprods.prix')
+                                    prixprods.prix,
+                                    
+                                    notes.nbrEtoiles')
 
                 ->join('condis', 'vins.idCondi', '=', 'condis.id')
                 ->join('prods', 'vins.idProd', '=', 'prods.id')
@@ -51,6 +53,7 @@ class HomeController extends Controller
                 ->join('stocks', 'vins.idStock', '=', 'stocks.id')
                 ->join('photos', 'photos.idVin', '=', 'vins.id')
                 ->join('prixprods', 'prixprods.idVin', '=', 'vins.id')
+                ->join('notes', 'notes.idVin', '=', 'vins.id')
                 ->inRandomOrder()->take(8)->get();
 
         return view('accueil2')->with('datas', $datas);

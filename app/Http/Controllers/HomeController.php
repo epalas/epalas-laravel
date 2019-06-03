@@ -28,6 +28,10 @@ class HomeController extends Controller
                                     vins.finDeSerie,
                                     vins.estBio,
                                     vins.estPrimeur,
+
+                                    cotas.nom as cotaNom,
+                                    cotas.echelle,
+                                    cotas.note,
                                     
                                     condis.nbrUnite,
                                     condis.type,
@@ -43,14 +47,18 @@ class HomeController extends Controller
                                     
                                     photos.url,
                                     
-                                    prixprods.prix')
+                                    prixprods.prix,
+                                    
+                                    notes.nbrEtoiles')
 
+                ->join('cotas', 'vins.id', '=', 'cotas.idVin')
                 ->join('condis', 'vins.idCondi', '=', 'condis.id')
                 ->join('prods', 'vins.idProd', '=', 'prods.id')
                 ->join('types', 'vins.idType', '=', 'types.id')
                 ->join('stocks', 'vins.idStock', '=', 'stocks.id')
                 ->join('photos', 'photos.idVin', '=', 'vins.id')
                 ->join('prixprods', 'prixprods.idVin', '=', 'vins.id')
+                ->join('notes', 'notes.idVin', '=', 'vins.id')
                 ->inRandomOrder()->take(8)->get();
 
         return view('accueil2')->with('datas', $datas);

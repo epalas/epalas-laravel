@@ -148,3 +148,11 @@ Route::get('wishlist', ['as' => 'wishlist', function () {
 */
 
 Route::get('home', 'HomeController@index')->name('produit');
+
+Auth::routes();
+
+Route::get('/customer', function () {
+    return view('customer-account');
+})->middleware('auth');
+
+Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');

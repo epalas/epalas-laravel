@@ -15,8 +15,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //$vins = Vin::inRandomOrder()->get(); 
 
+        $datas=Vin::inRandomOrder()->take(8)->get();
+
+        //->orderBy('vins.nom','asc');
+
+        $datas->load('stock','condi','type','prod','cepa','cont','met','util','cotas', 'photos', 'notes');
+
+        return view('accueil2')->with('datas', $datas);
+/* 
         $datas = Vin::selectRaw('vins.nom,
                                     vins.annee,
                                     vins.description,
@@ -61,7 +68,7 @@ class HomeController extends Controller
                 ->join('notes', 'notes.idVin', '=', 'vins.id')
                 ->inRandomOrder()->take(8)->get();
 
-        return view('accueil2')->with('datas', $datas);
+        return view('accueil2')->with('datas', $datas); */
 
     }
 }

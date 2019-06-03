@@ -9,9 +9,9 @@ class Catalogue extends Controller
 {
     public function afficheCatalogue($filtres = null){
 
-        $results = Vin::inRandomOrder()->take(8)->get();
+    $results = Vin::getData('asc');
 
-        return view('filtres')->with('results', $results);
+    return view('filtres')->with('results', $results);
 
     }
 }

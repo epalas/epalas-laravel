@@ -13,7 +13,7 @@ Gazzar - Contact
 
   <form>
     <div class="row">
-      <div class="col-3">
+      <div class="col-sm-3">
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text">Sujet</div>

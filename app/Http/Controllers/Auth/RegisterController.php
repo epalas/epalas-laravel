@@ -2,24 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Util;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+
 
     use RegistersUsers;
 
@@ -28,7 +18,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/customer';
 
     /**
      * Create a new controller instance.
@@ -49,9 +39,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:utils',
+            'mdp' => 'required|string|min:6|confirmed',
+            'adresse' => 'required|string|max:255',
+            'cp' => 'required|numeric|min:4',
+            'ville' => 'required|string|max:255',
+
         ]);
     }
 
@@ -63,10 +58,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Util::create([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'adresse' => $data['adresse'],
+            'cp' => $data['cp'],
+            'ville' => $data['ville'],
+            'pays' => $data['pays'],
+            'mdp' => $data['mdp'],
+            'admin' => 0,
+            'urlPhoto' => "https://img.icons8.com/windows/420/gender-neutral-user.png",
         ]);
     }
 }

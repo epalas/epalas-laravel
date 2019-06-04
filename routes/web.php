@@ -87,9 +87,9 @@ Route::get('/galerie', function () {
 });
 
 
-Route::get('/{filtre}', function ($url) {
+Route::get('/catalogue/{filtres}', function ($url) {
 
-    return view('filtres');
+    return view('catalogues');
 
 })->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
 
@@ -97,7 +97,7 @@ Route::get('/{filtre}', function ($url) {
 Route d'Adrien pour tester les pages implémentés
 */
 
-Route::get('/filtres', 'Catalogue@afficheCatalogue');
+Route::get('/catalogue', 'Catalogue@afficheCatalogue');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');
@@ -107,6 +107,15 @@ Route::get('/produit', 'ProductController@index');
 
 Route::get('home', 'HomeController@index');
 
+Auth::routes();
+
+Route::get('/customer', function () {
+    return view('customer-account');
+})->middleware('auth');
+
+Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/', function(){
     return redirect('home');
 });
+

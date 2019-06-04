@@ -34,11 +34,7 @@ Route::get('/map', function () {
 Route::get('/creation', function () {
     return view('inscription');
 });
-/*
-Route::get('/login', function () {
-    return view('login');
-});
-*/
+
 Route::get('/valeurs', function () {
     return view('valeurs');
 });
@@ -65,7 +61,6 @@ Route::get('/newsletter', function () {
 });
 
 
-
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
 });
@@ -83,6 +78,10 @@ Route::get('/galerie', function () {
     return view('galerie');
 });
 
+
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 Route::get('/catalogue/{filtres}', function ($url) {
 

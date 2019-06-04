@@ -19,9 +19,7 @@ Route::get('/template', function () {
     return view('template');
 });
 
-Route::get('/produit', function () {
-    return view('produit');
-});
+Route::get('/produit', 'Catalogue@afficheCatalogue');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -34,11 +32,11 @@ Route::get('/map', function () {
 Route::get('/creation', function () {
     return view('inscription');
 });
-
+/*
 Route::get('/login', function () {
-    return view('connexion');
+    return view('login');
 });
-
+*/
 Route::get('/valeurs', function () {
     return view('valeurs');
 });
@@ -51,9 +49,8 @@ Route::get('/', function () {
     return view('accueil2');
 });
 
-
 /*
-Route de Lucien pour tester les pages implémentés
+Route de Lucien pour tester les pages implémentées
 */
 
 Route::get('/cgv', ['as' => 'cgv', function () {
@@ -63,8 +60,6 @@ Route::get('/cgv', ['as' => 'cgv', function () {
 Route::get('/newsletter', function () {
     return view('newsletter');
 });
-
-
 
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
@@ -78,14 +73,9 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/customer-account', function () {
-    return view('customer-account');
-});
-
 Route::get('/galerie', function () {
     return view('galerie');
 });
-
 
 Route::get('/catalogue/{filtres}', function ($url) {
 
@@ -103,13 +93,21 @@ Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
 
+
 Route::get('/ajax', function () {
     return view('filtres_ajax_test');
 });
 
 Route::get('/produit', 'ProductController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+
+
+Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
+
+Route::get('/', function(){
+    return redirect('home');
+});
 
 Auth::routes();
 
@@ -118,6 +116,8 @@ Route::get('/customer', function () {
 })->middleware('auth');
 
 Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+/*
+Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
 Route::get('/', function(){
     return redirect('home');

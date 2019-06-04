@@ -7,28 +7,28 @@ Fiche Produit (mettre le nom du produit en variable)
 @section('contenu')
 <div class="">
   <div class="container mt-5">
-    <button type="button" class="btn btn-primary"><</button>
+    <a href="{{ url('/catalogue') }}" class="btn btn-primary" role="button"><</a>
     <div class="row">
       <div class="col-3">
-        <img src="/public/img/test-vin.jpg" alt="test vin" class="img-fluid">
+        <img src="{{ $x['photos'][0]['url'] }}" alt="test vin" class="img-fluid">
       </div>
       <div class="col-9">
         <div id="titreProduit">
-          <h1>{{ $vins[$id]->nom }}</h1>
+          <h1>{{ $x['nom'] }}</h1>
           <h2>
-            @if($vins[$id]->titre)
-              {{ $vins[$id]->annee }} - {{ $vins[$id]->titre }}
+            @if($x['titre'])
+              {{ $x['annee'] }} | {{ $x['titre'] }}
             @else
-              {{ $vins[$id]->annee }}
+              {{ $x['annee'] }}
             @endif
           </h2>
         </div>
         <p>
-          Bordeaux - France<br>
-          Haut-Médoc<br>
-          {{ $contVin }}<br>
+          {{ $x['prod']['pays'] }}<br>
+          {{--Haut-Médoc<br>--}}
+          {{ $x['cont'][0]['volume'] }} L<br>
         </p>
-        <h2>{{ $prix[$id]->prix }}</h2>
+        <h2>{{ $x['prixprods'][0]['prix'] }}</h2>
         <div class="row mt-4">
           <div class="input-group col-3 col-sm-2">
             <select class="custom-select" id="inputCart">
@@ -44,24 +44,65 @@ Fiche Produit (mettre le nom du produit en variable)
           <button type="button" class="btn btn-outline-primary col-2 col-sm-1 ml-3"><i class="far fa-heart"></i></button>
         </div>
         <p class="mt-4 text-primary">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <i class="far fa-star"></i>
+          @switch($x['notes'][0]['nbrEtoiles'])
+            @case(1)
+            @for ($i = 0; $i < 1; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            @break
+
+            @case(2)
+            @for ($i = 0; $i < 2; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            @break
+
+            @case(3)
+            @for ($i = 0; $i < 3; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            @break
+
+            @case(4)
+            @for ($i = 0; $i < 4; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+            <i class="far fa-star"></i>
+            @break
+
+            @case(5)
+            @for ($i = 0; $i < 5; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+            @break
+
+            @default
+            @for ($i = 0; $i < 5; $i++)
+              <i class="fas fa-star"></i>
+            @endfor
+          @endswitch
         </p>
-        <p>Cotation : 97/100 Parker</p>
+        <p>Cotation : {{ $x['cotas'][0]['note'] }} / {{ $x['cotas'][0]['echelle'] }} {{ $x['cotas'][0]['nom'] }}</p>
         <hr>
         <p>
-          Le Château Coller-la-petite doit principalement sa réputation à un terroir exceptionnel qui lui apporte des caractéristiques aromatiques originales. Il est issu des plus vieilles vignes du domaine (35 ans d’âge moyen), situées au cœur du terroir historique, qui fait environ 45 hectares. Il a bénéficié également depuis la fin des années 90 de la volonté de l’équipe dirigeante d’améliorer la qualité en introduisant de nombreuses innovations dans le vignoble comme aux chais. Ainsi, depuis 1997, un cuvier neuf et spacieux composé d’1/3 de cuves de bois, 1/3 de cuves de béton, et 1/3 de cuves inox, a été mis en place.
+          {{ $x['description'] }}
         </p>
         <hr>
-        <p>Degrès d'alcool :</p>
-        <p>Cépages :</p>
-        <p>Apogée :</p>
-        <p>Température de conservation :</p>
-        <p>Température de service :</p>
-        <p>Mets d'accompagnement :</p>
+        <p>Degrès d'alcool : {{ $x['alcool'] }} %</p>
+        <p>Cépages : {{ $x['cepa'][0]['label'] }}</p>
+        <p>Apogée : {{ $x['apogee'] }}</p>
+        <p>Température de conservation : {{ $x['tempCons'] }}°C</p>
+        <p>Température de service : {{ $x['tempServ'] }}°C</p>
+        <p>Mets d'accompagnement : {{ $x['met'][0]['label'] }}</p>
         <hr>
           <div class="row">
             <div class="input-group-prepend col-1">
@@ -92,12 +133,13 @@ Fiche Produit (mettre le nom du produit en variable)
           <hr>
           <div class="row">
             <div class="col-3">
-              <p>Pedro<br>
-                <time>17/12/2018</time>
+              <p>{{ $x['util'][0]['nom'] }}<br>
+                <time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time>
               </p>
             </div>
             <div class="col-9">
-              <p>Vin génial. Bonne surprise pour ce vin en promotion actuellement.</p>
+              <p>{{ $x['comms'][0]['titre'] }}</p>
+              <p>{{ $x['comms'][0]['contenu'] }}</p>
             </div>
           </div>
         </div>

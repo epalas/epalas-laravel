@@ -37,9 +37,17 @@ h5 {
 }
 
 .active {
-    font-family: 'Verlag Bold'
+    font-family: 'Verlag Bold';
 }
 
+#filter > .btn-light:hover {
+    border-color: #c16973 !important;
+}
+
+#filter > .active {
+    border-color: #a51c2a !important;
+    border: 2px solid !important;
+}
 
 /* nav */
 
@@ -63,7 +71,7 @@ h5 {
 
 
 .langues {
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 }
 
 /*

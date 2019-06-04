@@ -45,8 +45,7 @@ h5 {
 }
 
 #filter > .active {
-    border-color: #a51c2a !important;
-    border: 2px solid !important;
+    border: 2px solid #a51c2a !important;
 }
 
 /* nav */
@@ -72,6 +71,11 @@ h5 {
 
 .langues {
 	font-size: 0.8rem;
+}
+
+img.wine-card {
+
+    width:3rem;
 }
 
 /*

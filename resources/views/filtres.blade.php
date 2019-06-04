@@ -115,9 +115,7 @@ Gazzar - Catalogue
     </div>
     </div>
 </div>
-@endsection
 
-@section('article')
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container">

@@ -6,7 +6,7 @@ use App\Vin;
 use App\Cota;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class RecommController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $datas=Vin::inRandomOrder()->take(4)->get();
+        $datas=Vin::inRandomOrder()->take(10)->get();
 
         //->orderBy('vins.nom','asc');
 
@@ -27,7 +27,7 @@ class HomeController extends Controller
         'cotas','photos',
         'notes','prixprods');
 
-        return view('accueil2')->with('datas', $datas);
+        return view('recommandation')->with('datas', $datas);
 
     }
 }

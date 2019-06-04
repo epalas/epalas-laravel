@@ -34,11 +34,11 @@ Route::get('/map', function () {
 Route::get('/creation', function () {
     return view('inscription');
 });
-
+/*
 Route::get('/login', function () {
-    return view('connexion');
+    return view('login');
 });
-
+*/
 Route::get('/valeurs', function () {
     return view('valeurs');
 });
@@ -78,9 +78,6 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/customer-account', function () {
-    return view('customer-account');
-});
 
 Route::get('/galerie', function () {
     return view('galerie');
@@ -105,7 +102,7 @@ Route::get('/carte_vin', function () {
 
 Route::get('/produit', 'ProductController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
 Auth::routes();
 
@@ -114,6 +111,8 @@ Route::get('/customer', function () {
 })->middleware('auth');
 
 Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+/*
+Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
 Route::get('/', function(){
     return redirect('home');

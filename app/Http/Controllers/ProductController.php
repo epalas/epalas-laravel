@@ -7,8 +7,7 @@ use App\Vin;
 
 class ProductController extends Controller
 {
-    public function index($id) {
-        // id du produit à récupérer
+    public function index($id){
         $x = Vin::find($id);
         $x->load('stock','condi','type','prod','cepa','cont','met','util','cotas', 'photos', 'notes', 'prixprods', 'comms');
 

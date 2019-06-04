@@ -37,16 +37,16 @@ h5 {
 }
 
 .active {
-    font-family: 'Verlag Bold'
+    font-family: 'Verlag Bold';
 }
 
-#filter .btn-light:hover {
+#filter > .btn-light:hover {
     border-color: #c16973 !important;
 }
 
-#filter .active {
+#filter > .active {
     border-color: #a51c2a !important;
-    border: 2px solid;
+    border: 2px solid !important;
 }
 
 /* nav */

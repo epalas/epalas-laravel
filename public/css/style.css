@@ -48,6 +48,10 @@ h5 {
     border: 2px solid #a51c2a !important;
 }
 
+.short-line {
+    line-height: 0.1rem;
+}
+
 /* nav */
 
 #logo-top {

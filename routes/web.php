@@ -11,43 +11,23 @@
 |
 */
 use Gloudemans\Shoppingcart\Facades\Cart; //PROVISOIRE
-/*
-Route de Steve pour tester les pages implémentés
-*/
 
-Route::get('/template', function () {
-    return view('template');
+Route::get('/produit', function () {
+    return redirect('catalogue');
 });
-
-Route::get('/produit', 'Catalogue@afficheCatalogue');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('/map', function () {
     return view('map');
-});
-
-Route::get('/creation', function () {
-    return view('inscription');
-});
+})->name('map');
 
 Route::get('/valeurs', function () {
     return view('valeurs');
-});
+})->name('valeurs');
 
-Route::get('/home', function () {
-    return view('accueil2');
-});
-
-Route::get('/', function () {
-    return view('accueil2');
-});
-
-/*
-Route de Lucien pour tester les pages implémentées
-*/
 
 Route::get('/cgv', ['as' => 'cgv', function () {
     return view('cgv');
@@ -55,30 +35,23 @@ Route::get('/cgv', ['as' => 'cgv', function () {
 
 Route::get('/newsletter', function () {
     return view('newsletter');
-});
-
+})->name('newsletter');
 
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
-});
+})->name('carton-decouverte');
 
 Route::get('/presse', function () {
     return view('presse');
-});
+})->name('presse');
 
 Route::get('/blog', function () {
     return view('blog');
-});
+})->name('blog');
 
 Route::get('/galerie', function () {
     return view('galerie');
-});
-
-
-Route::get('/cart', function () {
-    return view('cart');
-});
-
+})->name('galerie');
 
 Route::get('/catalogue/{filtres}', function ($url) {
 
@@ -86,22 +59,13 @@ Route::get('/catalogue/{filtres}', function ($url) {
 
 })->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
 
-/*
-Route d'Adrien pour tester les pages implémentés
-*/
 
-Route::get('/catalogue', 'Catalogue@afficheCatalogue');
-
-Route::get('/carte_vin', function () {
-    return view('carte_vin');
-});
+Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
 
 
 Route::get('/ajax', function () {
     return view('filtres_ajax_test');
 });
-
-Route::get('/produit', 'ProductController@index');
 
 Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
 
@@ -118,16 +82,9 @@ Auth::routes();
 
 Route::get('/customer', function () {
     return view('customer-account');
-})->middleware('auth');
+})->middleware('auth')->name('customer');;
 
-Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
-/*
-Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
-
-Route::get('/', function(){
-    return redirect('home');
-});
-*/
+Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 

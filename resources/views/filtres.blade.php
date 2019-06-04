@@ -161,14 +161,12 @@ Gazzar - Catalogue
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
                             @break
 
                             @case(2)
                             @for ($i = 0; $i < 2; $i++)
                               <i class="fas fa-star"></i>
                             @endfor
-                              <i class="far fa-star"></i>
                               <i class="far fa-star"></i>
                               <i class="far fa-star"></i>
                               <i class="far fa-star"></i>
@@ -180,7 +178,6 @@ Gazzar - Catalogue
                             @endfor
                               <i class="far fa-star"></i>
                               <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
                             @break
 
                             @case(4)
@@ -188,14 +185,12 @@ Gazzar - Catalogue
                               <i class="fas fa-star"></i>
                             @endfor
                               <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
                             @break
 
                             @case(5)
                             @for ($i = 0; $i < 5; $i++)
                               <i class="fas fa-star"></i>
                             @endfor
-                              <i class="far fa-star"></i>
                             @break
 
                             @default

@@ -1,8 +1,3 @@
-
-
-
-
-
 @extends('template')
 
 @section('titre')
@@ -91,14 +86,7 @@ Gazzar - Inscription
 			</div>
 			<input name="mdp_confirmation" type="password" class="form-control mt-2" placeholder="confirmation du mot de passe">
               
-              
-
-
-              
-
-             
-
-
+    
 
               <button type="submit" class="btn btn-primary mr-auto mt-3 mb-5">Créer un compte</button>
             </form> 

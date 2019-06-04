@@ -40,8 +40,13 @@ Fiche Produit (mettre le nom du produit en variable)
               <option value="5">5</option>
             </select>
           </div>
-          <button type="button" class="btn btn-primary col-6 col-sm-3">Ajouter au panier <i class="fas fa-shopping-cart"></i></button>
-          <button type="button" class="btn btn-outline-primary col-2 col-sm-1 ml-3"><i class="far fa-heart"></i></button>
+          <form action="{{route('cart.store')}}" method="POST">
+            {{csrf_field()}}
+            <input type="hidden" name="id" value="{{ $x['id'] }}">
+            <input type="hidden" name="nom" value="{{ $x['nom'] }}">
+            <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
+            <button type="submit" class="btn btn-primary col-6 col-sm-12">Ajouter au panier <i class="fas fa-shopping-cart"></i></button>
+          </form>
         </div>
         <p class="mt-4 text-primary">
           @switch($x['notes'][0]['nbrEtoiles'])

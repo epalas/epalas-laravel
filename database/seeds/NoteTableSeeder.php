@@ -10,7 +10,7 @@ class NoteTableSeeder extends Seeder {
         DB::table('notes')->truncate();
         for ($i=1; $i < 26; $i++) { 
             $n = rand(5, 6);
-            $e = rand(1,6);
+            $e = rand(1,5);
             DB::table('notes')->insert([
                 'idVin' => $i,
                 'idUtil' => $n,

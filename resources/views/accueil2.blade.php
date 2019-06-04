@@ -95,7 +95,7 @@ img{width: 40px;}
               <p>{{$data['prod']['region']}} - {{$data['prod']['pays']}}</p> 
               <p>{{$data['prod']['nom']}}</p> 
               <p>{{$data['label']}} / <span class="annee">{{$data['annee']}}</span></p> 
-              <span class="prix"><b>{{$data['prixProduit']}}</b></span> <span>CHF</span>
+              <span class="prix"><b>{{$data['prixProduit']}}</b></span> <span>CHF {{$data['prixprods'][0]['prix']}}</span>
             </p>
           </div>
         </div>

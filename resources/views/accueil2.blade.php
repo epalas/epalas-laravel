@@ -66,98 +66,97 @@ Gazzar - Accueil
     </div>
   </div>  
 
-{{-- Mettre petite encarte de vin --}}
-@foreach($datas as $data)
-{{--
-{{$data['nom']}} - {{$data['annee']}} - {{$data['label']}} 
-{{$data['condi']['type']}} - {{$data['prod']['region']}} - {{$data['prod']['pays']}} - {{$data['prod']['nom']}}
-{{$data['cotas'][0]['nom']}} : {{$data['cotas'][0]['note']}} / {{$data['cotas'][0]['echelle']}}
-{{$data['notes'][0]['nbrEtoiles']}}
---}}
 
-<style>
-img{width: 40px;}
-.card-body{columns:2 200 px;}
-</style>
-<div class="card" style="width: 16rem;">
+    <div class="row">
+        @foreach($datas as $result)
+        {{-- Template pour chaque card --}}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+            <div class="card h-100">
+                <div class="card-body p-3">
+                    <div class="row" id="carte">
+                        <a href="produit/{{$result["id"]}}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="wine-card" src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                    </div>
+                                    <div class="col-9">
+                                        <h4 class="card-title">{{$result["nom"]}}</h4>
+                                        <p class="card-text">
+                                        <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                        <p>{{$result["prod"]["nom"]}}</p>
+                                        <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
+                                        <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <div class="row justify-content-between">
+                        <p class="ml-2 mt-2 text-primary">
+                        
+                          @switch($result['notes'][0]['nbrEtoiles'])
+                            @case(1)
+                            @for ($i = 0; $i < 1; $i++)
+                                <i class="fas fa-star"></i>
+                            @endfor
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            @break
 
-  <div class="card-body p-3">
-    
-    <div class="row" id="carte">
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-          <img src="{{$data['photos'][0]['url']}}" alt="{{$data['nom']}}">
-          </div>
-          <div class="col-9">
-            <h4 class="card-title">{{$data['nom']}}</h4>
-            <p class="card-text">
-              <p>{{$data['prod']['region']}} - {{$data['prod']['pays']}}</p> 
-              <p>{{$data['prod']['nom']}}</p> 
-              <p>{{$data['label']}} / <span class="annee">{{$data['annee']}}</span></p> 
-              <span class="prix"><b>{{$data['prixProduit']}}</b></span> <span>CHF {{$data['prixprods'][0]['prix']}}</span>
-            </p>
-          </div>
+                            @case(2)
+                            @for ($i = 0; $i < 2; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(3)
+                            @for ($i = 0; $i < 3; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(4)
+                            @for ($i = 0; $i < 4; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(5)
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                            @break
+
+                            @default
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                          @endswitch
+                        </p>
+                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-  </div>
-
-  </div>
-
-    <div class="card-header">
-      <div class="row justify-content-between">
-        <a class="nav-link" href="#">
-{{--
-@switch($data->nbrEtoiles)
-		@case(1)
-			@for ($i = 0; $i < 1; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-    @break
-
-    @case(2)
-			@for ($i = 0; $i < 2; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-		@break
-				
-		@case(3)
-			@for ($i = 0; $i < 3; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-		@break
-				
-		@case(4)
-			@for ($i = 0; $i < 4; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-		@break
-				
-		@case(5)
-			@for ($i = 0; $i < 5; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-		@break		
-
-    @default
-			@for ($i = 0; $i < 5; $i++)
-				<i class="far fa-star"></i>
-			@endfor
-@endswitch
---}}
-			
-			</a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
-      </div>
-    </div>
-
-</div>
 @endforeach
-
+    </div>
 
 
 <div class="row">
   <div class="col-auto ml-auto">
-    <button type="button" class="btn btn-primary mt-3 mb-5">En savoir plus</button>
+    <a type="button" class="btn btn-primary mt-3 mb-5" href="recommandations">En savoir plus</a>
   </div>
 </div>
 
@@ -174,7 +173,91 @@ img{width: 40px;}
     </div>
   </div>  
 
-{{-- Mettre petite encarte de vin --}}
+    <div class="row">
+        @foreach($datas as $result)
+        {{-- Template pour chaque card --}}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+            <div class="card h-100">
+                <div class="card-body p-3">
+                    <div class="row" id="carte">
+                        <a href="produit/{{$result["id"]}}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="wine-card" src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                    </div>
+                                    <div class="col-9">
+                                        <h4 class="card-title">{{$result["nom"]}}</h4>
+                                        <p class="card-text">
+                                        <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                        <p>{{$result["prod"]["nom"]}}</p>
+                                        <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
+                                        <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-header">
+                    <div class="row justify-content-between">
+                        <p class="ml-2 mt-2 text-primary">
+                        
+                          @switch($result['notes'][0]['nbrEtoiles'])
+                            @case(1)
+                            @for ($i = 0; $i < 1; $i++)
+                                <i class="fas fa-star"></i>
+                            @endfor
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            @break
+
+                            @case(2)
+                            @for ($i = 0; $i < 2; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(3)
+                            @for ($i = 0; $i < 3; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(4)
+                            @for ($i = 0; $i < 4; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(5)
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                            @break
+
+                            @default
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                          @endswitch
+                        </p>
+                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+@endforeach
+    </div>
 
 <div class="row">
   <div class="col-auto ml-auto">
@@ -185,8 +268,4 @@ img{width: 40px;}
 
 
 </div>
-
-
-
-
 @endsection

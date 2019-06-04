@@ -93,7 +93,15 @@ Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
 
+
+Route::get('/ajax', function () {
+    return view('filtres_ajax_test');
+});
+
+Route::get('/produit', 'ProductController@index');
+
 Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 

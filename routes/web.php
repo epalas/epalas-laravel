@@ -82,7 +82,7 @@ Route::get('/cart', function () {
 
 Route::get('/catalogue/{filtres}', function ($url) {
 
-    return view('catalogues');
+    return view('filtres');
 
 })->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
 

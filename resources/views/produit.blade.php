@@ -7,7 +7,7 @@ Fiche Produit (mettre le nom du produit en variable)
 @section('contenu')
 <div class="">
   <div class="container mt-5">
-    <a href="{{ url('/catalogue') }}" class="btn btn-primary" role="button"><</a>
+    <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
     <div class="row">
       <div class="col-3">
         <img src="{{ $x['photos'][0]['url'] }}" alt="test vin" class="img-fluid">

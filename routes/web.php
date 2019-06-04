@@ -74,23 +74,21 @@ Route::get('/galerie', function () {
     return view('galerie');
 });
 
+Route::get('/catalogue', 'Catalogue@afficheCatalogue');
+
+
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fin']);
 
 Route::get('/cart', function () {
     return view('cart');
 });
 
 
-Route::get('/catalogue/{filtres}', function ($url) {
-
-    return view('catalogues');
-
-})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
-
 /*
 Route d'Adrien pour tester les pages implémentés
 */
 
-Route::get('/catalogue', 'Catalogue@afficheCatalogue');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');

@@ -13,33 +13,45 @@ Gazzar - Catalogue
 <div class="container">
     <div class="row mt-5 mb-4 mx-auto">
         <div class="btn-group-justified col-12" role="group" id="filter">
-        @if (Request::is('rouge'))
-        <button type="button" class="btn btn-light bg-white active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
+
+        @if (Request::is('catalogue/rouges'))
+        <button type="button" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</button>
         @endif 
-        @if (Request::is('blanc'))
-        <button type="button" class="btn btn-light bg-white active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
+
+        @if (Request::is('catalogue/blancs'))
+        <button type="button" class="btn btn-light active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="white"><img src="img/pictos/vin.svg" alt="Blanc" /><br/>Blancs</button>
         @endif 
-        @if (Request::is('rose'))
-        <button type="button" class="btn btn-light bg-white active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
+
+        @if (Request::is('catalogue/roses'))
+        <button type="button" class="btn btn-light active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="rosy"><img src="img/pictos/vin.svg" alt="Rosé"/><br/>Rosés</button>
         @endif 
-        @if (Request::is('mousseux'))
-        <button type="button" class="btn btn-light bg-white active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
+
+        @if (Request::is('catalogue/mousseux'))
+        <button type="button" class="btn btn-light active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="mouss"><img src="img/pictos/mousseux.svg" alt="Mousseux"/><br/>Mousseux</button>
         @endif 
-        @if (Request::is('bio'))
-        <button type="button" class="btn btn-light bg-white active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
+
+        @if (Request::is('catalogue/bios'))
+        <button type="button" class="btn btn-light active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="bio"><img src="img/pictos/bio.svg" alt="Bio"/><br/>Bio</button>
         @endif 
-        @if (Request::is('primeur'))
-        <button type="button" class="btn btn-light bg-white active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
+
+        @if (Request::is('catalogue/primeurs'))
+        <button type="button" class="btn btn-light active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
+
         @else
         <button type="button" class="btn btn-light bg-white" id="prim"><img src="img/pictos/primeur.svg" alt="Primeur"/><br/>Primeurs</button>
         @endif 

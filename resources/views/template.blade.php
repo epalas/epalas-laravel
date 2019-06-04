@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-between">
-        <a href="home"><img class=" ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+        <a href="home"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
 
             <div class="col-lg-6 mt-3">
               <div class="row">
@@ -71,7 +71,7 @@
                 @endif 
                     <a class="nav-link" href="home">Accueil</a>
                 </li>
-                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin'))
+                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin') | Request::is('recommandations'))
                 <li class="nav-item dropdown active">
                 @else
                  <li class="nav-item dropdown">
@@ -133,7 +133,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" id="cart">
-                         <a class="nav-link" href="cart"><i class="fas fa-shopping-cart"></i></a>
+                         <a id="notifCart"  data-count="6" class="nav-link" href="cart"><i  class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                          <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
@@ -144,8 +144,6 @@
   </nav>
 
 @yield('contenu')
-
-@yield('article')
 {{-- Footer --}}
  <footer class="sticky bg-primary p-3 mt-5">
     <div class="container">

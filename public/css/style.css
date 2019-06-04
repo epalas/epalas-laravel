@@ -45,8 +45,7 @@ h5 {
 }
 
 #filter > .active {
-    border-color: #a51c2a !important;
-    border: 2px solid !important;
+    border: 2px solid #a51c2a !important;
 }
 
 /* nav */
@@ -70,8 +69,38 @@ h5 {
 }
 
 
+#notifCart {
+  
+  vertical-align: middle;
+  position: relative;
+  width: 100px;
+}
+
+#notifCart:after {
+  content: attr(data-count);
+  position: absolute;
+  background: #FFFFFF;
+  height: 1rem;
+  top: 1.3rem;
+  right: 3.9rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #a51c2a;
+}
+
 .langues {
 	font-size: 0.8rem;
+}
+
+img.wine-card {
+
+    width:3rem;
 }
 
 /*

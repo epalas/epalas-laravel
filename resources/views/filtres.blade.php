@@ -127,9 +127,7 @@ Gazzar - Catalogue
     </div>
     </div>
 </div>
-@endsection
 
-@section('article')
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container">
@@ -219,5 +217,114 @@ Gazzar - Catalogue
 @endforeach
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
+
+    <script type='text/javascript'>
+    $(document).ready(function(){
+
+    /* Fetch all records
+    $('#filtres').click(function(){
+	    fetchProducts(0);
+    });*/
+
+    // types de vins
+    $('#red').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'rouges']);
+    });
+
+    $('#white').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'blancs']);
+    });
+
+    $('#rosy').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'roses']);
+    });
+
+    $('#mouss').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'mousseux']);
+    });
+
+    $('#bio').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'bios']);
+    });
+
+    $('#prim').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'primeurs']);
+    });
+
+    $('#promo').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'promotions']);
+    });
+
+    $('#new').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'nouveautes']);
+    });
+
+    $('#end').click(function(){
+        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'fin']);
+    });
+
+});
+
+     function fetchProducts(id){
+       $.ajax({
+         url: 'getUsers/'+id,
+         type: 'get',
+         dataType: 'json',
+         success: function(response){
+
+           var len = 0;
+           $('#userTable tbody').empty(); // Empty <tbody>
+           if(response['data'] != null){
+             len = response['data'].length;
+           }
+
+           if(len > 0){
+             for(var i=0; i<len; i++){
+               var id = response['data'][i].id;
+               var username = response['data'][i].username;
+               var name = response['data'][i].name;
+               var email = response['data'][i].email;
+
+               var tr_str = "<tr>" +
+                   "<td align='center'>" + (i+1) + "</td>" +
+                   "<td align='center'>" + username + "</td>" +
+                   "<td align='center'>" + name + "</td>" +
+                   "<td align='center'>" + email + "</td>" +
+               "</tr>";
+
+               $("#userTable tbody").append(tr_str);
+             }
+           }else if(response['data'] != null){
+              var tr_str = "<tr>" +
+                  "<td align='center'>1</td>" +
+                  "<td align='center'>" + response['data'].username + "</td>" + 
+                  "<td align='center'>" + response['data'].name + "</td>" +
+                  "<td align='center'>" + response['data'].email + "</td>" +
+              "</tr>";
+
+              $("#userTable tbody").append(tr_str);
+           }else{
+              var tr_str = "<tr>" +
+                  "<td align='center' colspan='4'>No record found.</td>" +
+              "</tr>";
+
+              $("#userTable tbody").append(tr_str);
+           }
+
+         }
+       });
+     }
+     </script>
 @endsection
 

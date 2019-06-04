@@ -106,6 +106,8 @@ Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
+Route::get('recommandations', [ 'uses'=> 'RecommController@index', 'as'=>'recommandations']);
+
 Route::get('/', function(){
     return redirect('home');
 });

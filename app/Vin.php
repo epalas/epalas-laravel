@@ -81,4 +81,62 @@ class Vin extends Model
 
         }
 
+    public static function findRedWine(){
+
+        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
+            ->select('*')
+            ->where("types.label","like","Rouge")
+            ->get();
+
+        return $results;
+    }
+
+    public static function findWhiteWine(){
+
+        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
+            ->select('*')
+            ->where("types.label","like","Blanc")
+            ->get();
+
+        return $results;
+    }
+
+    public static function findRoseWine(){
+
+        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
+            ->select('*')
+            ->where("types.label","like","Rosé")
+            ->get();
+
+        return $results;
+    }
+
+    public static function findMousseuxWine(){
+
+        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
+            ->select('*')
+            ->where("types.label","like","Mousseux")
+            ->get();
+
+        return $results;
+    }
+
+    public static function findBio(){
+
+        $results = Vin::select('*')
+            ->where("estBio","=",1)
+            ->get();
+
+        return $results;
+    }
+
+    public static function findPrimeur(){
+
+        $results = Vin::select('*')
+            ->where("estPrimeur","=",1)
+            ->get();
+
+        return $results;
+    }
+
 }

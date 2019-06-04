@@ -78,6 +78,7 @@
                 @endif 
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                         <a class="dropdown-item" href="tous">Tous les vins</a>
                         <a class="dropdown-item" href="rouge">Rouges</a>
                         <a class="dropdown-item" href="blanc">Blancs</a>
@@ -91,6 +92,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('recommandations') }}">Recommandations</a>
                         <a class="dropdown-item" href="{{ route('carton-decouverte') }}">Carton découverte</a>
+
                     </div>
                 </li>
                 @if (Request::is('blog') | Request::is('galerie') | Request::is('presse') | Request::is('newsletter'))
@@ -134,8 +136,12 @@
                     <li class="nav-item active" id="cart">
                     @else
                     <li class="nav-item" id="cart">
+
                     @endif 
-                         <a class="nav-link" href="{{ route('cart.index') }}"><i class="fas fa-shopping-cart"></i></a>
+
+
+                         <a id="notifCart"  data-count="6" class="nav-link" href="{{ route('cart.index') }}"><i  class="fas fa-shopping-cart"></i></a>
+
                     </li>
                     <li class="nav-item">
                          <a class="nav-link" href="#"><i class="far fa-heart"></i></a>

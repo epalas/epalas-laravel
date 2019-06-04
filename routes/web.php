@@ -53,15 +53,10 @@ Route::get('/galerie', function () {
     return view('galerie');
 })->name('galerie');
 
-Route::get('/catalogue/{filtres}', function ($url) {
-
-    return view('catalogues');
-
-})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
-
-
 Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
 
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
+    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fin']);
 
 Route::get('/ajax', function () {
     return view('filtres_ajax_test');

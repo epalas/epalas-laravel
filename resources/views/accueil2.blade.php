@@ -58,7 +58,7 @@ Gazzar - Accueil
     <div class="col-0">
       <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
-    <div class="col col-sm-3">
+    <div class="col col-sm-6 col-md-5 col-xl-3">
       <h2>Nos recommendations</h2>
     </div>
     <div class="col-12 col-sm">
@@ -156,7 +156,7 @@ Gazzar - Accueil
 
 <div class="row">
   <div class="col-auto ml-auto">
-    <a type="button" class="btn btn-primary mt-3 mb-5" href="recommandations">En savoir plus</a>
+    <a class="btn btn-primary mt-3 mb-5" href="recommandations">En savoir plus</a>
   </div>
 </div>
 
@@ -165,7 +165,7 @@ Gazzar - Accueil
     <div class="col-0">
       <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
-    <div class="col col-sm-2">
+    <div class="col col-sm-4 col-md-4 col-xl-2">
       <h2>Nouveautés</h2>
     </div>
     <div class="col-12 col-sm">
@@ -261,7 +261,7 @@ Gazzar - Accueil
 
 <div class="row">
   <div class="col-auto ml-auto">
-    <button type="button" class="btn btn-primary mt-3 mb-5">En savoir plus</button>
+    <a class="btn btn-primary mt-3 mb-5" href="nouveautes">En savoir plus</a>
   </div>
 </div>
   

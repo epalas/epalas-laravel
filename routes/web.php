@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Gloudemans\Shoppingcart\Facades\Cart; //PROVISOIRE
 /*
 Route de Steve pour tester les pages implémentés
 */
@@ -121,4 +121,13 @@ Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
 Route::get('/', function(){
     return redirect('home');
+});
+*/
+
+Route::get('/cart', 'CartController@index')->name('cart.index');
+
+Route::post('/cart', 'CartController@store')->name('cart.store');
+
+Route::get('empty', function(){ //PROVISOIRE
+    Cart::destroy();
 });

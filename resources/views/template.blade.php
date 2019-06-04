@@ -32,7 +32,7 @@
 
               @if(Auth::check())
                 <div class="col-sm-8">
-                    <a href="customer-account">Accéder à votre profil</a>
+                    <a href="customer">Accéder à votre profil</a>
                       <span> | </span>
                     <a href="deconnexion">Se déconnecter</a>
               @else 
@@ -133,7 +133,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" id="cart">
-                         <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                         <a class="nav-link" href="cart"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                          <a class="nav-link" href="#"><i class="far fa-heart"></i></a>

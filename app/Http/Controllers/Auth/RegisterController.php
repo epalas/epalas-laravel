@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'cp' => $data['cp'],
             'ville' => $data['ville'],
             'pays' => $data['pays'],
-            'mdp' => $data['mdp'],
+            'mdp' => bcrypt($data['mdp']),
             'admin' => 0,
             'urlPhoto' => "https://img.icons8.com/windows/420/gender-neutral-user.png",
         ]);

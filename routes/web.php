@@ -104,6 +104,10 @@ Route::get('/produit', 'ProductController@index');
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
+Route::get('/', function(){
+    return redirect('home');
+});
+
 Auth::routes();
 
 Route::get('/customer', function () {

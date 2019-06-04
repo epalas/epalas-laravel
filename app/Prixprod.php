@@ -10,5 +10,4 @@ class Prixprod extends Model
         return $this->belongsTo('App\Vin');
     }
 
-
 }

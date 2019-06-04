@@ -78,19 +78,21 @@
                 @endif 
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="tous">Tous les vins</a>
-                        <a class="dropdown-item" href="rouge">Rouges</a>
-                        <a class="dropdown-item" href="blanc">Blancs</a>
-                        <a class="dropdown-item" href="rose">Rosés</a>
-                        <a class="dropdown-item" href="mousseux">Mousseux</a>
-                        <a class="dropdown-item" href="bio">Bio</a>
-                        <a class="dropdown-item" href="primeur">Primeurs</a>
-                        <a class="dropdown-item" href="promotions">Promotions</a>
-                        <a class="dropdown-item" href="nouveautes">Nouveautés</a>
-                        <a class="dropdown-item" href="fin">Fins de série</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Recommendations</a>
-                        <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
+
+                        {{-- TODO Gestion de la navigation si dans le cata --}}
+                            <a class="dropdown-item" href="catalogue">Tous les vins</a>
+                            <a class="dropdown-item" href="catalogue/rouges">Rouges</a>
+                            <a class="dropdown-item" href="catalogue/blancs">Blancs</a>
+                            <a class="dropdown-item" href="catalogue/roses">Rosés</a>
+                            <a class="dropdown-item" href="catalogue/mousseux">Mousseux</a>
+                            <a class="dropdown-item" href="catalogue/bios">Bio</a>
+                            <a class="dropdown-item" href="catalogue/primeurs">Primeurs</a>
+                            <a class="dropdown-item" href="catalogue/promotions">Promotions</a>
+                            <a class="dropdown-item" href="catalogue/nouveautes">Nouveautés</a>
+                            <a class="dropdown-item" href="catalogue/fin">Fins de série</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Recommendations</a>
+                            <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
                     </div>
                 </li>
                 @if (Request::is('blog') | Request::is('galerie') | Request::is('presse') | Request::is('newsletter'))

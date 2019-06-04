@@ -47,51 +47,40 @@ Fiche Produit (mettre le nom du produit en variable)
           @switch($x['notes'][0]['nbrEtoiles'])
             @case(1)
             @for ($i = 0; $i < 1; $i++)
-                <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
             @endfor
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
             @break
 
             @case(2)
             @for ($i = 0; $i < 2; $i++)
               <i class="fas fa-star"></i>
             @endfor
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
             @break
 
             @case(3)
             @for ($i = 0; $i < 3; $i++)
               <i class="fas fa-star"></i>
             @endfor
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
             @break
 
             @case(4)
             @for ($i = 0; $i < 4; $i++)
               <i class="fas fa-star"></i>
             @endfor
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
             @break
 
             @case(5)
             @for ($i = 0; $i < 5; $i++)
-              <i class="fas fa-star"></i>
-            @endfor
-              <i class="far fa-star"></i>
-            @break
-
-            @case(6)
-            @for ($i = 0; $i < 6; $i++)
               <i class="fas fa-star"></i>
             @endfor
             @break

@@ -103,6 +103,10 @@ Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
 
+Route::get('/ajax', function () {
+    return view('filtres_ajax_test');
+});
+
 Route::get('/produit', 'ProductController@index');
 
 Route::get('home', 'HomeController@index');
@@ -118,4 +122,3 @@ Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/', function(){
     return redirect('home');
 });
-

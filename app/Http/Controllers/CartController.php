@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Vin;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -13,7 +15,16 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+         $datas=Vin::all();
+
+        $datas->load( 'stock','condi',
+        'type','prod',
+        'cepa','cont',
+        'met','util',
+        'cotas','photos',
+        'notes','prixprods'); 
+
+        return view('cart');
     }
 
     /**
@@ -34,7 +45,11 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cart::add($request->id, $request->nom, 1, $request->prix)
+            ->associate('App/Vin');
+
+        return redirect()->route('cart.index');
+        //->with('success_message', 'L'élément a été ajouté dans votre panier !');
     }
 
     /**
@@ -80,5 +95,5 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
-    }
+    } 
 }

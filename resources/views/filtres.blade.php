@@ -14,49 +14,49 @@ Gazzar - Catalogue
     <div class="row mt-5 mb-4 mx-auto">
         <div class="btn-group-justified col-12" role="group" id="filter">
         @if (Request::is('rouge'))
-        <button type="button" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
+        <button type="button" class="btn btn-light bg-white active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
         @else
-        <button type="button" class="btn btn-light" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</button>
+        <button type="button" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</button>
         @endif 
         @if (Request::is('blanc'))
-        <button type="button" class="btn btn-light active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
+        <button type="button" class="btn btn-light bg-white active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
         @else
-        <button type="button" class="btn btn-light" id="white"><img src="img/pictos/vin.svg" alt="Blanc" /><br/>Blancs</button>
+        <button type="button" class="btn btn-light bg-white" id="white"><img src="img/pictos/vin.svg" alt="Blanc" /><br/>Blancs</button>
         @endif 
         @if (Request::is('rose'))
-        <button type="button" class="btn btn-light active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
+        <button type="button" class="btn btn-light bg-white active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
         @else
-        <button type="button" class="btn btn-light" id="rosy"><img src="img/pictos/vin.svg" alt="Rosé"/><br/>Rosés</button>
+        <button type="button" class="btn btn-light bg-white" id="rosy"><img src="img/pictos/vin.svg" alt="Rosé"/><br/>Rosés</button>
         @endif 
         @if (Request::is('mousseux'))
-        <button type="button" class="btn btn-light active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <button type="button" class="btn btn-light bg-white active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
         @else
-        <button type="button" class="btn btn-light" id="mouss"><img src="img/pictos/mousseux.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <button type="button" class="btn btn-light bg-white" id="mouss"><img src="img/pictos/mousseux.svg" alt="Mousseux"/><br/>Mousseux</button>
         @endif 
         @if (Request::is('bio'))
-        <button type="button" class="btn btn-light active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
+        <button type="button" class="btn btn-light bg-white active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
         @else
-        <button type="button" class="btn btn-light" id="bio"><img src="img/pictos/bio.svg" alt="Bio"/><br/>Bio</button>
+        <button type="button" class="btn btn-light bg-white" id="bio"><img src="img/pictos/bio.svg" alt="Bio"/><br/>Bio</button>
         @endif 
         @if (Request::is('primeur'))
-        <button type="button" class="btn btn-light active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
+        <button type="button" class="btn btn-light bg-white active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
         @else
-        <button type="button" class="btn btn-light" id="prim"><img src="img/pictos/primeur.svg" alt="Primeur"/><br/>Primeurs</button>
+        <button type="button" class="btn btn-light bg-white" id="prim"><img src="img/pictos/primeur.svg" alt="Primeur"/><br/>Primeurs</button>
         @endif 
         @if (Request::is('promotions'))
-        <button type="button" class="btn btn-light active" id="promo"><img src="img/pictos/picto_color/promo-red.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="img/pictos/picto_color/promo-red.svg" alt="Promo"/><br/>Promo</button>
         @else
-        <button type="button" class="btn btn-light" id="promo"><img src="img/pictos/promo.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white" id="promo"><img src="img/pictos/promo.svg" alt="Promo"/><br/>Promo</button>
         @endif 
         @if (Request::is('nouveautes'))
-        <button type="button" class="btn btn-light active" id="new"><img src="img/pictos/picto_color/new-red.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white active" id="new"><img src="img/pictos/picto_color/new-red.svg" alt="Nouveau"/><br/>Nouveaux</button>
         @else
-        <button type="button" class="btn btn-light" id="new"><img src="img/pictos/nouveau.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white" id="new"><img src="img/pictos/nouveau.svg" alt="Nouveau"/><br/>Nouveaux</button>
         @endif 
         @if (Request::is('fin'))
-        <button type="button" class="btn btn-light" id="end"><img src="img/pictos/picto_color/end-red.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/picto_color/end-red.svg" alt="Fin de série"/><br/>Fins de série</button>
         @else
-        <button type="button" class="btn btn-light" id="end"><img src="img/pictos/fin.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/fin.svg" alt="Fin de série"/><br/>Fins de série</button>
         @endif 
         </div>   
     </div>
@@ -120,45 +120,92 @@ Gazzar - Catalogue
 @section('article')
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
-
-@foreach($results as $result)
-{{-- Template pour chaque card --}}
-    <div class="card" style="width: 16rem;">
-
-        <div class="card-body p-3">
-
-            <div  class="row" id="carte">
-                <a href="produit/{{$result["id"]}}">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+<div class="container">
+    <div class="row">
+        @foreach($results as $result)
+        {{-- Template pour chaque card --}}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+            <div class="card h-100">
+                <div class="card-body p-3">
+                    <div class="row" id="carte">
+                        <a href="produit/{{$result["id"]}}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                    </div>
+                                    <div class="col-9">
+                                        <h4 class="card-title">{{$result["nom"]}}</h4>
+                                        <p class="card-text">
+                                        <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                        <p>{{$result["prod"]["nom"]}}</p>
+                                        <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
+                                        <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-9">
-                                <h4 class="card-title">{{$result["nom"]}}</h4>
-                                <p class="card-text">
-                                <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
-                                <p>{{$result["prod"]["nom"]}}</p>
-                                <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
-                                <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                </a>
+                </div>
+                <div class="card-header">
+                    <div class="row justify-content-between">
+                        <p class="ml-2 mt-2 text-primary">
+                        
+                          @switch($result['notes'][0]['nbrEtoiles'])
+                            @case(1)
+                            @for ($i = 0; $i < 1; $i++)
+                                <i class="fas fa-star"></i>
+                            @endfor
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            @break
+
+                            @case(2)
+                            @for ($i = 0; $i < 2; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(3)
+                            @for ($i = 0; $i < 3; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(4)
+                            @for ($i = 0; $i < 4; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                              <i class="far fa-star"></i>
+                            @break
+
+                            @case(5)
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                            @break
+
+                            @default
+                            @for ($i = 0; $i < 5; $i++)
+                              <i class="fas fa-star"></i>
+                            @endfor
+                          @endswitch
+                        </p>
+                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
             </div>
-
         </div>
-
-        <div class="card-header">
-            <div class="row justify-content-between">
-                <a class="nav-link" href="#">
-</a> <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
-</div>
-</div>
-
-</div>
 @endforeach
-
+    </div>
+</div>
 @endsection
 

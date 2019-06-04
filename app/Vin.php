@@ -50,13 +50,16 @@ class Vin extends Model
     }
 
     public function notes(){
-        return $this->hasMany('App\Photo', 'idVin', 'id');
+        return $this->hasMany('App\Note', 'idVin', 'id');
     }
 
     public function prixprods(){
         return $this->hasMany('App\Prixprod', 'idVin', 'id');
     }
 
+    public function comms(){
+        return $this->hasMany('App\Comm', 'idVin', 'id');
+    }
 
     /* Bordel de Audric */
 
@@ -71,7 +74,8 @@ class Vin extends Model
                                 'cepa','cont',
                                 'met','util',
                                 'cotas','photos',
-                                'notes','prixprods');
+                                'notes','prixprods',
+                                'comms');
 
         return $results;
 

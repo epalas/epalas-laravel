@@ -50,7 +50,7 @@ class Vin extends Model
     }
 
     public function notes(){
-        return $this->hasMany('App\Photo', 'idVin', 'id');
+        return $this->hasMany('App\Note', 'idVin', 'id');
     }
 
     public function prixprods(){

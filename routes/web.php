@@ -105,6 +105,8 @@ Route::get('/carte_vin', function () {
 
 Route::get('/produit', 'ProductController@index');
 
+Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+
 Route::get('home', 'HomeController@index');
 
 Auth::routes();

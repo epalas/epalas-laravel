@@ -30,26 +30,17 @@ Gazzar - Panier
                     @foreach(Cart::content() as $item)
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <img class="img-responsive" src="" alt="" width="120" height="80">
+                                <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">
                             <h4 class="product-name"><strong>{{$item->name}}</strong></h4>
                             <h4 class="text-black">
                                 <small>{{$datas[$item->id-1]['description']}}</small> 
+                                <p>{{$item->qty}} x {{$item->price}}.-</p>
+                                <p>Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-5 text-md-right row">
-                            <div class="col-3 col-sm-3 col-md-6 text-md-right">
-                                <h6><strong>{{$item->price}}.- <span class="text-muted">x</span></strong></h6>
-                            </div>
-                            <div class="col-4 col-sm-4 col-md-4">
-                                <div class="quantity">
-                                    <button class="btn-primary">-</button>
-                                    <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
-                                           size="4">
-                                    <button class="btn-primary">+</button>
-                                </div>
-                            </div>
                             <div class="col-2 col-sm-2 col-md-2 text-right">
                                 <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
@@ -74,7 +65,8 @@ Gazzar - Panier
                         <div>
                                 <a href="" class="btn btn-success pull-right">Commander</a>
                                 <div class="pull-right" style="margin: 5px">
-                                    Total: <b>50.00 CHF</b>
+                                    Total: <b>{{Cart::subtotal()}} CHF</b> <br>
+                                    Total (TVA 7,7%): <b>{{round(Cart::total(), 1, PHP_ROUND_HALF_UP)}} CHF</b>
                                 </div>
                         </div>
                     </div>
@@ -84,3 +76,15 @@ Gazzar - Panier
                 </div>
 </div>
 @endsection
+<script>
+        (function(){
+            const classname = document.querySelectorAll('.quantity')
+
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function(){
+                    alert('change');
+                })
+            })
+        })();
+</script>
+

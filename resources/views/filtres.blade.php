@@ -15,10 +15,11 @@ Gazzar - Catalogue
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-        <a role="button" href="catalogue/rouges" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</a>
-
+        
+        <a role="button" href="catalogue/rouges" class="btn btn-light active" class="red" id="red"><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</a>
+       
         @else
-        <a role="button" href="catalogue/rouges" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</a>
+        <a role="button" href="catalogue/rouges" class="btn btn-light bg-white"  id="red"><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</a>
         @endif 
 
         @if (Request::is('catalogue/blancs'))
@@ -81,11 +82,11 @@ Gazzar - Catalogue
                     Tous les pays
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
                 <?php /* recherche en BD sur les pays disponibles */?>
-                    <a class="dropdown-item" href="#">Suisse</a>
-                    <a class="dropdown-item" href="#">Italie</a>
-                    <a class="dropdown-item" href="#">Espagne</a>
+                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
+                    <a class="dropdown-item" href="#" value="Italie">Italie</a>
+                    <a class="dropdown-item" href="#" value="Espagne">Espagne</a>
                 </div>
             </div>
         </div>
@@ -96,7 +97,7 @@ Gazzar - Catalogue
                     Toutes les Régions
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
                     <?php /* recherche en BD sur les régions disponibles */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
@@ -111,7 +112,7 @@ Gazzar - Catalogue
                     Prix croissant
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
                     <a class="dropdown-item" href="#">Prix croissant</a>
                     <a class="dropdown-item" href="#">Prix décroissant</a>
@@ -223,107 +224,23 @@ Gazzar - Catalogue
 
     <script type='text/javascript'>
     $(document).ready(function(){
+        
+        // liste déroulante pays
+        $("#paysListe a").click( function() {
+        var pays = $(this).text();
+        alert(yourText)
+        });
 
-    /* Fetch all records
-    $('#filtres').click(function(){
-	    fetchProducts(0);
-    });*/
+        $("#regionListe a").click( function() {
+        var region = $(this).text();
+        alert(yourText)
+        });
+       
+        $("#prixListe a").click( function() {
+        var prix = $(this).text();
+        alert(yourText)
+        });
 
-    // types de vins
-    $('#red').click(function(){
-        console.log("jaaj");
     });
-/*
-    $('#white').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'blancs']);
-    });
-
-    $('#rosy').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'roses']);
-    });
-
-    $('#mouss').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'mousseux']);
-    });
-
-    $('#bio').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'bios']);
-    });
-
-    $('#prim').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'primeurs']);
-    });
-
-    $('#promo').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'promotions']);
-    });
-
-    $('#new').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'nouveautes']);
-    });
-
-    $('#end').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'fin']);
-    });
-*/
-});
-
-     function fetchProducts(filtre){
-       $.ajax({
-         url: 'getUsers/'+id,
-         type: 'get',
-         dataType: 'json',
-         success: function(response){
-
-           var len = 0;
-           $('#contenant').empty(); // Empty <tbody>
-           if(response['data'] != null){
-             len = response['data'].length;
-           }
-
-           if(len > 0){
-             for(var i=0; i<len; i++){
-               var id = response['data'][i].id;
-               var username = response['data'][i].username;
-               var name = response['data'][i].name;
-               var email = response['data'][i].email;
-
-               var tr_str = "<tr>" +
-                   "<td align='center'>" + (i+1) + "</td>" +
-                   "<td align='center'>" + username + "</td>" +
-                   "<td align='center'>" + name + "</td>" +
-                   "<td align='center'>" + email + "</td>" +
-               "</tr>";
-
-               $("#userTable tbody").append(tr_str);
-             }
-           }else if(response['data'] != null){
-              var tr_str = "<tr>" +
-                  "<td align='center'>1</td>" +
-                  "<td align='center'>" + response['data'].username + "</td>" + 
-                  "<td align='center'>" + response['data'].name + "</td>" +
-                  "<td align='center'>" + response['data'].email + "</td>" +
-              "</tr>";
-
-              $("#userTable tbody").append(tr_str);
-           }else{
-              var tr_str = "<tr>" +
-                  "<td align='center' colspan='4'>No record found.</td>" +
-              "</tr>";
-
-              $("#userTable tbody").append(tr_str);
-           }
-
-         }
-       });
-     }
      </script>
 @endsection

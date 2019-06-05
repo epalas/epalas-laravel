@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-Fiche Produit (mettre le nom du produit en variable)
+Gazzar | {{ $x['nom'] }}
 @endsection
 
 @section('contenu')
@@ -122,24 +122,25 @@ Fiche Produit (mettre le nom du produit en variable)
             </div>
           </div>
           <hr>
-          <form>
+          <form action="" method="post">
+            {{ csrf_field() }}
             <div class="row">
               <div class="form-group col-6 col-sm-3">
-                <input type="text" class="form-control" id="title" placeholder="Titre...">
+                <input type="text" name="titre" class="form-control" id="title" placeholder="Titre...">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-12">
-                <textarea class="form-control" id="commentairee" rows="3" placeholder="Commentaire..."></textarea>
+                <textarea class="form-control" name="contenu" id="commentairee" rows="3" placeholder="Commentaire..."></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
+            <button type="submit" name="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
           </form>
           <hr>
           <div class="row">
             <div class="mt-2 col-3">
               <p class="bold short-line">{{ $x['util'][0]['nom'] }}</p>
-               <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p> 
+              <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p>
             </div>
             <div class="mt-2 col-9">
               <p class="bold short-line">{{ $x['comms'][0]['titre'] }}</p>
@@ -150,5 +151,5 @@ Fiche Produit (mettre le nom du produit en variable)
       </div>
     </div>
   </div>
-</div>              
+</div>
 @endsection

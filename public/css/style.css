@@ -1,5 +1,9 @@
 /* General settings */
 
+.link-slider:hover {
+  text-decoration: none;
+}
+
 .zoom:hover {
   transform: scale(1.1);
 }

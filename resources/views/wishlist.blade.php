@@ -11,7 +11,7 @@ Gazzar - Wishlist
       <div class="col-0">
         <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
-      <div class="col-12 col-sm-5 col-md-3 col-lg-3">
+      <div class="col-10 col-sm-5 col-md-3 col-lg-3">
         <h2>Wishlist<i class="ml-3 fas fa-heart" aria-hidden="true"></i></h2>
       </div>
       <div class="col-12 col-sm">

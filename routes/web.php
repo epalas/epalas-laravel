@@ -21,25 +21,25 @@ Route::get('/template', function () {
 
 Route::get('/produit', 'Catalogue@afficheCatalogue');
 
-Route::get('/contact', function () {
+Route::get('/contact',['as' => 'contact', function () {
     return view('contact');
-});
+}]);
 
-Route::get('/map', function () {
+Route::get('/map', ['as' => 'map',function () {
     return view('map');
-});
+}]);
 
 Route::get('/creation', function () {
     return view('inscription');
 });
 
-Route::get('/valeurs', function () {
+Route::get('/valeurs',['as' => 'valeurs', function () {
     return view('valeurs');
-});
+}]);
 
-Route::get('/home', function () {
+Route::get('/home', ['as' => 'home', function () {
     return view('accueil2');
-});
+}]);
 
 Route::get('/', function () {
     return view('accueil2');
@@ -53,36 +53,36 @@ Route::get('/cgv', ['as' => 'cgv', function () {
     return view('cgv');
 }]);
 
-Route::get('/newsletter', function () {
+Route::get('/newsletter', ['as' => 'newsletter', function () {
     return view('newsletter');
-});
+}]);
 
 
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
 });
 
-Route::get('/presse', function () {
+Route::get('/presse', ['as' => 'presse',function () {
     return view('presse');
-});
+}]);
 
-Route::get('/blog', function () {
+Route::get('/blog', ['as' => 'blog', function () {
     return view('blog');
-});
+}]);
 
-Route::get('/galerie', function () {
+Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
-});
+}]);
 
-Route::get('/catalogue', 'Catalogue@afficheCatalogue');
+Route::get('/catalogue', ['uses' => 'Catalogue@afficheCatalogue', 'as' => 'cata']);
 
 
-Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fin']);
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
+    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
 
-Route::get('/cart', function () {
+Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
-});
+}]);
 
 /*
 Route d'Adrien pour tester les pages implémentés
@@ -100,7 +100,7 @@ Route::get('/ajax', function () {
 
 Route::get('/produit', 'ProductController@index');
 
-Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+Route::get('/produit/{id}', ['uses' =>'ProductController@index','as' => 'produit']);
 
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
@@ -113,11 +113,11 @@ Route::get('/', function(){
 
 Auth::routes();
 
-Route::get('/customer', function () {
+Route::get('/customer', ['as' => 'customer', function () {
     return view('customer-account');
-})->middleware('auth');
+}])->middleware('auth');
 
-Route::get('deconnexion', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController@logout', 'as' => 'deconnexion']);
 /*
 Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 

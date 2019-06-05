@@ -30,7 +30,9 @@ Gazzar - Panier
                     @foreach(Cart::content() as $item)
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                <a href="">
+                                    <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                </a>
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">
                             <h4 class="product-name"><strong>{{$item->name}}</strong></h4>

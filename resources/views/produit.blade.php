@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-Fiche Produit (mettre le nom du produit en variable)
+Gazzar | {{ $x['nom'] }}
 @endsection
 
 @section('contenu')
@@ -116,36 +116,35 @@ Fiche Produit (mettre le nom du produit en variable)
               <span class="input-group-text">Noter ce vin</span>
             </div>
             <form action="POST" id="rate-form" class="rating col-8 ml-auto mt-auto">
-    
+              {{ csrf_field() }}
               <input type="radio" id="star5" name="rating" value="5" /><label for="star5"><i class="fas fa-star"></i></label>
               <input type="radio" id="star4" name="rating" value="4" /><label for="star4"><i class="fas fa-star"></i></label>
               <input type="radio" id="star3" name="rating" value="3" /><label for="star3"><i class="fas fa-star"></i></label>
               <input type="radio" id="star2" name="rating" value="2" /><label for="star2"><i class="fas fa-star"></i></label>
               <input type="radio" id="star1" name="rating" value="1" /><label for="star1"><i class="fas fa-star"></i></label>
-
             </form>
           </div>
           <hr>
-          
-          <form>
+          <form action="" method="post">
+            {{ csrf_field() }}
             <div class="row">
               <div class="form-group col-6 col-sm-3">
-                <input type="text" class="form-control" id="title" placeholder="Titre...">
+                <input type="text" name="titre" class="form-control" id="title" placeholder="Titre...">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-12">
-                <textarea class="form-control" id="commentairee" rows="3" placeholder="Commentaire..."></textarea>
+                <textarea class="form-control" name="contenu" id="commentairee" rows="3" placeholder="Commentaire..."></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
+            <button type="submit" name="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
           </form>
           <hr>
           @endif
           <div class="row">
             <div class="mt-2 col-4 col-sm-3">
               <p class="bold short-line">{{ $x['util'][0]['nom'] }}</p>
-               <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p> 
+              <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p>
             </div>
             <div class="mt-2 col-8 col-sm-9">
               <p class="bold short-line">{{ $x['comms'][0]['titre'] }}</p>
@@ -156,5 +155,5 @@ Fiche Produit (mettre le nom du produit en variable)
       </div>
     </div>
   </div>
-</div>           
+</div>
 @endsection

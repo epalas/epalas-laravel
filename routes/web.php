@@ -128,8 +128,8 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 
 Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 
-/*
-Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
+
+
 
 //Route::get('/customer', function () {
 //    return view('customer-account');

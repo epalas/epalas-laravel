@@ -66,7 +66,9 @@ Route::get('/cart', function () {
 /*
 Route d'Adrien pour tester les pages implémentés
 */
-
+Route::get('/image/{id}', function ($id) {
+    return view('image')->with('id', $id);
+})->name('image');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');
@@ -87,6 +89,7 @@ Route::get('/', function(){
 });
 
 Auth::routes();
+
 
 //Route::get('/customer', function () {
 //    return view('customer-account');

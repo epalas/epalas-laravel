@@ -5,7 +5,7 @@ Gazzar - Panier
 @endsection
 
 @section('contenu')
-<div class="container pl-5 pb-3 pr-5  pt-5 bg-white rounded mt-5">
+<div class="container pl-sm-5 pb-3 pr-sm-5  pt-5 bg-white rounded mt-5">
     <h1 class="mb-5">Shop</h1>  
     <div class="row">
       <div class="col-0">

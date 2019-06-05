@@ -122,6 +122,12 @@ Route::get('/customer', ['as' => 'customer', function () {
 
 Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController@logout', 'as' => 'deconnexion']);
 
+Route::get('/cart', 'CartController@index')->name('cart.index');
+
+Route::post('/cart', 'CartController@store')->name('cart.store');
+
+Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
+
 /*
 Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
@@ -133,11 +139,6 @@ Route::get('/customer', 'UtilController@index')->name('customer')->middleware('a
 
 Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
 
-Route::get('/cart', 'CartController@index')->name('cart.index');
-
-Route::post('/cart', 'CartController@store')->name('cart.store');
-
-Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();

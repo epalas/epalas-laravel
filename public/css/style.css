@@ -1,5 +1,9 @@
 /* General settings */
 
+.zoom:hover {
+  transform: scale(1.1);
+}
+
 h1 {
 	font-family: 'Verlag Bold';
 }

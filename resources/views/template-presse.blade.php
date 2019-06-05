@@ -11,7 +11,7 @@ Gazzar - Presse
       <div class="col-0">
         <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div> 
-      <div class="col col-sm-2">
+      <div class="col col-sm-3 col-md-2">
         <h2>Journaux</h2>
       </div>
       <div class="col-12 col-sm">

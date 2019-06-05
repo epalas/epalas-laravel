@@ -7,7 +7,7 @@ Fiche Produit (mettre le nom du produit en variable)
 @section('contenu')
 <div class="">
   <div class="container mt-5">
-    <a href="{{ url('/catalogue') }}" class="btn btn-primary" role="button"><</a>
+    <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
     <div class="row">
       <div class="col-3">
         <img src="{{ $x['photos'][0]['url'] }}" alt="test vin" class="img-fluid">
@@ -28,7 +28,7 @@ Fiche Produit (mettre le nom du produit en variable)
           {{--Haut-Médoc<br>--}}
           {{ $x['cont'][0]['volume'] }} L<br>
         </p>
-        <h2>{{ $x['prixprods'][0]['prix'] }}</h2>
+        <h2>{{ $x['prixprods'][0]['prix'] }} CHF</h2>
         <div class="row mt-4">
           <div class="input-group col-3 col-sm-2">
             <select class="custom-select" id="inputCart">
@@ -137,13 +137,12 @@ Fiche Produit (mettre le nom du produit en variable)
           </form>
           <hr>
           <div class="row">
-            <div class="col-3">
-              <p>{{ $x['util'][0]['nom'] }}<br>
-                <time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time>
-              </p>
+            <div class="mt-2 col-3">
+              <p class="bold short-line">{{ $x['util'][0]['nom'] }}</p>
+               <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p> 
             </div>
-            <div class="col-9">
-              <p>{{ $x['comms'][0]['titre'] }}</p>
+            <div class="mt-2 col-9">
+              <p class="bold short-line">{{ $x['comms'][0]['titre'] }}</p>
               <p>{{ $x['comms'][0]['contenu'] }}</p>
             </div>
           </div>

@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-between">
-        <a href="home"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+        <a href="{{ route('home') }}"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
 
             <div class="col-lg-6 mt-3">
               <div class="row">
@@ -32,17 +32,17 @@
 
               @if(Auth::check())
                 <div class="col-sm-8">
-                    <a href="customer">Accéder à votre profil</a>
+                    <a href="{{ route('customer') }}">Accéder à votre profil</a>
                       <span> | </span>
-                    <a href="deconnexion">Se déconnecter</a>
+                    <a href="{{ route('deconnexion') }}">Se déconnecter</a>
               @else 
 
       
               <div class="col-sm-8">
                         
-                            <a href="register">Créer un compte</a>
+                            <a href="{{ route('register') }}">Créer un compte</a>
                             <span> | </span>
-                            <a href="login">Connexion</a>
+                            <a href="{{ route('login') }}">Connexion</a>
               @endif
                 <div class="input-group mb-3">
                 <input type="search" class="form-control" placeholder="Recherche" aria-label="Recherche" aria-describedby="basic-addon2">
@@ -69,7 +69,7 @@
                 @else
                  <li class="nav-item dropdown">
                 @endif 
-                    <a class="nav-link" href="home">Accueil</a>
+                    <a class="nav-link" href="{{ route('home') }}">Accueil</a>
                 </li>
                 @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin') | Request::is('recommandations'))
                 <li class="nav-item dropdown active">
@@ -79,20 +79,20 @@
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                        {{-- TODO Gestion de la navigation si dans le cata --}}
-                            <a class="dropdown-item" href="catalogue">Tous les vins</a>
-                            <a class="dropdown-item" href="catalogue/rouges">Rouges</a>
-                            <a class="dropdown-item" href="catalogue/blancs">Blancs</a>
-                            <a class="dropdown-item" href="catalogue/roses">Rosés</a>
-                            <a class="dropdown-item" href="catalogue/mousseux">Mousseux</a>
-                            <a class="dropdown-item" href="catalogue/bios">Bio</a>
-                            <a class="dropdown-item" href="catalogue/primeurs">Primeurs</a>
-                            <a class="dropdown-item" href="catalogue/promotions">Promotions</a>
-                            <a class="dropdown-item" href="catalogue/nouveautes">Nouveautés</a>
-                            <a class="dropdown-item" href="catalogue/fin">Fins de série</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Recommendations</a>
-                            <a class="dropdown-item" href="carton-decouverte">Carton découverte</a>
+                        <a class="dropdown-item" href="tous">Tous les vins</a>
+                        <a class="dropdown-item" href="rouge">Rouges</a>
+                        <a class="dropdown-item" href="blanc">Blancs</a>
+                        <a class="dropdown-item" href="rose">Rosés</a>
+                        <a class="dropdown-item" href="mousseux">Mousseux</a>
+                        <a class="dropdown-item" href="bio">Bio</a>
+                        <a class="dropdown-item" href="primeur">Primeurs</a>
+                        <a class="dropdown-item" href="promotions">Promotions</a>
+                        <a class="dropdown-item" href="nouveautes">Nouveautés</a>
+                        <a class="dropdown-item" href="fin">Fins de série</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('recommandations') }}">Recommandations</a>
+                        <a class="dropdown-item" href="{{ route('carton-decouverte') }}">Carton découverte</a>
+
                     </div>
                 </li>
                 @if (Request::is('blog') | Request::is('galerie') | Request::is('presse') | Request::is('newsletter'))
@@ -102,10 +102,10 @@
                 @endif    
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="blog">Blog</a>
-                            <a class="dropdown-item" href="galerie">Galerie</a>
-                            <a class="dropdown-item" href="presse">Presse</a>
-                            <a class="dropdown-item" href="newsletter">Newsletter</a>
+                            <a class="dropdown-item" href="{{ route('blog') }}">Blog</a>
+                            <a class="dropdown-item" href="{{ route('galerie') }}">Galerie</a>
+                            <a class="dropdown-item" href="{{ route('presse') }}">Presse</a>
+                            <a class="dropdown-item" href="{{ route('newsletter') }}">Newsletter</a>
                         </div>
                 </li>
                 @if (Request::is('valeurs') | Request::is('cgv'))
@@ -115,8 +115,8 @@
                 @endif   
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="valeurs">Nos valeurs</a>
-                        <a class="dropdown-item" href="cgv">Conditions générales de ventes</a>
+                        <a class="dropdown-item" href="{{ route('valeurs') }}">Nos valeurs</a>
+                        <a class="dropdown-item" href="{{ route('cgv') }}">Conditions générales de ventes</a>
                     </div>
                 </li>
                 @if (Request::is('contact') | Request::is('map'))
@@ -126,14 +126,22 @@
                 @endif 
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="contact">Formulaire de contact</a>
-                        <a class="dropdown-item" href="map">Où nous trouver ?</a>
+                        <a class="dropdown-item" href="{{ route('contact') }}">Formulaire de contact</a>
+                        <a class="dropdown-item" href="{{ route('map') }}">Où nous trouver ?</a>
                     </div>
                 </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    @if (Request::is('cart'))
+                    <li class="nav-item active" id="cart">
+                    @else
                     <li class="nav-item" id="cart">
-                         <a id="notifCart"  data-count="6" class="nav-link" href="cart"><i  class="fas fa-shopping-cart"></i></a>
+
+                    @endif 
+
+
+                         <a id="notifCart"  data-count="6" class="nav-link" href="{{ route('cart.index') }}"><i  class="fas fa-shopping-cart"></i></a>
+
                     </li>
                     <li class="nav-item">
                          <a class="nav-link" href="#"><i class="far fa-heart"></i></a>

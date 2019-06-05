@@ -78,7 +78,6 @@ Route::get('/ajax', function () {
 
 Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
 
-
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
 Route::get('recommandations', [ 'uses'=> 'RecommController@index', 'as'=>'recommandations']);
@@ -89,9 +88,11 @@ Route::get('/', function(){
 
 Auth::routes();
 
-Route::get('/customer', function () {
-    return view('customer-account');
-})->middleware('auth')->name('customer');;
+//Route::get('/customer', function () {
+//    return view('customer-account');
+// })->middleware('auth')->name('customer');
+
+Route::get('/customer', 'UtilController@index')->name('customer')->middleware('auth');
 
 Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
 

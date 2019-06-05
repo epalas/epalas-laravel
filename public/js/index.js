@@ -63,9 +63,14 @@ switch(alt) {
 }
 });
 
+  $( "#rate-form" ).click(function() {
+  $('#rate-form').submit();
+});
+
 $(document).ready(function(){
     $('.card').hover(function(){
         $(this).toggleClass('red-magic');
     }); 
 });
+
 

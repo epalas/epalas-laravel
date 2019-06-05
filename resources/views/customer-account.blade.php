@@ -11,7 +11,7 @@ Gazzar - Customer Account
     <div class="col-6 col-sm-4 col-md-2  ml-5 mt-5">
       <img src="/public/img/john-doe.jpg" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
     </div>
-    <div id="align-user"><h1>Bonjour John Doe</h1></div>
+    <div id="align-user"><h1>Bonjour {{ $x['prenom'] }} {{ $x['nom'] }} </h1></div>
    </div>
   </div>
   {{-- DONNES PERSO--}}
@@ -29,24 +29,24 @@ Gazzar - Customer Account
        
    
       <div class="col-sm-6 ml-sm-5 mt-sm-5">
-        <p class="bold">John Doe</p> 
+        <p class="bold">{{ $x['prenom'] }} {{ $x['nom'] }}</p> 
       </div>
       <div class="col-5 mt-5">
-        <p>john.doe@gmail.com</p> 
+        <p>{{ $x['email'] }}</p> 
       </div>
 
       <div class="col-sm-6 ml-sm-5 mt-sm-5">
         <p class="bold">Adresse de facturation</p>
-        <p>Avenue du Chêne 3<br>
-           1000 Lausanne<br>
-           Suisse</p> 
+        <p>{{ $x['adresse'] }}<br>
+           {{ $x['cp'] }} {{ $x['ville'] }}<br>
+           {{ $x['pays'] }}</p> 
         <p><a href="#">Changer mon mot de passe ></a></p>
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <p class="bold">Adresse de livraison</p>
-        <p>Avenue du Chêne 3<br>
-           1000 Lausanne<br>
-           Suisse</p>
+        <p>{{ $x['adresse'] }}<br>
+           {{ $x['cp'] }} {{ $x['ville'] }}<br>
+           {{ $x['pays'] }}</p> 
         <p><a href="#">Modifier mes données personelles ></a></p>        
       </div>
   

@@ -22,9 +22,10 @@ class CartController extends Controller
         'cepa','cont',
         'met','util',
         'cotas','photos',
-        'notes','prixprods'); 
-
-        return view('cart');
+        'notes','prixprods');  
+           // dd($datas);
+        return view('cart')->with('datas', $datas);
+        
     }
 
     /**
@@ -94,6 +95,8 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+
+        return back();
     } 
 }

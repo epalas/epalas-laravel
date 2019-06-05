@@ -10,65 +10,68 @@ Gazzar - Catalogue
         width:3rem;
     }
 </style>
+
 <div class="container">
     <div class="row mt-5 mb-4 mx-auto">
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-        <button type="button" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
+
+        <button type="button" class="btn btn-light active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</button>
+        <button type="button" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</button>
+
         @endif 
 
         @if (Request::is('catalogue/blancs'))
-        <button type="button" class="btn btn-light active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
+        <button type="button" class="btn btn-light active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="white"><img src="img/pictos/vin.svg" alt="Blanc" /><br/>Blancs</button>
+        <button type="button" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</button>
         @endif 
 
         @if (Request::is('catalogue/roses'))
-        <button type="button" class="btn btn-light active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
+        <button type="button" class="btn btn-light active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="rosy"><img src="img/pictos/vin.svg" alt="Rosé"/><br/>Rosés</button>
+        <button type="button" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</button>
         @endif 
 
         @if (Request::is('catalogue/mousseux'))
-        <button type="button" class="btn btn-light active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <button type="button" class="btn btn-light active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="mouss"><img src="img/pictos/mousseux.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <button type="button" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</button>
         @endif 
 
         @if (Request::is('catalogue/bios'))
-        <button type="button" class="btn btn-light active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
+        <button type="button" class="btn btn-light active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="bio"><img src="img/pictos/bio.svg" alt="Bio"/><br/>Bio</button>
+        <button type="button" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</button>
         @endif 
 
         @if (Request::is('catalogue/primeurs'))
-        <button type="button" class="btn btn-light active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
+        <button type="button" class="btn btn-light active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</button>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="prim"><img src="img/pictos/primeur.svg" alt="Primeur"/><br/>Primeurs</button>
+        <button type="button" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</button>
         @endif 
         @if (Request::is('promotions'))
-        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="img/pictos/picto_color/promo-red.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promo</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="promo"><img src="img/pictos/promo.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promo</button>
         @endif 
         @if (Request::is('nouveautes'))
-        <button type="button" class="btn btn-light bg-white active" id="new"><img src="img/pictos/picto_color/new-red.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="new"><img src="img/pictos/nouveau.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
         @endif 
         @if (Request::is('fin'))
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/picto_color/end-red.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/fin.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
         @endif 
         </div>   
     </div>
@@ -130,7 +133,7 @@ Gazzar - Catalogue
 
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
-<div class="container">
+<div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
@@ -217,10 +220,12 @@ Gazzar - Catalogue
 @endforeach
     </div>
 </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
 
     <script type='text/javascript'>
+
     $(document).ready(function(){
 
     /* Fetch all records
@@ -230,10 +235,9 @@ Gazzar - Catalogue
 
     // types de vins
     $('#red').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'rouges']);
+        console.log("jaaj");
     });
-
+/*
     $('#white').click(function(){
         Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
     ->where(['filtre' => 'blancs']);
@@ -273,10 +277,10 @@ Gazzar - Catalogue
         Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
     ->where(['filtre' => 'fin']);
     });
-
+*/
 });
 
-     function fetchProducts(id){
+     function fetchProducts(filtre){
        $.ajax({
          url: 'getUsers/'+id,
          type: 'get',
@@ -284,7 +288,7 @@ Gazzar - Catalogue
          success: function(response){
 
            var len = 0;
-           $('#userTable tbody').empty(); // Empty <tbody>
+           $('#contenant').empty(); // Empty <tbody>
            if(response['data'] != null){
              len = response['data'].length;
            }
@@ -327,4 +331,3 @@ Gazzar - Catalogue
      }
      </script>
 @endsection
-

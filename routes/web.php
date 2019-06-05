@@ -90,3 +90,11 @@ Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
+
+Route::get('/wishlist', function () {
+    return view('wishlist');
+})->name('wishlist');
+
+Route::get('/recap_commande', function () {
+    return view('recap_commande');
+})->name('recap_commande');

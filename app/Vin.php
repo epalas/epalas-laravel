@@ -83,9 +83,10 @@ class Vin extends Model
 
     public static function findRedWine(){
 
-        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
-            ->select('*')
-            ->where("types.label","like","Rouge")
+        $results = Vin::whereHas('type', function($query) {
+            $query->where('label', 'like', 'Rouge');
+        })
+            //->with('type')
             ->get();
 
         return $results;
@@ -93,9 +94,10 @@ class Vin extends Model
 
     public static function findWhiteWine(){
 
-        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
-            ->select('*')
-            ->where("types.label","like","Blanc")
+        $results = Vin::whereHas('type', function($query) {
+            $query->where('label', 'like', 'Blanc');
+        })
+            //->with('type')
             ->get();
 
         return $results;
@@ -103,9 +105,10 @@ class Vin extends Model
 
     public static function findRoseWine(){
 
-        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
-            ->select('*')
-            ->where("types.label","like","Rosé")
+        $results = Vin::whereHas('type', function($query) {
+            $query->where('label', 'like', 'Rosé');
+        })
+            //->with('type')
             ->get();
 
         return $results;
@@ -113,9 +116,10 @@ class Vin extends Model
 
     public static function findMousseuxWine(){
 
-        $results = Vin::join('types', 'vins.idType', '=', 'types.id')
-            ->select('*')
-            ->where("types.label","like","Mousseux")
+        $results = Vin::whereHas('type', function($query) {
+            $query->where('label', 'like', 'Mousseux');
+        })
+            //->with('type')
             ->get();
 
         return $results;

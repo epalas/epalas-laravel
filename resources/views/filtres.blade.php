@@ -16,10 +16,12 @@ Gazzar - Catalogue
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
+
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</a>
+
         @endif 
 
         @if (Request::is('catalogue/blancs'))
@@ -131,7 +133,7 @@ Gazzar - Catalogue
 
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
-<div class="container">
+<div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
@@ -218,6 +220,8 @@ Gazzar - Catalogue
 @endforeach
     </div>
 </div>
+</div>
 
 @endsection
+
 

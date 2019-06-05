@@ -22,9 +22,10 @@ class CartController extends Controller
         'cepa','cont',
         'met','util',
         'cotas','photos',
-        'notes','prixprods'); 
-
-        return view('cart');
+        'notes','prixprods');  
+           // dd($datas);
+        return view('cart')->with('datas', $datas);
+        
     }
 
     /**
@@ -45,7 +46,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        Cart::add($request->id, $request->nom, 1, $request->prix)
+        
+        Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
             ->associate('App/Vin');
 
         return redirect()->route('cart.index');
@@ -94,6 +96,8 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+
+        return back();
     } 
 }

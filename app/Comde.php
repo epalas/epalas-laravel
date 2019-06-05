@@ -14,4 +14,3 @@ class Comde extends Model
         return $this->hasMany('App\Paim');
     }
 }
-}

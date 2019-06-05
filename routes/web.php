@@ -11,13 +11,11 @@
 |
 */
 use Gloudemans\Shoppingcart\Facades\Cart; //PROVISOIRE
-/*
-Route de Steve pour tester les pages implémentés
-*/
 
-Route::get('/template', function () {
-    return view('template');
+Route::get('/produit', function () {
+    return redirect('catalogue');
 });
+
 
 Route::get('/produit', 'Catalogue@afficheCatalogue');
 
@@ -60,15 +58,17 @@ Route::get('/newsletter', ['as' => 'newsletter', function () {
 
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
-});
+})->name('carton-decouverte');
 
 Route::get('/presse', ['as' => 'presse',function () {
     return view('presse');
 }]);
 
+
 Route::get('/blog', ['as' => 'blog', function () {
     return view('blog');
 }]);
+
 
 Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
@@ -76,9 +76,11 @@ Route::get('/galerie', ['as' => 'galerie', function () {
 
 Route::get('/catalogue', ['uses' => 'Catalogue@afficheCatalogue', 'as' => 'cata']);
 
+Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
 
 Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
+
 
 Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
@@ -88,11 +90,13 @@ Route::get('/cart',['as' => 'cart', function (){
 Route d'Adrien pour tester les pages implémentés
 */
 
+Route::get('/image/{id}', function ($id) {
+    return view('image')->with('id', $id);
+})->name('image');
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');
 });
-
 
 Route::get('/ajax', function () {
     return view('filtres_ajax_test');
@@ -113,22 +117,29 @@ Route::get('/', function(){
 
 Auth::routes();
 
+
 Route::get('/customer', ['as' => 'customer', function () {
     return view('customer-account');
 }])->middleware('auth');
 
 Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController@logout', 'as' => 'deconnexion']);
+
 /*
 Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
-Route::get('/', function(){
-    return redirect('home');
-});
-*/
+//Route::get('/customer', function () {
+//    return view('customer-account');
+// })->middleware('auth')->name('customer');
+
+Route::get('/customer', 'UtilController@index')->name('customer')->middleware('auth');
+
+Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 
 Route::post('/cart', 'CartController@store')->name('cart.store');
+
+Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();

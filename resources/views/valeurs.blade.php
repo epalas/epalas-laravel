@@ -11,7 +11,7 @@ Gazzar - Nos valeurs
       <div class="col-0">
         <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
-      <div class="col col-sm-2">
+      <div class="col col-sm-4 col-md-3 col-lg-2">
         <h2>Gazzard S.A.</h2>
       </div>
       <div class="col-12 col-sm">

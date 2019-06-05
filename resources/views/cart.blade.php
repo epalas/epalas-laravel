@@ -66,7 +66,7 @@ Gazzar - Panier
                                 <a href="" class="btn btn-success pull-right">Commander</a>
                                 <div class="pull-right" style="margin: 5px">
                                     Total: <b>{{Cart::subtotal()}} CHF</b> <br>
-                                    Total (TVA 7,7%): <b>{{round(Cart::total(), 1, PHP_ROUND_HALF_UP)}} CHF</b>
+                                    Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
                                 </div>
                         </div>
                     </div>

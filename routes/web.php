@@ -74,9 +74,7 @@ Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
 }]);
 
-Route::get('/catalogue', ['uses' => 'Catalogue@afficheCatalogue', 'as' => 'cata']);
-
-Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
+Route::get('/catalogue', ['as' => 'cata','uses' => 'Catalogue@afficheCatalogue', ]);
 
 Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);

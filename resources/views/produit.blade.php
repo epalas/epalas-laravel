@@ -31,7 +31,9 @@ Fiche Produit (mettre le nom du produit en variable)
         <h2>{{ $x['prixprods'][0]['prix'] }} CHF</h2>
         <div class="row mt-4">
           <div class="input-group col-3 col-sm-2">
-            <select class="custom-select" id="inputCart">
+          <form action="{{route('cart.store')}}" method="POST">
+            {{csrf_field()}}
+            <select class="custom-select" name="inputCart" id="inputCart">
               <option selected>6</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -40,8 +42,6 @@ Fiche Produit (mettre le nom du produit en variable)
               <option value="5">5</option>
             </select>
           </div>
-          <form action="{{route('cart.store')}}" method="POST">
-            {{csrf_field()}}
             <input type="hidden" name="id" value="{{ $x['id'] }}">
             <input type="hidden" name="nom" value="{{ $x['nom'] }}">
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">

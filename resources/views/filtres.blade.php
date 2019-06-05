@@ -15,10 +15,10 @@ Gazzar - Catalogue
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-        <button type="button" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</button>
+        <a role="button" href="catalogue/rouges" class="btn btn-light active" id="red" ><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</button>
+        <a role="button" href="catalogue/rouges" class="btn btn-light bg-white" id="red" ><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</a>
         @endif 
 
         @if (Request::is('catalogue/blancs'))
@@ -130,7 +130,7 @@ Gazzar - Catalogue
 
 
 {{-- @yield('carte') <- Ca marche pas mdr --}}
-<div class="container">
+<div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
@@ -217,6 +217,7 @@ Gazzar - Catalogue
 @endforeach
     </div>
 </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
 
@@ -230,10 +231,9 @@ Gazzar - Catalogue
 
     // types de vins
     $('#red').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'rouges']);
+        console.log("jaaj");
     });
-
+/*
     $('#white').click(function(){
         Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
     ->where(['filtre' => 'blancs']);
@@ -273,10 +273,10 @@ Gazzar - Catalogue
         Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
     ->where(['filtre' => 'fin']);
     });
-
+*/
 });
 
-     function fetchProducts(id){
+     function fetchProducts(filtre){
        $.ajax({
          url: 'getUsers/'+id,
          type: 'get',
@@ -284,7 +284,7 @@ Gazzar - Catalogue
          success: function(response){
 
            var len = 0;
-           $('#userTable tbody').empty(); // Empty <tbody>
+           $('#contenant').empty(); // Empty <tbody>
            if(response['data'] != null){
              len = response['data'].length;
            }
@@ -327,4 +327,3 @@ Gazzar - Catalogue
      }
      </script>
 @endsection
-

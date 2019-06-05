@@ -12,7 +12,7 @@ Gazzar - Recap Commande
 	      <div class="col-0">
 	        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
 	      </div>   
-	      <div class="col-12 col-sm-7 col-md-5 col-lg-3">
+	      <div class="col-10 col-sm-7 col-md-5 col-lg-3">
 	        <h2>Moyens de payements</h2>
 	      </div>
 	      <div class="col-12 col-sm">
@@ -44,7 +44,7 @@ Gazzar - Recap Commande
 	      <div class="col-0">
 	        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
 	      </div>   
-	      <div class="col-12 col-sm-3 col-md-2 col-lg-2">
+	      <div class="col-10 col-sm-3 col-md-2 col-lg-2">
 	        <h2>Adresses</h2>
 	      </div>
 	      <div class="col-12 col-sm">
@@ -88,7 +88,7 @@ Gazzar - Recap Commande
 	      <div class="col-0">
 	        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
 	      </div>   
-	      <div class="col-12 col-sm-9 col-md-6 col-lg-5">
+	      <div class="col-10 col-sm-9 col-md-6 col-lg-5">
 	        <h2>Récapitulatif de la commande</h2>
 	      </div>
 	      <div class="col-12 col-sm">

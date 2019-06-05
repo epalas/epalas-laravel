@@ -11,7 +11,7 @@ Gazzar - Panier
       <div class="col-0">
         <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="col-10 col-sm-6 col-md-4 col-lg-3">
         <h2>Votre panier <i class="ml-3 fa fa-shopping-cart" aria-hidden="true"></i></h2>
       </div>
       <div class="col-12 col-sm">

@@ -32,7 +32,7 @@
 
               @if(Auth::check())
                 <div class="col-sm-8">
-                    <a href="{{ route('customer') }}">Accéder à votre profil</a>
+                    <a href="{{ route('customer') }}"><i class="fas fa-user"></i></i> {{Auth::user()->prenom}} {{Auth::user()->nom}}</a>
                       <span> | </span>
                     <a href="{{ route('deconnexion') }}">Se déconnecter</a>
               @else 

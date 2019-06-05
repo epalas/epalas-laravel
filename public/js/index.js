@@ -64,4 +64,11 @@ switch(alt) {
 }
 });
 
+//gestion rating vin
+
+  $( "#rate-form" ).click(function() {
+  $('#rate-form').submit();
+});
+
+
 

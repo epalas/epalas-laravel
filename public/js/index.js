@@ -1,4 +1,4 @@
-$("#filter .btn-light").on('click', event => {
+/*$("#filter .btn-light").on('click', event => {
 
     if ($(event.currentTarget).hasClass("active")) {
     $(event.currentTarget).removeClass("active");
@@ -61,7 +61,7 @@ switch(alt) {
   default:
     }
 }
-});
+});*/
 
   $( "#rate-form" ).click(function() {
   $('#rate-form').submit();

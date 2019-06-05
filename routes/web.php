@@ -16,56 +16,80 @@ Route::get('/produit', function () {
     return redirect('catalogue');
 });
 
-Route::get('/contact', function () {
+
+Route::get('/produit', 'Catalogue@afficheCatalogue');
+
+Route::get('/contact',['as' => 'contact', function () {
     return view('contact');
-})->name('contact');
+}]);
 
-Route::get('/map', function () {
+Route::get('/map', ['as' => 'map',function () {
     return view('map');
-})->name('map');
+}]);
 
-Route::get('/valeurs', function () {
+Route::get('/creation', function () {
+    return view('inscription');
+});
+
+Route::get('/valeurs',['as' => 'valeurs', function () {
     return view('valeurs');
-})->name('valeurs');
+}]);
 
+Route::get('/home', ['as' => 'home', function () {
+    return view('accueil2');
+}]);
+
+Route::get('/', function () {
+    return view('accueil2');
+});
+
+/*
+Route de Lucien pour tester les pages implémentées
+*/
 
 Route::get('/cgv', ['as' => 'cgv', function () {
     return view('cgv');
 }]);
 
-Route::get('/newsletter', function () {
+Route::get('/newsletter', ['as' => 'newsletter', function () {
     return view('newsletter');
-})->name('newsletter');
+}]);
+
 
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
 })->name('carton-decouverte');
 
-Route::get('/presse', function () {
+Route::get('/presse', ['as' => 'presse',function () {
     return view('presse');
-})->name('presse');
+}]);
 
-Route::get('/blog', function () {
+
+Route::get('/blog', ['as' => 'blog', function () {
     return view('blog');
-})->name('blog');
+}]);
 
-Route::get('/galerie', function () {
+
+Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
-})->name('galerie');
+}]);
+
+Route::get('/catalogue', ['uses' => 'Catalogue@afficheCatalogue', 'as' => 'cata']);
 
 Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
 
-Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fin']);
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
+    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
 
 
-Route::get('/cart', function () {
+Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
-});
+}]);
 
 /*
 Route d'Adrien pour tester les pages implémentés
 */
+
 Route::get('/image/{id}', function ($id) {
     return view('image')->with('id', $id);
 })->name('image');
@@ -78,7 +102,10 @@ Route::get('/ajax', function () {
     return view('filtres_ajax_test');
 });
 
-Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+Route::get('/produit', 'ProductController@index');
+
+Route::get('/produit/{id}', ['uses' =>'ProductController@index','as' => 'produit']);
+
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
@@ -90,6 +117,15 @@ Route::get('/', function(){
 
 Auth::routes();
 
+
+Route::get('/customer', ['as' => 'customer', function () {
+    return view('customer-account');
+}])->middleware('auth');
+
+Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController@logout', 'as' => 'deconnexion']);
+
+/*
+Route::get('/login', '\App\Http\Controllers\Auth\LoginController@login');
 
 //Route::get('/customer', function () {
 //    return view('customer-account');

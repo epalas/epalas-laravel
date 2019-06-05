@@ -15,7 +15,9 @@
 <body>
     <div class="container">
         <div class="row justify-content-between">
-        <a href="{{ route('home') }}"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+
+        <a href="{{route('home')}}"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+
 
             <div class="col-lg-6 mt-3">
               <div class="row">
@@ -69,7 +71,9 @@
                 @else
                  <li class="nav-item dropdown">
                 @endif 
-                    <a class="nav-link" href="{{ route('home') }}">Accueil</a>
+
+                    <a class="nav-link" href="{{route('home')}}">Accueil</a>
+
                 </li>
                 @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin') | Request::is('recommandations'))
                 <li class="nav-item dropdown active">
@@ -79,19 +83,21 @@
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                        <a class="dropdown-item" href="tous">Tous les vins</a>
-                        <a class="dropdown-item" href="rouge">Rouges</a>
-                        <a class="dropdown-item" href="blanc">Blancs</a>
-                        <a class="dropdown-item" href="rose">Rosés</a>
-                        <a class="dropdown-item" href="mousseux">Mousseux</a>
-                        <a class="dropdown-item" href="bio">Bio</a>
-                        <a class="dropdown-item" href="primeur">Primeurs</a>
-                        <a class="dropdown-item" href="promotions">Promotions</a>
-                        <a class="dropdown-item" href="nouveautes">Nouveautés</a>
-                        <a class="dropdown-item" href="fin">Fins de série</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('recommandations') }}">Recommandations</a>
-                        <a class="dropdown-item" href="{{ route('carton-decouverte') }}">Carton découverte</a>
+
+                        {{-- TODO Gestion de la navigation si dans le cata --}}
+                            <a class="dropdown-item" href="{{route('cata')}}">Tous les vins</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'rouges'])}}">Rouges</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'blancs'])}}">Blancs</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'roses'])}}">Rosés</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'mousseux'])}}">Mousseux</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'bios'])}}">Bio</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'primeurs'])}}">Primeurs</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'promotions'])}}">Promotions</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
+                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'fins'])}}">Fins de série</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('recommandations')}}">Recommendations</a>
+                            <a class="dropdown-item" href="{{route('carton-decouverte')}}">Carton découverte</a>
 
                     </div>
                 </li>
@@ -102,10 +108,12 @@
                 @endif    
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('blog') }}">Blog</a>
-                            <a class="dropdown-item" href="{{ route('galerie') }}">Galerie</a>
-                            <a class="dropdown-item" href="{{ route('presse') }}">Presse</a>
-                            <a class="dropdown-item" href="{{ route('newsletter') }}">Newsletter</a>
+
+                            <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
+                            <a class="dropdown-item" href="{{route('galerie')}}">Galerie</a>
+                            <a class="dropdown-item" href="{{route('presse')}}">Presse</a>
+                            <a class="dropdown-item" href="{{route('newsletter')}}">Newsletter</a>
+
                         </div>
                 </li>
                 @if (Request::is('valeurs') | Request::is('cgv'))
@@ -115,8 +123,10 @@
                 @endif   
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('valeurs') }}">Nos valeurs</a>
-                        <a class="dropdown-item" href="{{ route('cgv') }}">Conditions générales de ventes</a>
+
+                        <a class="dropdown-item" href="{{route('valeurs')}}">Nos valeurs</a>
+                        <a class="dropdown-item" href="{{route('cgv')}}">Conditions générales de ventes</a>
+                        
                     </div>
                 </li>
                 @if (Request::is('contact') | Request::is('map'))
@@ -126,8 +136,10 @@
                 @endif 
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('contact') }}">Formulaire de contact</a>
-                        <a class="dropdown-item" href="{{ route('map') }}">Où nous trouver ?</a>
+
+                        <a class="dropdown-item" href="{{route('contact')}}">Formulaire de contact</a>
+                        <a class="dropdown-item" href="{{route('map')}}">Où nous trouver ?</a>
+
                     </div>
                 </li>
                 </ul>
@@ -183,7 +195,7 @@
            
           {{-- logo --}}
           <div class="col-2 text-right">
-            <a href="home"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
+            <a href="{{route('home')}}"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
           </div>
         </div>
     </div>

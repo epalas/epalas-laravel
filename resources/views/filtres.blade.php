@@ -129,13 +129,11 @@ Gazzar - Catalogue
     </div>
 </div>
 
-
-{{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3 carte_vin" class="{{$result["prod"]["pays"]}}">
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
@@ -228,17 +226,21 @@ Gazzar - Catalogue
         // liste déroulante pays
         $("#paysListe a").click( function() {
         var pays = $(this).text();
-        alert(yourText)
+            $('div.carte_vin').each(function() {
+                $(this).hide;
+                $('div.' + pays).show;
+            });
+           
         });
 
         $("#regionListe a").click( function() {
         var region = $(this).text();
-        alert(yourText)
+        
         });
        
         $("#prixListe a").click( function() {
         var prix = $(this).text();
-        alert(yourText)
+        
         });
 
     });

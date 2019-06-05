@@ -84,14 +84,6 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
-
-
-Route::get('/catalogue/{filtres}', function ($url) {
-
-    return view('filtres');
-
-})->where(['filtre' => 'rouge|blanc|rose|mousseux|bio|primeur|nouveautes|promotions|fin|tous']);
-
 /*
 Route d'Adrien pour tester les pages implémentés
 */

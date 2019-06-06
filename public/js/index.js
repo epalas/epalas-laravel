@@ -3,8 +3,8 @@ $("#filter .btn-light").on('click', event => {
     if ($(event.currentTarget).hasClass("active")) {
     $(event.currentTarget).removeClass("active");
 
-    // remise à zéro
-    $("#red img").attr('src', "img/pictos/vin.svg");
+        // remise à zéro
+    $("#red img").attr('src','img/pictos/vin.svg');
     $("#white img").attr('src','img/pictos/vin.svg');
     $("#rosy img").attr('src','img/pictos/vin.svg');
     $("#mouss img").attr('src','img/pictos/mousseux.svg');
@@ -18,8 +18,9 @@ $("#filter .btn-light").on('click', event => {
     $("#filter .active").removeClass("active");
     $(event.currentTarget).addClass("active"); 
     let alt = $(".active img").attr('alt');
+
     // remise à zéro
-    $("#red img").attr('src', "img/pictos/vin.svg");
+    $("#red img").attr('src','img/pictos/vin.svg');
     $("#white img").attr('src','img/pictos/vin.svg');
     $("#rosy img").attr('src','img/pictos/vin.svg');
     $("#mouss img").attr('src','img/pictos/mousseux.svg');
@@ -32,7 +33,7 @@ $("#filter .btn-light").on('click', event => {
 // ajout de la nouvelle photo
 switch(alt) {
     case 'Rouge':
-        $(".active img").attr('src',"{{asset(img/pictos/picto_color/red.svg)}}");
+        $(".active img").attr('src','img/pictos/picto_color/red.svg');
     break;
     case 'Blanc':
         $(".active img").attr('src','img/pictos/picto_color/white.svg');
@@ -63,14 +64,10 @@ switch(alt) {
 }
 });
 
-  $( "#rate-form" ).click(function() {
-  $('#rate-form').submit();
-});
-
 $(document).ready(function(){
     $('.card').hover(function(){
         $(this).toggleClass('red-magic');
     }); 
-});
 
+});
 

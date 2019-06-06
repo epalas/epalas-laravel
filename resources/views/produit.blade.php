@@ -30,8 +30,10 @@ Gazzar | {{ $x['nom'] }}
         </p>
         <h2>{{ $x['prixprods'][0]['prix'] }} CHF</h2>
         <div class="row mt-4">
-          <div class="input-group col-12 col-sm-4 col-md-2 col-lg-2 mb-2">
-            <select class="custom-select" id="inputCart">
+          <div class="input-group">
+          <form action="{{route('cart.store')}}" method="POST" class="col-12">
+            {{csrf_field()}}
+            <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
               <option selected>6</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -39,15 +41,20 @@ Gazzar | {{ $x['nom'] }}
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-          </div>
-          <form action="{{route('cart.store')}}" method="POST" class="col">
-            {{csrf_field()}}
+          
             <input type="hidden" name="id" value="{{ $x['id'] }}">
             <input type="hidden" name="nom" value="{{ $x['nom'] }}">
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
-            <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-6 col-lg-4 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
-            <button type="button" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
+            <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
           </form>
+          <form action="{{route('wishlist.store')}}" method="POST" class="col-12">
+          {{csrf_field()}}
+            <input type="hidden" name="id" value="{{ $x['id'] }}">
+            <input type="hidden" name="nom" value="{{ $x['nom'] }}">
+            <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
+            <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
+          </form>
+          </div>
         </div>
         <p class="mt-4 text-primary">
           @switch($x['notes'][0]['nbrEtoiles'])

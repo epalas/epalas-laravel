@@ -13,14 +13,14 @@ class  CreationTableArt extends Migration
      */
     public function up()
     {
-        Schema::create('arts', function (Blueprint $table){ //nom de la table
+        Schema::create('arts', function (Blueprint $table){
                 $table->increments('id');
-                $table->string('urlPhoto');
-                $table->foreign('urlPhoto')->references('url')->on('photos')->onDelete('cascade');
+                $table->integer('idPhoto')->unsigned();
+                $table->foreign('idPhoto')->references('id')->on('photos')->onDelete('cascade');
                 $table->integer('idComm')->unsigned();
                 $table->foreign('idComm')->references('id')->on('comms')->onDelete('cascade');
                 $table->string('titre');
-		$table->text('contenu');
+		        $table->text('contenu');
                 $table->timestamp('datePub')->nullable();
                 $table->timestamp('dateRev')->nullable();
         });

@@ -74,20 +74,20 @@ Gazzar - Accueil
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
-                        <a href="produit/{{$result["id"]}}">
+                        <a href="produit/{{ $result['id'] }}">
+
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3">
-                                        <img class="wine-card" src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                        <img class="wine-card" src="{{ asset($result["photos"][0]['url']) }}" alt="{{ $result["photos"][0]['alt'] }}">
                                     </div>
                                     <div class="col-9">
                                         <h4 class="card-title">{{$result["nom"]}}</h4>
                                         <p class="card-text">
                                         <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
                                         <p>{{$result["prod"]["nom"]}}</p>
-                                        <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
-                                        <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
-                                        </p>
+                                        <p>{{$result["cont"][0]["volume"]}} L / <span class="annee">{{ $result["annee"] }}</span></p>
+                                        <span class="prix"><b>{{ $result["prixprods"][0]["prix"] }}</b></span> <span>CHF</span>
                                     </div>
                                 </div>
                             </div>

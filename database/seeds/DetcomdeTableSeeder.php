@@ -8,7 +8,7 @@ class DetcomdeTableSeeder extends Seeder {
     public function run() {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('detcomdes')->truncate();
-        for ($i=1; $i < 26; $i++) { 
+        for ($i=1; $i < 38; $i++) {
             $n = rand(10, 300);
             DB::table('detcomdes')->insert([
                 'idVin' => $i,

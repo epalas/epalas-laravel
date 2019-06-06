@@ -17,8 +17,10 @@ Gazzar - Wishlist
       <div class="col-12 col-sm">
         <hr class="titre-point">  
       </div>
+
     </div> 
     @if (Cart::instance('wishlist')->count() > 0)
+
       
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>

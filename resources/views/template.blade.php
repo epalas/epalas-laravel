@@ -151,7 +151,7 @@
                     <li class="nav-item" id="cart">
 
                     @endif 
-                    @if(Cart::count() > 0)
+                    @if(Cart::instance('default')->count() > 0)
 
                          <a id="notifCart"  data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @else

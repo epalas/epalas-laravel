@@ -40,7 +40,7 @@ Gazzar - Wishlist
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-5 text-md-right row">
                             <div class="col-2 col-sm-2 col-md-2 text-right">
-                                <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button type="submit" class="btn btn-outline-danger btn-xs">

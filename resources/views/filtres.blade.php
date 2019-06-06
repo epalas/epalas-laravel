@@ -100,7 +100,7 @@ Gazzar - Catalogue
         </div>
         <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Régions</button>
-            <div class="btn-group" role="group">
+            <div class="btn-group" role="group" id="grpRegions">
                 <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les Régions
                 </button>
@@ -108,9 +108,10 @@ Gazzar - Catalogue
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
                     <?php /* recherche en BD sur les régions disponibles 
                         @foreach($pays as $land)
-                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["region"]}}">{{$land["region"]["pays"]}}</a>
                         @endforeach 
                     */ ?>
+                    <a class="dropdown-item" href="catalogue">Toutes les régions</a>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -119,13 +120,12 @@ Gazzar - Catalogue
         </div>
         <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Prix croissant</button>
-            <div class="btn-group" role="group">
+            <div class="btn-group" role="group" id="grpPrix">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Prix croissant
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
-                    <?php /* recharge les articles en ASC ou DESC*/ ?>
                     <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
                     <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
                 </div>
@@ -251,7 +251,13 @@ Gazzar - Catalogue
         $('.carte_vins').each(function() {
                 $(this).hide();
                 $('#contenant > div').find("[data-region='" + region + "']").show();
+                $('#grpRegions button').text(region);
             });
+        });
+
+        $("#prixListe a").click( function() {
+        var prix = $(this).text();
+                $('#grpPrix button').text(prix);
         });
 
     });

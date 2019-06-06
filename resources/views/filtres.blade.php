@@ -16,7 +16,6 @@ Gazzar - Catalogue
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
@@ -119,15 +118,15 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Prix croissant</button>
+            <button type="button" class="btn btn-primary" disabled>Prix</button>
             <div class="btn-group" role="group" id="grpPrix">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Prix croissant
+                    Croissant
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
-                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
-                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Décroissant</a>
                 </div>
             </div>
         </div>
@@ -219,8 +218,15 @@ Gazzar - Catalogue
                               <i class="fas fa-star"></i>
                             @endfor
                           @endswitch
+                
+                            <form action="{{route('wishlist.store')}}" method="POST">
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                            </form>
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
                     </div>
                 </div>
             </div>

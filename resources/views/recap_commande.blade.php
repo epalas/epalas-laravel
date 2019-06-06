@@ -34,11 +34,6 @@ Gazzar - Recap Commande
     		 <label for="subscribeNews">Facture</label>
   		</div>
     </div>
-		
-		
-	
-
-
     <div>
  	    <div class="row mb-5">
 	      <div class="col-0">
@@ -113,7 +108,6 @@ Gazzar - Recap Commande
 	    </div>
 	    <hr>
 	    @endforeach
-
 	    <div class="row">
 	    	<div class="col-sm-12 text-right">	
 	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>

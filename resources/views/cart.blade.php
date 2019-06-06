@@ -43,8 +43,7 @@ Gazzar - Panier
                                 <p class="text-right">Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>
                         </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">
-                            
+                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">                        
                                 <form class="col-12 text-center text-sm-right col-sm-2 col-md-2" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
@@ -52,8 +51,6 @@ Gazzar - Panier
                                         <i class=" fa-2x fa fa-trash" aria-hidden="true"></i>
                                     </button>          
                                 </form>
-
-                           
                         </div>
                     </div>
                     <hr>

@@ -18,8 +18,7 @@ Gazzar - Wishlist
         <hr class="titre-point">  
       </div>
     </div> 
-    @if (Cart::instance('wishlist')->count() > 0)
-      
+    @if (Cart::instance('wishlist')->count() > 0)      
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
             
@@ -60,4 +59,4 @@ Gazzar - Wishlist
                     @endif
                 </div>
 </div>
-@endsection 
+@endsection

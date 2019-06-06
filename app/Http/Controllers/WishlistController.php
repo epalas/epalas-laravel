@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Vin;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CartController extends Controller
+class WishlistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,9 +23,8 @@ class CartController extends Controller
         'met','util',
         'cotas','photos',
         'notes','prixprods');  
-           // dd($datas);
-        return view('cart')->with('datas', $datas);
-        
+
+        return view('wishlist')->with('datas', $datas);
     }
 
     /**
@@ -46,11 +45,10 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        
-        Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
-            ->associate('App/Vin');
+        Cart::instance('wishlist')->add($request->id, $request->nom, 1, $request->prix)
+        ->associate('App/Vin');
 
-        return redirect()->route('cart.index');
+        return redirect()->route('wishlist.index');
     }
 
     /**
@@ -95,8 +93,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-
-        return back();
-    } 
+        //
+    }
 }

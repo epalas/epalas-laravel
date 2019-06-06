@@ -158,7 +158,7 @@
                     @endif
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                         <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
                     </li>
                 </ul>
         </div>

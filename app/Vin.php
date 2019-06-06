@@ -67,15 +67,48 @@ class Vin extends Model
 
         $results=Vin::all();
 
-        //->orderBy('vins.nom','asc');
+        /*
+        $results->with(['stock' => function($q){
+                    $q->with(['condi' => function($q){
+                        $q->with(['type' => function($q) {
+                            $q->with(['prod' => function($q){
+                                $q->with(['cepa' => function($q){
+                                    $q->with(['cont' => function($q){
+                                        $q->with(['met' => function($q){
+                                            $q->with(['util' => function($q){
+                                                $q->with(['cotas' => function($q){
+                                                    $q->with(['photos' => function($q){
+                                                        $q->with(['notes' => function($q){
+                                                            $q->with(['comms' => function($q){
+                                                                $q->with(['prixprods' => function($q){
+                                                                    $q->orderBy('prix', 'asc');
+                                                                }])->orderBy('prix','asc');
+                                                            }])->orderBy('prix','asc');
+                                                        }])->orderBy('prix','asc');
+                                                    }])->orderBy('prix','asc');
+                                                }])->orderBy('prix','asc');
+                                            }])->orderBy('prix','asc');
+                                        }])->orderBy('prix','asc');
+                                    }])->orderBy('prix','asc');
+                                }])->orderBy('prix','asc');
+                            }])->orderBy('prix','asc');
+                        }])->orderBy('prix','asc');
+                    }])->orderBy('prix','asc');
+                }]);
+        */
+
+        /*$results->load(['prixprods',function($q){
+            $q->orderBy('prix','asc');
+        }]);
+        */
 
         $results->load( 'stock','condi',
                                 'type','prod',
                                 'cepa','cont',
                                 'met','util',
                                 'cotas','photos',
-                                'notes','prixprods',
-                                'comms');
+                                'notes', 'comms',
+                                'prixprods');
 
         return $results;
 
@@ -138,6 +171,35 @@ class Vin extends Model
 
         $results = Vin::select('*')
             ->where("estPrimeur","=",1)
+            ->get();
+
+        return $results;
+    }
+
+    public static function findPromotions(){
+
+        $results = Vin::select('*')
+            ->where("estPromo","=",1)
+            ->get();
+
+        return $results;
+    }
+
+    public static function findNouveautes(){
+
+        $results = Vin::select('*')
+            ->where("estNouveau","=",1)
+            ->get();
+
+        return $results;
+    }
+
+    public static function findFins(){
+
+        $results = Vin::whereHas('stock', function($query) {
+            $query->where('nbrUnite', '<=', 5);
+        })
+            //->with('type')
             ->get();
 
         return $results;

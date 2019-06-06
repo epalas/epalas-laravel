@@ -48,7 +48,7 @@ Gazzar - Panier
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button type="submit" class=" mt-md-5 btn btn-outline-danger btn-xs">
-                                        <i class=" fa-2x fa fa-trash" aria-hidden="true"></i>
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>          
                                 </form>
                         </div>

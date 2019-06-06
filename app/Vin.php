@@ -78,8 +78,7 @@ class Vin extends Model
                                 'comms');
 
         return $results;
-
-        }
+    }
 
     public static function findRedWine(){
 

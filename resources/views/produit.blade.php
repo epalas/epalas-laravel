@@ -104,19 +104,20 @@ Gazzar | {{ $x['nom'] }}
             @endfor
           @endswitch
         </p>
-        <p>Cotation : {{ $x['cotas'][0]['note'] }} / {{ $x['cotas'][0]['echelle'] }} {{ $x['cotas'][0]['nom'] }}</p>
+        <p><span class="bold">Cotation :</span> {{ $x['cotas'][0]['note'] }} / {{ $x['cotas'][0]['echelle'] }} {{ $x['cotas'][0]['nom'] }}</p>
         <hr>
         <p>
           {{ $x['description'] }}
         </p>
         <hr>
-        <p>Degrès d'alcool : {{ $x['alcool'] }} %</p>
-        <p>Cépages : {{ $x['cepa'][0]['label'] }}</p>
-        <p>Apogée : {{ $x['apogee'] }}</p>
-        <p>Température de conservation : {{ $x['tempCons'] }}°C</p>
-        <p>Température de service : {{ $x['tempServ'] }}°C</p>
-        <p>Mets d'accompagnement : {{ $x['met'][0]['label'] }}</p>
+        <p><span class="bold">Degrès d'alcool :</span> {{ $x['alcool'] }} %</p>
+        <p><span class="bold">Cépages :</span> {{ $x['cepa'][0]['label'] }}</p>
+        <p><span class="bold">Apogée :</span> {{ $x['apogee'] }}</p>
+        <p><span class="bold">Température de conservation :</span> {{ $x['tempCons'] }}°C</p>
+        <p><span class="bold">Température de service :</span> {{ $x['tempServ'] }}°C</p>
+        <p><span class="bold">Mets d'accompagnement :</span> {{ $x['met'][0]['label'] }}</p>
         <hr>
+        <p><span class="bold">Disponibilité :</span> {{ $x['stock']['nbrUnite'] }} bouteilles en stock </p>
         @if(Auth::check())
           <div class="row">
             <div class="input-group-prepend col-1">
@@ -132,10 +133,11 @@ Gazzar | {{ $x['nom'] }}
             </form>
           </div>
           <hr>
-          <form action="" method="post">
+          <form action="{{route('comment.store')}}" method="post">
             {{ csrf_field() }}
             <div class="row">
               <div class="form-group col-6 col-sm-3">
+                <input type="hidden" name="idVin" value="{{ $x['id'] }}">
                 <input type="text" name="titre" class="form-control" id="title" placeholder="Titre...">
               </div>
             </div>
@@ -148,16 +150,19 @@ Gazzar | {{ $x['nom'] }}
           </form>
           <hr>
           @endif
+          @foreach($comments as $comment)
+          <hr>
           <div class="row">
             <div class="mt-2 col-4 col-sm-3">
-              <p class="bold short-line">{{ $x['util'][0]['nom'] }}</p>
-              <p><time>{{ date('d.m.Y', strtotime($x['comms'][0]['date'])) }}</time></p>
+              <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
+              <p><time>{{ date('d.m.Y', strtotime($comment->date)) }}</time></p>
             </div>
             <div class="mt-2 col-8 col-sm-9">
-              <p class="bold short-line">{{ $x['comms'][0]['titre'] }}</p>
-              <p>{{ $x['comms'][0]['contenu'] }}</p>
+              <p class="bold short-line">{{ $comment->titreComm }}</p>
+              <p>{{ $comment->contenu }}</p>
             </div>
           </div>
+          @endforeach
         </div>
       </div>
     </div>

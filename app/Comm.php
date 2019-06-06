@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Comm extends Model
 {
-    protected $fillable = ['titre', 'contenu', 'date'];
+    protected $table = 'comms';
 
     public $timestamps = false;
 
@@ -17,4 +18,14 @@ class Comm extends Model
     public function vin(){
         return $this->belongsToMany('App\Vin');
     }
+
+    public static function findWinesComm($id){
+        $comments = DB::select('SELECT comms.titre as titreComm, contenu, utils.nom, utils.prenom, date FROM `comms` 
+                                      INNER JOIN vins ON comms.idVin = vins.id 
+                                      INNER JOIN utils ON comms.idUtil = utils.id 
+                                      WHERE vins.id =' . $id, array());
+
+        return $comments;
+    }
+
 }

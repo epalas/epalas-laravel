@@ -16,7 +16,6 @@ Route::get('/produit', function () {
     return redirect('catalogue');
 });
 
-
 Route::get('/produit', 'Catalogue@afficheCatalogue');
 
 Route::get('/contact',['as' => 'contact', function () {
@@ -55,7 +54,6 @@ Route::get('/newsletter', ['as' => 'newsletter', function () {
     return view('newsletter');
 }]);
 
-
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');
 })->name('carton-decouverte');
@@ -64,11 +62,9 @@ Route::get('/presse', ['as' => 'presse',function () {
     return view('presse');
 }]);
 
-
 Route::get('/blog', ['as' => 'blog', function () {
     return view('blog');
 }]);
-
 
 Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
@@ -79,6 +75,7 @@ Route::get('/catalogue', ['as' => 'cata','uses' => 'Catalogue@afficheCatalogue',
 Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
 
+Route::get('/cart', function () {
 
 Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
@@ -100,10 +97,14 @@ Route::get('/ajax', function () {
     return view('filtres_ajax_test');
 });
 
+Route::get('/produit/{id}', [
+    'uses' =>'ProductController@index',
+    'comms' => 'CommentController@index'
+]);
+
 Route::get('/produit', 'ProductController@index');
 
 Route::get('/produit/{id}', ['uses' =>'ProductController@index','as' => 'produit']);
-
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
@@ -114,7 +115,6 @@ Route::get('/', function(){
 });
 
 Auth::routes();
-
 
 Route::get('/customer', ['as' => 'customer', function () {
     return view('customer-account');
@@ -136,9 +136,6 @@ Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.
 
 Route::get('/recap', 'RecapCommController@index')->name('recap.index');
 
-
-
-
 //Route::get('/customer', function () {
 //    return view('customer-account');
 // })->middleware('auth')->name('customer');
@@ -147,7 +144,13 @@ Route::get('/customer', 'UtilController@index')->name('customer')->middleware('a
 
 Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
 
-
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
+
+// commentaires
+Route::post('/produit', 'CommentController@store')->name('comment.store');
+
+Route::get('/recap_commande', function () {
+    return view('recap_commande');
+})->name('recap_commande');

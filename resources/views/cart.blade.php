@@ -23,6 +23,7 @@ Gazzar - Panier
       
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
+                 <hr>
             
             </div>
             <div>
@@ -34,25 +35,22 @@ Gazzar - Panier
                                     <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
                         </div>
-                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">
-                            <h4 class="product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
-                            <h4 class="text-black">
-                                <small>{{$datas[$item->id-1]['description']}}</small> 
+                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-8">
+                            <h4 class="mt-md-5 product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
+                            <h4>
+                                <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                                 <p>{{$item->qty}} x {{$item->price}}.-</p>
-                                <p>Sous-total : {{$item->qty * $item->price}} .-</p>
+                                <p class="text-right">Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>
                         </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-5 text-md-right row">
-                            <div class="col-2 col-sm-2 col-md-2 text-right">
-                                <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">                        
+                                <form class="col-12 text-center text-sm-right col-sm-2 col-md-2" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-outline-danger btn-xs">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <button type="submit" class=" mt-md-5 btn btn-outline-danger btn-xs">
+                                        <i class=" fa-2x fa fa-trash" aria-hidden="true"></i>
                                     </button>          
                                 </form>
-
-                            </div>
                         </div>
                     </div>
                     <hr>
@@ -63,12 +61,15 @@ Gazzar - Panier
                          <div class="pl-3">
                              <a href="" class="btn btn-outline-primary pull-right">
                                     Mettre à jour le panier</a>
+                                    <p class="mt-sm-2">{{Cart::count()}} éléments dans votre panier</p>
                         </div>
                         <div>
-                                <a href="" class="btn btn-success pull-right">Commander</a>
-                                <div class="pull-right" style="margin: 5px">
-                                    Total: <b>{{Cart::subtotal()}} CHF</b> <br>
+                                <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">
+                                    Total: <b>{{Cart::subtotal()}} CHF</b><br>
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
+                                </div>
+                                <div class="text-right mr-sm-5 mt-sm-3">
+                                 <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
                         </div>
                     </div>

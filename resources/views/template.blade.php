@@ -152,13 +152,13 @@
                     @endif 
                     @if(Cart::count() > 0)
 
-                         <a id="notifCart"  data-count="{{Cart::count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
+                         <a id="notifCart"  data-count="{{Cart::content()->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @else
                     <a data-count="{{Cart::count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @endif
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                         <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
                     </li>
                 </ul>
         </div>

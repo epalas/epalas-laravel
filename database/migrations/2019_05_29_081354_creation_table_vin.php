@@ -35,6 +35,7 @@ class CreationTableVin extends Migration
             $table->boolean('estBio');
             $table->boolean('estPrimeur');
             $table->boolean('estPromo');
+            $table->boolean('estNouveau');
         });
 
     }

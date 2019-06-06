@@ -58,20 +58,20 @@ Gazzar - Catalogue
         @else
         <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</a>
         @endif 
-        @if (Request::is('promotions'))
-        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promo</button>
+        @if (Request::is('catalogue/promotions'))
+        <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promotions</a>
         @else
-        <button type="button" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promo</button>
+        <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promotions</a>
         @endif 
-        @if (Request::is('nouveautes'))
-        <button type="button" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
+        @if (Request::is('catalogue/nouveautes'))
+        <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
         @else
-        <button type="button" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
+        <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
         @endif 
-        @if (Request::is('fin'))
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
+        @if (Request::is('catalogue/fins'))
+        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @else
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
+        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @endif 
         </div>   
     </div>
@@ -79,28 +79,38 @@ Gazzar - Catalogue
     <div class="col-12">
         <div class="btn-group mt-2" role="group">
             <button type="button" class="btn btn-primary" disabled>Pays</button>
-            <div class="btn-group" role="group">
+            <div class="btn-group" role="group" id="grpPays">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les pays
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <?php /* recherche en BD sur les pays disponibles */?>
-                    <a class="dropdown-item" href="#">Suisse</a>
-                    <a class="dropdown-item" href="#">Italie</a>
-                    <a class="dropdown-item" href="#" >Espagne</a>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
+                <?php /* recherche en BD sur les pays disponibles
+                    @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                    @endforeach 
+                */?>
+                    <a class="dropdown-item" href="catalogue">Tous les pays</a>
+                    <a class="dropdown-item" href="#" value="France">France</a>
+                    <a class="dropdown-item" href="#" value="Italie">Italie</a>
+                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
                 </div>
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Régions</button>
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les Régions
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <?php /* recherche en BD sur les régions disponibles */ ?>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <?php /* recherche en BD sur les régions disponibles 
+                        @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        @endforeach 
+                    */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -114,10 +124,10 @@ Gazzar - Catalogue
                     Prix croissant
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="#">Prix croissant</a>
-                    <a class="dropdown-item" href="#">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
                 </div>
             </div>
         </div>
@@ -131,13 +141,11 @@ Gazzar - Catalogue
     </div>
 </div>
 
-
-{{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="carte_vins col-12 col-sm-6 col-md-4 col-lg-3 mt-3" data-pays="{{$result["prod"]["pays"]}}" data-region="{{$result["prod"]["region"]}}">
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
@@ -222,6 +230,31 @@ Gazzar - Catalogue
 </div>
 </div>
 
-@endsection
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function(){
+        
+        // liste déroulante pays
+        $("#paysListe a").click( function() {
+        var pays = $(this).text();
+            $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-pays='" + pays + "']").show();
+                $('#grpPays button').text(pays);
+            });
+        });
+
+        //liste déroulante region
+        $("#regionListe a").click( function() {
+        var region = $(this).text();
+        $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-region='" + region + "']").show();
+            });
+        });
+
+    });
+    </script>
+@endsection
 

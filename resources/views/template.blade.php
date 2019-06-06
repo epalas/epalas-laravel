@@ -11,7 +11,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fonts/font-awesome/css/fontawesome-all.min.css') }}" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 </head>
 <body>
     <div class="container">

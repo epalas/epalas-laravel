@@ -251,7 +251,13 @@ Gazzar - Accueil
                             @endfor
                           @endswitch
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                        <form action="{{route('wishlist.store')}}" method="POST">
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                            </form>
                     </div>
                 </div>
             </div>

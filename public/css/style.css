@@ -1,5 +1,13 @@
 /* General settings */
 
+.link-slider:hover {
+  text-decoration: none;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
 h1 {
 	font-family: 'Verlag Bold';
 }
@@ -141,6 +149,10 @@ img.wine-card {
     color: #a51c2a;
 }
 
+#carte > a{
+text-decoration: none;
+}
+
 /* Newsletter*/
 
 .space {
@@ -165,6 +177,12 @@ img.wine-card {
 }
 
 
+
+.red-magic > div  {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
 
 
 /* footer */

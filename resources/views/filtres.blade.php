@@ -10,66 +10,69 @@ Gazzar - Catalogue
         width:3rem;
     }
 </style>
+
 <div class="container">
     <div class="row mt-5 mb-4 mx-auto">
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-        
-        <a role="button" href="catalogue/rouges" class="btn btn-light active" class="red" id="red"><img src="img/pictos/picto_color/red.svg" alt="Rouge"/><br/>Rouges</a>
-       
+
+
+        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
+
         @else
-        <a role="button" href="catalogue/rouges" class="btn btn-light bg-white"  id="red"><img src="img/pictos/vin.svg" alt="Rouge"/><br/>Rouges</a>
+        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</a>
+
         @endif 
 
         @if (Request::is('catalogue/blancs'))
-        <button type="button" class="btn btn-light active" id="white"><img src="img/pictos/picto_color/white.svg" alt="Blanc" /><br/>Blancs</button>
+        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="white"><img src="img/pictos/vin.svg" alt="Blanc" /><br/>Blancs</button>
+        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</a>
         @endif 
 
         @if (Request::is('catalogue/roses'))
-        <button type="button" class="btn btn-light active" id="rosy"><img src="img/pictos/picto_color/rosy.svg" alt="Rosé"/><br/>Rosés</button>
+        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="rosy"><img src="img/pictos/vin.svg" alt="Rosé"/><br/>Rosés</button>
+        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</a>
         @endif 
 
         @if (Request::is('catalogue/mousseux'))
-        <button type="button" class="btn btn-light active" id="mouss"><img src="img/pictos/picto_color/champain.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="mouss"><img src="img/pictos/mousseux.svg" alt="Mousseux"/><br/>Mousseux</button>
+        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
         @endif 
 
         @if (Request::is('catalogue/bios'))
-        <button type="button" class="btn btn-light active" id="bio"><img src="img/pictos/picto_color/bio-green.svg" alt="Bio"/><br/>Bio</button>
+        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="bio"><img src="img/pictos/bio.svg" alt="Bio"/><br/>Bio</button>
+        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</a>
         @endif 
 
         @if (Request::is('catalogue/primeurs'))
-        <button type="button" class="btn btn-light active" id="prim"><img src="img/pictos/picto_color/primeur-color.svg" alt="Primeur"/><br/>Primeurs</button>
+        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="prim"><img src="img/pictos/primeur.svg" alt="Primeur"/><br/>Primeurs</button>
+        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</a>
         @endif 
         @if (Request::is('promotions'))
-        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="img/pictos/picto_color/promo-red.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promo</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="promo"><img src="img/pictos/promo.svg" alt="Promo"/><br/>Promo</button>
+        <button type="button" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promo</button>
         @endif 
         @if (Request::is('nouveautes'))
-        <button type="button" class="btn btn-light bg-white active" id="new"><img src="img/pictos/picto_color/new-red.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="new"><img src="img/pictos/nouveau.svg" alt="Nouveau"/><br/>Nouveaux</button>
+        <button type="button" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveaux</button>
         @endif 
         @if (Request::is('fin'))
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/picto_color/end-red.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
         @else
-        <button type="button" class="btn btn-light bg-white" id="end"><img src="img/pictos/fin.svg" alt="Fin de série"/><br/>Fins de série</button>
+        <button type="button" class="btn btn-light bg-white" id="end"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</button>
         @endif 
         </div>   
     </div>
@@ -82,6 +85,7 @@ Gazzar - Catalogue
                     Tous les pays
                 </button>
 
+
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
                 <?php /* recherche en BD sur les pays disponibles
                     @foreach($pays as $land)
@@ -91,6 +95,7 @@ Gazzar - Catalogue
                     <a class="dropdown-item" href="#" value="France">France</a>
                     <a class="dropdown-item" href="#" value="Italie">Italie</a>
                     <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
+
                 </div>
             </div>
         </div>
@@ -145,7 +150,7 @@ Gazzar - Catalogue
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
-                        <a href="produit/{{$result["id"]}}">
+                        <a href="{{ route('produit', ['id' => $result["id"]]) }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3">
@@ -154,7 +159,7 @@ Gazzar - Catalogue
                                     <div class="col-9">
                                         <h4 class="card-title">{{$result["nom"]}}</h4>
                                         <p class="card-text">
-                                        <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                        <span data-filter="{{$result["prod"]["region"]}}">{{$result["prod"]["region"]}}</span> - {{$result["prod"]["pays"]}}</span>
                                         <p>{{$result["prod"]["nom"]}}</p>
                                         <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
                                         <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
@@ -226,6 +231,7 @@ Gazzar - Catalogue
 </div>
 </div>
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript'>
     $(document).ready(function(){
@@ -251,3 +257,4 @@ Gazzar - Catalogue
     });
     </script>
 @endsection
+

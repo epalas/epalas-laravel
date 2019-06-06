@@ -11,7 +11,6 @@ class Catalogue extends Controller
     public function afficheCatalogue(){
 
         $results = Vin::getData('asc');
-
         return view('filtres')->with('results', $results);
 
     }

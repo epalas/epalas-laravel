@@ -69,7 +69,7 @@ Gazzar - Catalogue
         <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
         @endif 
         @if (Request::is('catalogue/fins'))
-        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white active" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @else
         <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @endif 
@@ -135,7 +135,106 @@ Gazzar - Catalogue
     </div>
     <div id="row">
     <div class="col-10 mt-3">
-        <a href="#">Recherche avancée ></a>
+        <a href="#search-plus-btn" data-toggle="collapse">Recherche avancée ></a>
+        <div id="search-plus-btn" class="collapse">
+            <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Cépages</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tous les cépages
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">Merlot</a>
+                    <a class="dropdown-item" href="#">Cabernet-Sauvignon</a>
+                    <a class="dropdown-item" href="#">Syrah</a>
+                </div>
+            </div>
+        </div>  
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Années</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les années
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">2014</a>
+                    <a class="dropdown-item" href="#">2015</a>
+                    <a class="dropdown-item" href="#">2016</a>
+                    <a class="dropdown-item" href="#">2017</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Mets</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tous les mets
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">Volaille</a>
+                    <a class="dropdown-item" href="#">Fromage</a>
+                    <a class="dropdown-item" href="#">Viande Rouge</a>
+                    <a class="dropdown-item" href="#">Gibier à plume</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Contenances</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les contenances
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">0,75</a>
+                    <a class="dropdown-item" href="#">3</a>
+                    <a class="dropdown-item" href="#">4,5</a>
+                    <a class="dropdown-item" href="#">6</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Notes</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les notes
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#"><i class="fas fa-star"></i></a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                   <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
     </div>
     </div>
     </div>

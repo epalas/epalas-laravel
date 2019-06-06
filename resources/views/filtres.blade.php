@@ -17,6 +17,7 @@ Gazzar - Catalogue
 
         @if (Request::is('catalogue/rouges'))
 
+
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
@@ -84,11 +85,17 @@ Gazzar - Catalogue
                     Tous les pays
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <?php /* recherche en BD sur les pays disponibles */?>
-                    <a class="dropdown-item" href="#">Suisse</a>
-                    <a class="dropdown-item" href="#">Italie</a>
-                    <a class="dropdown-item" href="#" >Espagne</a>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
+                <?php /* recherche en BD sur les pays disponibles
+                    @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                    @endforeach 
+                */?>
+                    <a class="dropdown-item" href="#" value="France">France</a>
+                    <a class="dropdown-item" href="#" value="Italie">Italie</a>
+                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
+
                 </div>
             </div>
         </div>
@@ -99,8 +106,12 @@ Gazzar - Catalogue
                     Toutes les Régions
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <?php /* recherche en BD sur les régions disponibles */ ?>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <?php /* recherche en BD sur les régions disponibles 
+                        @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        @endforeach 
+                    */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -114,10 +125,10 @@ Gazzar - Catalogue
                     Prix croissant
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="#">Prix croissant</a>
-                    <a class="dropdown-item" href="#">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
                 </div>
             </div>
         </div>
@@ -131,13 +142,11 @@ Gazzar - Catalogue
     </div>
 </div>
 
-
-{{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="carte_vins col-12 col-sm-6 col-md-4 col-lg-3 mt-3" data-pays="{{$result["prod"]["pays"]}}" data-region="{{$result["prod"]["region"]}}">
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
@@ -222,6 +231,30 @@ Gazzar - Catalogue
 </div>
 </div>
 
-@endsection
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function(){
+        
+        // liste déroulante pays
+        $("#paysListe a").click( function() {
+        var pays = $(this).text();
+            $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-pays='" + pays + "']").show();
+            });
+        });
+
+        //liste déroulante region
+        $("#regionListe a").click( function() {
+        var region = $(this).text();
+        $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-region='" + region + "']").show();
+            });
+        });
+
+    });
+    </script>
+@endsection
 

@@ -19,13 +19,15 @@ Gazzar - Panier
       </div>
     </div> 
     @if (Cart::count() > 0)
-      <p>{{Cart::count()}} éléments dans votre panier</p>
+      
       
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
-                 <hr>
+                 <p>{{Cart::count()}} éléments dans votre panier</p>
+                
             
             </div>
+             <hr>
             <div>
                     <!-- PRODUCT -->
                     @foreach(Cart::content() as $item)
@@ -57,13 +59,14 @@ Gazzar - Panier
                     @endforeach
 
                     <!-- END PRODUCT -->
-                    <div class="row justify-content-between">   
-                         <div class="mt-4 ml-4">
+                    <div class="row justify-content-between text-center">   
+                         <div class="mt-2 ml-4">
+                            <p>{{Cart::count()}} éléments dans votre panier</p>
                             <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
-                        </div>
-                        <p class="mt-sm-2">{{Cart::count()}} éléments dans votre panier</p>
-                        </div>
-                        <div>
+                         </div>
+
+
+                         <div>
                                 <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">
                                     Total: <b>{{Cart::subtotal()}} CHF</b><br>
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
@@ -77,8 +80,11 @@ Gazzar - Panier
                                  <a href="{{ route('login') }}" class="btn btn-success">Commander</a>
                                 </div>
                                 @endif
-                        </div>
+                         </div>
+                            
                     </div>
+
+            </div>
                     @else 
                         <p>Pas d'éléments dans le panier.</p>
                     @endif

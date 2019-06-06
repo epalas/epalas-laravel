@@ -13,25 +13,25 @@ Gazzar - Accueil
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/slider5.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Profiter des promotions du moments !</a>
+          <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Profitez des promotions du moments !</a>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider2.jpg" alt="Second slide">
         <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{ route('recommandations') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Découvrer notre séléction de recommandations !</a>
+          <a href="{{ route('recommandations') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Découvrez notre séléction de recommandations !</a>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{ route('carton-decouverte') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Tester notre carton découverte !</a>
+          <a href="{{ route('carton-decouverte') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Testez notre carton découverte !</a>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider4.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jeter un oeil aux nouveautés !</a>
+          <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jetez un oeil aux nouveautés !</a>
       </div>
     </div>
     <div class="carousel-item">

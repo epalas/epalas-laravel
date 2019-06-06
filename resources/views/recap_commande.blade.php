@@ -50,16 +50,17 @@ Gazzar - Recap Commande
 
 		    <div class="col-sm-6">
 		       <p class="bold">Adresse de facturation</p>
-	           <p>Avenue du Chêne 3<br>
-	           1000 Lausanne<br>
-	           Suisse</p> 
+				<p>{{Auth::user()->nom}} {{Auth::user()->prenom}} <br>
+	           {{Auth::user()->adresse}}<br>
+	           {{Auth::user()->cp}} {{Auth::user()->ville}}<br>
+	           {{Auth::user()->pays}}</p> 
 	           <p><a href="#">Changer mon adresse de facturation ></a></p>  
 	        </div>
 
 	        <div class="col-sm-6">
 			  <button data-toggle="collapse" data-target="#form-livraison" class="btn btn-primary mt-2" type="submit">Adresse de livraison différente</button>
 			
-		        <form class="collapse" id="form-livraison"class="col-sm-6">
+		        <form class="collapse" id="form-livraison"class="col-sm-6" method="POST">
 				  <input name="rue" type="text" class="form-control mt-2" placeholder="Rue">
 	              <input name="cp" type="number" class="form-control mt-2" placeholder="Code Postal">
 	              <input name="ville" type="text" class="form-control mt-2" placeholder="Ville">

@@ -153,11 +153,11 @@ Gazzar | {{ $x['nom'] }}
           @foreach($comments as $comment)
           <hr>
           <div class="row">
-            <div class="mt-2 col-4 col-sm-3">
+            <div class="mt-2 col-auto col-md-5 col-lg-3">
               <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
               <p><time>{{ date('d.m.Y', strtotime($comment->date)) }}</time></p>
             </div>
-            <div class="mt-2 col-8 col-sm-9">
+            <div class="mt-2 col-8 col-md-7 col-lg-9">
               <p class="bold short-line">{{ $comment->titreComm }}</p>
               <p>{{ $comment->contenu }}</p>
             </div>

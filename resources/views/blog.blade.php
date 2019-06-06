@@ -4,7 +4,7 @@
   @for ($i = 0; $i < 5; $i++)
   <div class="row mt-5">
     <div class="col-sm-3">
-      <img src="/public/img/blog-exemple.jpg" alt="photo d'exemple d'article de blog" class="img-fluid">
+      <img src="img/blog-exemple.jpg" alt="photo d'exemple d'article de blog" class="img-fluid">
     </div>
     <div class="col-sm-9">
       <h3 class="titres-articles">Article exemple {{ $i }}</h3>

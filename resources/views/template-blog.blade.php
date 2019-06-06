@@ -9,7 +9,7 @@ Gazzar - Blog
   <h1 class="mb-5">Blog</h1>  
     <div class="row">
       <div class="col-0">
-        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div> 
       <div class="col col-sm-5 col-md-4 col-xl-3">
         <h2>Articles publiées</h2>

@@ -12,7 +12,7 @@ Gazzar - Image
     <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
   </div>
       <div class="col-3">
-        <img src="/public/img/galerie/galerie{{$id}}.jpg" alt="image de la galerie" width="395%">
+        <img src="{{ asset("img/galerie/galerie$id.jpg") }}" alt="image de la galerie" width="395%">
       </div>
   </div> 
 </div> 

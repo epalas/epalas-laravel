@@ -9,7 +9,7 @@ Gazzar - Presse
   <h1 class="mb-5">Presse</h1>  
     <div class="row">
       <div class="col-0">
-        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div> 
       <div class="col col-sm-3 col-md-2">
         <h2>Journaux</h2>

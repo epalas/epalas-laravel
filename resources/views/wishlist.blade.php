@@ -9,7 +9,7 @@ Gazzar - Wishlist
     <h1 class="mb-5">Shop</h1>  
     <div class="row">
       <div class="col-0">
-        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
       <div class="col-10 col-sm-5 col-md-3 col-lg-3">
         <h2>Wishlist<i class="ml-3 fas fa-heart" aria-hidden="true"></i></h2>
@@ -31,7 +31,7 @@ Gazzar - Wishlist
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
                                 <a href="">
-                                    <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                    <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">

@@ -11,31 +11,31 @@ Gazzar - Accueil
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="/public/img/slider5.jpg" alt="First slide">
+      <img class="d-block w-100" src="img/slider5.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Profiter des promotions du moments !</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/public/img/slider2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="img/slider2.jpg" alt="Second slide">
         <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{ route('recommandations') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Découvrer notre séléction de recommandations !</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/public/img/slider3.jpg" alt="Third slide">
+      <img class="d-block w-100" src="img/slider3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{ route('carton-decouverte') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Tester notre carton découverte !</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/public/img/slider4.jpg" alt="Second slide">
+      <img class="d-block w-100" src="img/slider4.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jeter un oeil aux nouveautés !</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/public/img/slider1.jpg" alt="Third slide">
+      <img class="d-block w-100" src="img/slider1.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Envie d'étancher votre soif de vins bio ?</a>
       </div>
@@ -56,7 +56,7 @@ Gazzar - Accueil
 <div class="container mt-5">
   <div class="row">
     <div class="col-0">
-      <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+      <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
     <div class="col col-sm-6 col-md-5 col-xl-3">
       <h2>Nos recommendations</h2>
@@ -163,7 +163,7 @@ Gazzar - Accueil
 
   <div class="row">
     <div class="col-0">
-      <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+      <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
     <div class="col col-sm-4 col-md-4 col-xl-2">
       <h2>Nouveautés</h2>

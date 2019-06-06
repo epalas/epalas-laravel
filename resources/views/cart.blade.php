@@ -68,9 +68,15 @@ Gazzar - Panier
                                     Total: <b>{{Cart::subtotal()}} CHF</b><br>
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
                                 </div>
+                                @if(Auth::check())
                                 <div class="text-right mr-sm-5 mt-sm-3">
                                  <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
+                                @else
+                                <div class="text-right mr-sm-5 mt-sm-3">
+                                 <a href="{{ route('login') }}" class="btn btn-success">Commander</a>
+                                </div>
+                                @endif
                         </div>
                     </div>
                     @else 

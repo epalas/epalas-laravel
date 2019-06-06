@@ -134,8 +134,6 @@ Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController
         return view('customer-account');
     }])->middleware('auth');
 
-    Route::get('deconnexion', ['uses' => '\App\Http\Controllers\Auth\LoginController@logout', 'as' => 'deconnexion']);
-
     Route::get('/cart', 'CartController@index')->name('cart.index');
 
     Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -156,15 +154,9 @@ Route::get('/recap', 'RecapCommController@index')->name('recap.index');
 
 Route::get('/customer', 'UtilController@index')->name('customer')->middleware('auth');
 
-Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController@logout', 'as'=>'deconnexion']);
-
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
 
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
-
-Route::get('/recap_commande', function () {
-    return view('recap_commande');
-})->name('recap_commande');

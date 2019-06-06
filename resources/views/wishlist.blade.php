@@ -29,7 +29,7 @@ Gazzar - Wishlist
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
                                 <a href="{{ route('produit', ['id' => $item->id ])}}">
-                                    <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                    <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">

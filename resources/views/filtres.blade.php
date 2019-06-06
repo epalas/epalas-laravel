@@ -17,46 +17,47 @@ Gazzar - Catalogue
 
         @if (Request::is('catalogue/rouges'))
 
-        <button type="button" class="btn btn-light active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</button>
+
+        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</button>
+        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @endif 
 
         @if (Request::is('catalogue/blancs'))
-        <button type="button" class="btn btn-light active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</button>
+        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</button>
+        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</a>
         @endif 
 
         @if (Request::is('catalogue/roses'))
-        <button type="button" class="btn btn-light active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</button>
+        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</button>
+        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</a>
         @endif 
 
         @if (Request::is('catalogue/mousseux'))
-        <button type="button" class="btn btn-light active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</button>
+        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</button>
+        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
         @endif 
 
         @if (Request::is('catalogue/bios'))
-        <button type="button" class="btn btn-light active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</button>
+        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</button>
+        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</a>
         @endif 
 
         @if (Request::is('catalogue/primeurs'))
-        <button type="button" class="btn btn-light active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</button>
+        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</a>
 
         @else
-        <button type="button" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</button>
+        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</a>
         @endif 
         @if (Request::is('promotions'))
         <button type="button" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promo</button>
@@ -84,11 +85,17 @@ Gazzar - Catalogue
                     Tous les pays
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <?php /* recherche en BD sur les pays disponibles */?>
-                    <a class="dropdown-item" href="#">Suisse</a>
-                    <a class="dropdown-item" href="#">Italie</a>
-                    <a class="dropdown-item" href="#">Espagne</a>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
+                <?php /* recherche en BD sur les pays disponibles
+                    @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                    @endforeach 
+                */?>
+                    <a class="dropdown-item" href="#" value="France">France</a>
+                    <a class="dropdown-item" href="#" value="Italie">Italie</a>
+                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
+
                 </div>
             </div>
         </div>
@@ -99,8 +106,12 @@ Gazzar - Catalogue
                     Toutes les Régions
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <?php /* recherche en BD sur les régions disponibles */ ?>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <?php /* recherche en BD sur les régions disponibles 
+                        @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        @endforeach 
+                    */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -114,10 +125,10 @@ Gazzar - Catalogue
                     Prix croissant
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="#">Prix croissant</a>
-                    <a class="dropdown-item" href="#">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
                 </div>
             </div>
         </div>
@@ -131,17 +142,15 @@ Gazzar - Catalogue
     </div>
 </div>
 
-
-{{-- @yield('carte') <- Ca marche pas mdr --}}
 <div class="container" id="contenant">
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="carte_vins col-12 col-sm-6 col-md-4 col-lg-3 mt-3" data-pays="{{$result["prod"]["pays"]}}" data-region="{{$result["prod"]["region"]}}">
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
-                        <a href="produit/{{$result["id"]}}">
+                        <a href="{{ route('produit', ['id' => $result["id"]]) }}">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3">
@@ -150,7 +159,7 @@ Gazzar - Catalogue
                                     <div class="col-9">
                                         <h4 class="card-title">{{$result["nom"]}}</h4>
                                         <p class="card-text">
-                                        <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
+                                        <span data-filter="{{$result["prod"]["region"]}}">{{$result["prod"]["region"]}}</span> - {{$result["prod"]["pays"]}}</span>
                                         <p>{{$result["prod"]["nom"]}}</p>
                                         <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
                                         <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
@@ -222,112 +231,30 @@ Gazzar - Catalogue
 </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript'>
-
     $(document).ready(function(){
+        
+        // liste déroulante pays
+        $("#paysListe a").click( function() {
+        var pays = $(this).text();
+            $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-pays='" + pays + "']").show();
+            });
+        });
 
-    /* Fetch all records
-    $('#filtres').click(function(){
-	    fetchProducts(0);
-    });*/
+        //liste déroulante region
+        $("#regionListe a").click( function() {
+        var region = $(this).text();
+        $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-region='" + region + "']").show();
+            });
+        });
 
-    // types de vins
-    $('#red').click(function(){
-        console.log("jaaj");
     });
-/*
-    $('#white').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'blancs']);
-    });
-
-    $('#rosy').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'roses']);
-    });
-
-    $('#mouss').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'mousseux']);
-    });
-
-    $('#bio').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'bios']);
-    });
-
-    $('#prim').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'primeurs']);
-    });
-
-    $('#promo').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'promotions']);
-    });
-
-    $('#new').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'nouveautes']);
-    });
-
-    $('#end').click(function(){
-        Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
-    ->where(['filtre' => 'fin']);
-    });
-*/
-});
-
-     function fetchProducts(filtre){
-       $.ajax({
-         url: 'getUsers/'+id,
-         type: 'get',
-         dataType: 'json',
-         success: function(response){
-
-           var len = 0;
-           $('#contenant').empty(); // Empty <tbody>
-           if(response['data'] != null){
-             len = response['data'].length;
-           }
-
-           if(len > 0){
-             for(var i=0; i<len; i++){
-               var id = response['data'][i].id;
-               var username = response['data'][i].username;
-               var name = response['data'][i].name;
-               var email = response['data'][i].email;
-
-               var tr_str = "<tr>" +
-                   "<td align='center'>" + (i+1) + "</td>" +
-                   "<td align='center'>" + username + "</td>" +
-                   "<td align='center'>" + name + "</td>" +
-                   "<td align='center'>" + email + "</td>" +
-               "</tr>";
-
-               $("#userTable tbody").append(tr_str);
-             }
-           }else if(response['data'] != null){
-              var tr_str = "<tr>" +
-                  "<td align='center'>1</td>" +
-                  "<td align='center'>" + response['data'].username + "</td>" + 
-                  "<td align='center'>" + response['data'].name + "</td>" +
-                  "<td align='center'>" + response['data'].email + "</td>" +
-              "</tr>";
-
-              $("#userTable tbody").append(tr_str);
-           }else{
-              var tr_str = "<tr>" +
-                  "<td align='center' colspan='4'>No record found.</td>" +
-              "</tr>";
-
-              $("#userTable tbody").append(tr_str);
-           }
-
-         }
-       });
-     }
-     </script>
+    </script>
 @endsection
+

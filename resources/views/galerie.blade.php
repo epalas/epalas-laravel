@@ -19,57 +19,14 @@ Gazzar - Galerie Photo
       </div>
     </div> 
     <div class="row mt-5">
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+      @for ($i = 1; $i < 13; $i++)
+      <div class="col-12 col-lg-3 col-md-4 col-6">  
+        <a href=" {{route('image', ['id' => $i])}}" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail zoom" src="/public/img/galerie/galerie{{$i}}.jpg" alt="">
             </a>
+           
       </div>
-
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
-            </a>
-      </div>
-      <div class="col-12 col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
-            </a>
-    </div>
+       @endfor
  </div>      
 </div>
 @endsection

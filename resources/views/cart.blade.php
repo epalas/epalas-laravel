@@ -58,10 +58,10 @@ Gazzar - Panier
 
                     <!-- END PRODUCT -->
                     <div class="row justify-content-between">   
-                         <div class="pl-3">
-                             <a href="" class="btn btn-outline-primary pull-right">
-                                    Mettre à jour le panier</a>
-                                    <p class="mt-sm-2">{{Cart::count()}} éléments dans votre panier</p>
+                         <div class="mt-4 ml-4">
+                            <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
+                        </div>
+                        <p class="mt-sm-2">{{Cart::count()}} éléments dans votre panier</p>
                         </div>
                         <div>
                                 <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">

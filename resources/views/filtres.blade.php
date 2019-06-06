@@ -135,7 +135,7 @@ Gazzar - Catalogue
     </div>
     <div id="row">
     <div class="col-10 mt-3">
-        <a href="#search-plus-btn" data-toggle="collapse">Recherche avancée ></a>
+        <a href="#search-plus-btn" data-toggle="collapse">Recherche avancée <i class="fas fa-sort-down"></i></a>
         <div id="search-plus-btn" class="collapse">
             <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Cépages</button>

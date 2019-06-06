@@ -38,7 +38,7 @@ Gazzar - Panier
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-8">
                             <h4 class="mt-md-5 product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
                             <h4>
-                                <small>{{$datas[$item->id-1]['description']}}</small> 
+                                <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                                 <p>{{$item->qty}} x {{$item->price}}.-</p>
                                 <p class="text-right">Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>

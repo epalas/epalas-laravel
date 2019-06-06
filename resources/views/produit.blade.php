@@ -10,7 +10,7 @@ Gazzar | {{ $x['nom'] }}
     <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
     <div class="row">
       <div class="col-3">
-        <img src="{{ $x['photos'][0]['url'] }}" alt="test vin" class="img-fluid">
+        <img src="{{ asset($x['photos'][0]['url']) }}" alt="test vin" class="img-fluid">
       </div>
       <div class="col-9">
         <div id="titreProduit">
@@ -148,10 +148,10 @@ Gazzar | {{ $x['nom'] }}
             </div>
             <button type="submit" name="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
           </form>
-          <hr>
           @endif
-          @foreach($comments as $comment)
           <hr>
+          @foreach($comments as $comment)
+          <i class="fas fa-quote-left"></i>
           <div class="row">
             <div class="mt-2 col-4 col-sm-3">
               <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
@@ -162,6 +162,7 @@ Gazzar | {{ $x['nom'] }}
               <p>{{ $comment->contenu }}</p>
             </div>
           </div>
+          <hr>
           @endforeach
         </div>
       </div>

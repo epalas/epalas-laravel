@@ -153,7 +153,7 @@ Gazzar - Catalogue
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3">
-                                        <img src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                        <img src="{{asset($result["photos"][0]['url'])}}" alt="{{$result["photos"][0]['alt']}}">
                                     </div>
                                     <div class="col-9">
                                         <h4 class="card-title">{{$result["nom"]}}</h4>

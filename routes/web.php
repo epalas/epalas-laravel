@@ -34,9 +34,7 @@ Route::get('/valeurs',['as' => 'valeurs', function () {
     return view('valeurs');
 }]);
 
-Route::get('/home', ['as' => 'home', function () {
-    return view('accueil2');
-}]);
+Route::get('/home',  ['as' => 'home','uses' => 'HomeController@index' ]);
 
 Route::get('/', function () {
     return view('accueil2');

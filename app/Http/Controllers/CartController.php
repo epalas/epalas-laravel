@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-         $datas=Vin::all();
+        $datas=Vin::all();
 
         $datas->load( 'stock','condi',
         'type','prod',
@@ -51,7 +51,6 @@ class CartController extends Controller
             ->associate('App/Vin');
 
         return redirect()->route('cart.index');
-        //->with('success_message', 'L'élément a été ajouté dans votre panier !');
     }
 
     /**

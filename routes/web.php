@@ -58,7 +58,6 @@ Route::get('/catalogue', 'Catalogue@afficheCatalogue')->name('catalogue');
 Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fin']);
 
-
 Route::get('/cart', function () {
     return view('cart');
 });
@@ -66,7 +65,6 @@ Route::get('/cart', function () {
 /*
 Route d'Adrien pour tester les pages implémentés
 */
-
 
 Route::get('/carte_vin', function () {
     return view('carte_vin');
@@ -76,7 +74,10 @@ Route::get('/ajax', function () {
     return view('filtres_ajax_test');
 });
 
-Route::get('/produit/{id}', ['uses' =>'ProductController@index']);
+Route::get('/produit/{id}', [
+    'uses' =>'ProductController@index',
+    'comms' => 'CommentController@index'
+]);
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
@@ -105,3 +106,6 @@ Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
+
+// commentaires
+Route::post('/produit', 'CommentController@store')->name('comment.store');

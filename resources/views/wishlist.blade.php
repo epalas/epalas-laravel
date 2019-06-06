@@ -18,8 +18,7 @@ Gazzar - Wishlist
         <hr class="titre-point">  
       </div>
     </div> 
-    @if (Cart::count() > 0)
-      <p>{{Cart::count()}} éléments dans votre wishlist</p>
+    @if (Cart::instance('wishlist')->count() > 0)
       
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
@@ -27,19 +26,17 @@ Gazzar - Wishlist
             </div>
             <div>
                     <!-- PRODUCT -->
-                    @foreach(Cart::content() as $item)
+                    @foreach(Cart::instance('wishlist')->content() as $item)
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
-                                <a href="">
+                                <a href="{{ route('produit', ['id' => $item->id ])}}">
                                     <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">
-                            <h4 class="product-name"><strong>{{$item->name}}</strong></h4>
+                            <h4 class="product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
                             <h4 class="text-black">
                                 <small>{{$datas[$item->id-1]['description']}}</small> 
-                                <p>{{$item->qty}} x {{$item->price}}.-</p>
-                                <p>Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-5 text-md-right row">
@@ -59,15 +56,6 @@ Gazzar - Wishlist
                     @endforeach
 
                     <!-- END PRODUCT -->
-                    <div class="row justify-content-between">   
-                         <div class="pl-3">
-                             <a href="" class="btn btn-outline-primary pull-right">
-                                    Mettre à jour la wishlist</a>
-                        </div>
-                        <div>
-                                <a href="" class="btn btn-success pull-right">Commander</a>
-                        </div>
-                    </div>
                     @else 
                         <p>Pas d'éléments dans la wishlist.</p>
                     @endif

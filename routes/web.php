@@ -128,6 +128,12 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 
 Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 
+Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
+
+Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
+
+Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
+
 
 
 
@@ -143,10 +149,6 @@ Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
-
-Route::get('/wishlist', function () {
-    return view('wishlist');
-})->name('wishlist');
 
 Route::get('/recap_commande', function () {
     return view('recap_commande');

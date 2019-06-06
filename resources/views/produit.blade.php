@@ -46,7 +46,13 @@ Gazzar | {{ $x['nom'] }}
             <input type="hidden" name="nom" value="{{ $x['nom'] }}">
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
             <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-6 col-lg-4 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
-            <button type="button" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
+          </form>
+          <form action="{{route('wishlist.store')}}" method="POST">
+          {{csrf_field()}}
+            <input type="hidden" name="id" value="{{ $x['id'] }}">
+            <input type="hidden" name="nom" value="{{ $x['nom'] }}">
+            <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
+            <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
           </form>
         </div>
         <p class="mt-4 text-primary">

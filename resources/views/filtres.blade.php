@@ -83,10 +83,14 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
-                <?php /* recherche en BD sur les pays disponibles */?>
-                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
+                <?php /* recherche en BD sur les pays disponibles
+                    @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                    @endforeach 
+                */?>
+                    <a class="dropdown-item" href="#" value="France">France</a>
                     <a class="dropdown-item" href="#" value="Italie">Italie</a>
-                    <a class="dropdown-item" href="#" value="Espagne">Espagne</a>
+                    <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
                 </div>
             </div>
         </div>
@@ -98,7 +102,11 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
-                    <?php /* recherche en BD sur les régions disponibles */ ?>
+                    <?php /* recherche en BD sur les régions disponibles 
+                        @foreach($pays as $land)
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        @endforeach 
+                    */ ?>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -114,8 +122,8 @@ Gazzar - Catalogue
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="#">Prix croissant</a>
-                    <a class="dropdown-item" href="#">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
                 </div>
             </div>
         </div>
@@ -133,7 +141,7 @@ Gazzar - Catalogue
     <div class="row">
         @foreach($results as $result)
         {{-- Template pour chaque card --}}
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3 carte_vin" class="{{$result["prod"]["pays"]}}">
+        <div class="carte_vins col-12 col-sm-6 col-md-4 col-lg-3 mt-3" data-pays="{{$result["prod"]["pays"]}}" data-region="{{$result["prod"]["region"]}}">
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
@@ -218,31 +226,28 @@ Gazzar - Catalogue
 </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript'>
     $(document).ready(function(){
         
         // liste déroulante pays
         $("#paysListe a").click( function() {
         var pays = $(this).text();
-            $('div.carte_vin').each(function() {
-                $(this).hide;
-                $('div.' + pays).show;
+            $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-pays='" + pays + "']").show();
             });
-           
         });
 
+        //liste déroulante region
         $("#regionListe a").click( function() {
         var region = $(this).text();
-        
-        });
-       
-        $("#prixListe a").click( function() {
-        var prix = $(this).text();
-        
+        $('.carte_vins').each(function() {
+                $(this).hide();
+                $('#contenant > div').find("[data-region='" + region + "']").show();
+            });
         });
 
     });
-     </script>
+    </script>
 @endsection

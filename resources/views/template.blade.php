@@ -146,21 +146,27 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @if (Request::is('cart'))
-                    <li class="nav-item active" id="cart">
+                      <li class="nav-item active" id="cart">
                     @else
-                    <li class="nav-item" id="cart">
+                      <li class="nav-item" id="cart">
 
                     @endif 
                     @if(Cart::instance('default')->count() > 0)
 
-                         <a id="notifCart"  data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
+                      <a id="notifCart"  data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @else
-                    <a data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
+                      <a data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @endif
                     </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
-                    </li>
+                    @if(Cart::instance('wishlist')->count() > 0)
+                      <li class="nav-item">
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
+                      </li>
+                    @else
+                      <li class="nav-item">
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
+                      </li>
+                    @endif
                 </ul>
         </div>
     </div>

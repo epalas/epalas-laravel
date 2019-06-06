@@ -17,7 +17,7 @@ Gazzar - Wishlist
       <div class="col-12 col-sm">
         <hr class="titre-point">  
       </div>
-    </div> 
+    </div>
     @if (Cart::count() > 0)
       <p>{{Cart::count()}} éléments dans votre wishlist</p>
       

@@ -17,7 +17,6 @@ Gazzar - Catalogue
 
         @if (Request::is('catalogue/rouges'))
 
-
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
@@ -80,7 +79,7 @@ Gazzar - Catalogue
     <div class="col-12">
         <div class="btn-group mt-2" role="group">
             <button type="button" class="btn btn-primary" disabled>Pays</button>
-            <div class="btn-group" role="group">
+            <div class="btn-group" role="group" id="grpPays">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les pays
                 </button>
@@ -92,17 +91,17 @@ Gazzar - Catalogue
                         <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
                     @endforeach 
                 */?>
+                    <a class="dropdown-item" href="catalogue">Tous les pays</a>
                     <a class="dropdown-item" href="#" value="France">France</a>
                     <a class="dropdown-item" href="#" value="Italie">Italie</a>
                     <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
-
                 </div>
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Régions</button>
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les Régions
                 </button>
 
@@ -242,6 +241,7 @@ Gazzar - Catalogue
             $('.carte_vins').each(function() {
                 $(this).hide();
                 $('#contenant > div').find("[data-pays='" + pays + "']").show();
+                $('#grpPays button').text(pays);
             });
         });
 

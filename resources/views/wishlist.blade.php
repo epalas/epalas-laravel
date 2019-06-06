@@ -11,17 +11,14 @@ Gazzar - Wishlist
       <div class="col-0">
         <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
-      <div class="col-10 col-sm-5 col-md-3 col-lg-3">
+      <div class="col-12 col-sm-5 col-md-3 col-lg-3">
         <h2>Wishlist<i class="ml-3 fas fa-heart" aria-hidden="true"></i></h2>
       </div>
       <div class="col-12 col-sm">
         <hr class="titre-point">  
       </div>
-
     </div> 
-    @if (Cart::instance('wishlist')->count() > 0)
-
-      
+    @if (Cart::instance('wishlist')->count() > 0)      
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
             
@@ -56,11 +53,10 @@ Gazzar - Wishlist
                     </div>
                     <hr>
                     @endforeach
-
                     <!-- END PRODUCT -->
                     @else 
                         <p>Pas d'éléments dans la wishlist.</p>
                     @endif
                 </div>
 </div>
-@endsection 
+@endsection

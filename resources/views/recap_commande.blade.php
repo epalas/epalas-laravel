@@ -13,7 +13,7 @@ Gazzar - Recap Commande
 	        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
 	      </div>   
 	      <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-	        <h2>Moyens de payements</h2>
+	        <h2>Moyens de paiement</h2>
 	      </div>
 	      <div class="col-12 col-sm">
 	        <hr class="titre-point">  
@@ -34,11 +34,6 @@ Gazzar - Recap Commande
     		 <label for="subscribeNews">Facture</label>
   		</div>
     </div>
-		
-		
-	
-
-
     <div>
  	    <div class="row mb-5">
 	      <div class="col-0">
@@ -95,29 +90,28 @@ Gazzar - Recap Commande
 	        <hr class="titre-point">  
 	      </div>
 	    </div>
-	 	@for ($i = 0; $i < 5; $i++)
+	 	@foreach(Cart::content() as $item)
 	    <div class="row">
 	      <div class="col-sm-4 text-center">	
-	    	<h4>Titre du vin</h4>
-	    	<h4>Region</h4>
-	    	<p>Autres informations diverses</p>
+	    	<h4>{{$item->name}}</h4>
+	    	<h4>{{$datas[$item->id-1]['prod']['region']}} - {{$datas[$item->id-1]['prod']['pays']}}</h4>
+	    	<p>{{$datas[$item->id-1]['titre']}}</p>
 	      </div>
 
 	      <div class="col-sm-4 text-center">	
-	    	<p>14 articles</p>
+	    	<p>{{$item->qty}} articles</p>
 	      </div>
 
 	      <div class="col-sm-4 text-center">	
-	    	<p>sous total</p>
+	    	<p>{{$item->qty * $item->price}} .-</p>
 	      </div>	
 	    </div>
 	    <hr>
-	    @endfor
-
+	    @endforeach
 	    <div class="row">
 	    	<div class="col-sm-12 text-right">	
-	    	<h6>TOTAL sans tax</h6>
-	    	<h4>TOTAL CHF</h4>
+	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>
+	    	<h4>TOTAL CHF : {{Cart::total()}}</h4>
 	      </div>
 	    </div>
     </div>

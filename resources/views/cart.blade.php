@@ -38,13 +38,12 @@ Gazzar - Panier
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-8">
                             <h4 class="mt-md-5 product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
                             <h4>
-                                <small>{{$datas[$item->id-1]['description']}}</small> 
+                                <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                                 <p>{{$item->qty}} x {{$item->price}}.-</p>
                                 <p class="text-right">Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>
                         </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">
-                            
+                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">                        
                                 <form class="col-12 text-center text-sm-right col-sm-2 col-md-2" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
@@ -52,8 +51,6 @@ Gazzar - Panier
                                         <i class=" fa-2x fa fa-trash" aria-hidden="true"></i>
                                     </button>          
                                 </form>
-
-                           
                         </div>
                     </div>
                     <hr>
@@ -72,7 +69,7 @@ Gazzar - Panier
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
                                 </div>
                                 <div class="text-right mr-sm-5 mt-sm-3">
-                                 <a href="{{ route('recap_commande') }}" class="btn btn-success">Commander</a>
+                                 <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
                         </div>
                     </div>

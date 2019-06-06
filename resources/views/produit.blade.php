@@ -110,8 +110,8 @@ Gazzar | {{ $x['nom'] }}
           {{ $x['description'] }}
         </p>
         <hr>
-        <p><span class="bold">Degrès d'alcool :</span> {{ $x['alcool'] }} %</p>
-        <p><span class="bold">Cépages :</span> {{ $x['cepa'][0]['label'] }}</p>
+        <p><span class="bold">Degré d'alcool :</span> {{ $x['alcool'] }} %</p>
+        <p><span class="bold">Cépage(s) :</span> {{ $x['cepa'][0]['label'] }}</p>
         <p><span class="bold">Apogée :</span> {{ $x['apogee'] }}</p>
         <p><span class="bold">Température de conservation :</span> {{ $x['tempCons'] }}°C</p>
         <p><span class="bold">Température de service :</span> {{ $x['tempServ'] }}°C</p>

@@ -160,11 +160,11 @@
                     </li>
                     @if(Cart::instance('wishlist')->count() > 0)
                       <li class="nav-item">
-                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
                       </li>
                     @else
                       <li class="nav-item">
-                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
                       </li>
                     @endif
                 </ul>

@@ -49,6 +49,23 @@ class Catalogue extends Controller
                 return view('filtres')->with('results', $filtered_results);
                 break;
 
+            case "promotions":
+                $filtered_results = Vin::findPromotions();
+                return view('filtres')->with('results', $filtered_results);
+                break;
+
+            case "nouveautes":
+                $filtered_results = Vin::findNouveautes();
+                return view('filtres')->with('results', $filtered_results);
+                break;
+
+            case "fins":
+                $filtered_results = Vin::findFins();
+                return view('filtres')->with('results', $filtered_results);
+                break;
+
+
+
         }
 
 

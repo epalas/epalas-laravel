@@ -25,7 +25,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 1,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -43,7 +44,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -61,7 +63,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 1,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -79,7 +82,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -97,7 +101,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -115,7 +120,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -133,7 +139,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -151,7 +158,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 1,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -169,7 +177,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -187,7 +196,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 1
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -205,7 +215,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -223,7 +234,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -241,7 +253,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -259,7 +272,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -277,7 +291,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -295,7 +310,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -313,7 +329,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 1
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -331,7 +348,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -349,7 +367,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -367,7 +386,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -385,7 +405,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 1,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -403,7 +424,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -421,7 +443,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 1
+            'estPromo' => 1,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -439,7 +462,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 0
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
@@ -457,7 +481,8 @@ class VinTableSeeder extends Seeder {
             'finDeSerie' => 0,
             'estBio' => 0,
             'estPrimeur' => 0,
-            'estPromo' => 0
+            'estPromo' => 0,
+            'estNouveau' => 1
         ]);
     }
 }

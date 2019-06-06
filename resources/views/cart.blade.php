@@ -72,7 +72,7 @@ Gazzar - Panier
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
                                 </div>
                                 <div class="text-right mr-sm-5 mt-sm-3">
-                                 <a href="{{ route('recap_commande') }}" class="btn btn-success">Commander</a>
+                                 <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
                         </div>
                     </div>

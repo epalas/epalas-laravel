@@ -1,4 +1,4 @@
-$("#filter .btn-light").on('click', event => {
+/* $("#filter .btn-light").on('click', event => {
 
     if ($(event.currentTarget).hasClass("active")) {
     $(event.currentTarget).removeClass("active");
@@ -63,6 +63,7 @@ switch(alt) {
     }
 }
 });
+*/
 
 $(document).ready(function(){
     $('.card').hover(function(){
@@ -70,4 +71,5 @@ $(document).ready(function(){
     }); 
 
 });
+
 

@@ -75,8 +75,6 @@ Route::get('/catalogue', ['as' => 'cata','uses' => 'Catalogue@afficheCatalogue',
 Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
 
-Route::get('/cart', function () {
-
     Route::get('/cart',['as' => 'cart', function (){
         return view('cart');
     }]);

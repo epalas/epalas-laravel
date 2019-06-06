@@ -134,6 +134,8 @@ Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
 
 Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
 
+Route::get('/recap', 'RecapCommController@index')->name('recap.index');
+
 //Route::get('/customer', function () {
 //    return view('customer-account');
 // })->middleware('auth')->name('customer');

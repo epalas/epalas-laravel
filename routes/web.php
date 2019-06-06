@@ -134,6 +134,8 @@ Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
 
 Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
 
+Route::get('/recap', 'RecapCommController@index')->name('recap.index');
+
 
 
 
@@ -149,7 +151,3 @@ Route::get('deconnexion', [ 'uses'=> '\App\Http\Controllers\Auth\LoginController
 Route::get('empty', function(){ //PROVISOIRE
     Cart::destroy();
 });
-
-Route::get('/recap_commande', function () {
-    return view('recap_commande');
-})->name('recap_commande');

@@ -9,7 +9,7 @@ Gazzar - Customer Account
   <div class="row">
     <div class="col-sm-12">
     <div class="col-6 col-sm-4 col-md-2  ml-5 mt-5">
-      <img src="/public/img/john-doe.jpg" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
+      <img src="img/john-doe.jpg" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
     </div>
     <div id="align-user"><h1>Bonjour {{ $x['prenom'] }} {{ $x['nom'] }} </h1></div>
    </div>
@@ -17,7 +17,7 @@ Gazzar - Customer Account
   {{-- DONNES PERSO--}}
   <div class="row rounded bg-white pt-3 mt-5">
     <div class="col-0">
-        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
     <div class="col col-sm-3">
         <h2>Données personelles</h2>
@@ -55,7 +55,7 @@ Gazzar - Customer Account
   {{-- COMMANDES--}}
   <div class="row rounded bg-white pt-3 mt-5">
         <div class="col-0">
-            <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+            <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
         </div>   
         <div class="col-12 col-sm-3">
             <h2>Mes commandes</h2>

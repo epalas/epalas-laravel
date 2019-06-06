@@ -9,12 +9,12 @@ Gazzar - Carton Découverte
   <h1 class="mb-5">Carton Découverte</h1>  
     <div class="row">
       <div class="col-8 col-md-6">
-         <img src="/public/img/carton.png" alt="Carton découverte" class="img-fluid">
+         <img src="img/carton.png" alt="Carton découverte" class="img-fluid">
       </div>
       <div class="col-12 col-sm-6 mb-5">
         <div class="row mb-5">
           <div class="col-0">
-            <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+            <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
           </div>   
           <div class="col col-sm-8">
             <h2>Osez testez de nouvelles saveurs</h2>
@@ -32,7 +32,7 @@ Gazzar - Carton Découverte
       <div class="col-12 col-sm-6">
         <div class="row">
           <div class="col-0">
-            <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+            <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
           </div>   
           <div class="col col-sm-3">
             <h2>Contenu</h2>

@@ -9,10 +9,10 @@ Gazzar - Nos valeurs
   <h1 class="mb-5">Nos Valeurs</h1>  
     <div class="row">
       <div class="col-0">
-        <img src="/public/img/point.svg" alt="Point du logo" width="25rem" id="point">
+        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
       </div>   
       <div class="col col-sm-4 col-md-3 col-lg-2">
-        <h2>Gazzard S.A.</h2>
+        <h2>Gazzar S.A.</h2>
       </div>
       <div class="col-12 col-sm">
         <hr class="titre-point">  
@@ -20,7 +20,7 @@ Gazzar - Nos valeurs
     </div>     
     <div class="row mt-2">
       <div class="col-12 col-sm-7">
-        <img src="/public/img/elie-gazzar.jpg" alt="Photo de Elie Gazzard et un amis" class="img-fluid">
+        <img src="img/elie-gazzar.jpg" alt="Photo de Elie Gazzard et un ami" class="img-fluid">
       </div>
       <div class="col-12 col-sm-5">
         <p>

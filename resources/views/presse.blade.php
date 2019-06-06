@@ -4,7 +4,7 @@
   @for ($i = 0; $i < 5; $i++)
   <div class="row mt-5">
     <div class="col-sm-3">
-      <img src="/public/img/journal-exemple.jpg" alt="photo d'exemple d'article de journal" class="img-fluid">
+      <img src="img/journal-exemple.jpg" alt="photo d'exemple d'article de journal" class="img-fluid">
     </div>
     <div class="col-sm-9">
       <h3 class="titres-articles">Vins de bourgognes: un art qui se transmet {{ $i }}</h3>

@@ -8,15 +8,15 @@
 
     <title>@yield('titre')</title>
 
-    <link href="/public/css/style.css" rel="stylesheet">
-    <link href="/public/css/app.css" rel="stylesheet">
-    <link href="/vendor/components/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fonts/font-awesome/css/fontawesome-all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-between">
 
-        <a href="{{route('home')}}"><img class="ml-3 mt-3" src="/public/img/gazzar-logo.svg" alt="Logo Gazzar" id="logo-top"></a>
+        <a href="{{route('home')}}"><img class="ml-3 mt-3" src="{{ asset('img/gazzar-logo.svg') }}" alt="Logo Gazzar" id="logo-top"></a>
 
 
             <div class="col-lg-6 mt-3">
@@ -195,14 +195,14 @@
            
           {{-- logo --}}
           <div class="col-2 text-right">
-            <a href="{{route('home')}}"><img id="logo-bottom" class="col-lg-2 mt-3" src="/public/img/logo_gazzar_white.svg" alt="Logo Gazzar en blanc"></a>
+            <a href="{{route('home')}}"><img id="logo-bottom" class="col-lg-2 mt-3" src="{{ asset('img/logo_gazzar_white.svg') }}" alt="Logo Gazzar en blanc"></a>
           </div>
         </div>
     </div>
 </footer>
-  <script src="/vendor/components/jquery/jquery.slim.min.js"></script>
-  <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>   
-  <script src="/public/js/index.js"></script>
+  <script src="{{ asset('js/jquery/jquery.slim.min.js') }}"></script>
+  <script src="{{ asset('css/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>   
+  <script src="{{ asset('js/index.js') }}"></script>
 </body>
 </html>
 

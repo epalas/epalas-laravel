@@ -75,7 +75,7 @@
                     <a class="nav-link" href="{{route('home')}}">Accueil</a>
 
                 </li>
-                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin') | Request::is('recommandations'))
+                @if (Request::is('carton-decouverte') | Request::is('catalogue') | Request::is('catalogue/rouges') | Request::is('catalogue/blancs') | Request::is('catalogue/roses') | Request::is('catalogue/mousseux') | Request::is('catalogue/bios') | Request::is('catalogue/primeurs') | Request::is('catalogue/promotions') | Request::is('catalogue/nouveautes') | Request::is('catalogue/fins') | Request::is('recommandations'))
                 <li class="nav-item dropdown active">
                 @else
                  <li class="nav-item dropdown">

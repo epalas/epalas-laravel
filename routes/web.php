@@ -158,3 +158,11 @@ Route::get('empty', function(){ //PROVISOIRE
 
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
+
+//email
+
+Route::get('/mail', 'confirmEmailController@sendEmail')->name('email');
+
+    Route::get('/confirm', function(){
+        return view('confirmEmail');
+    });

@@ -16,11 +16,19 @@ class HomeController extends Controller
     public function index()
     {
 
-        $datas=Vin::inRandomOrder()->take(4)->get();
+        $datas['new']=Vin::inRandomOrder()->take(4)->get();
+        $datas['recom']=Vin::inRandomOrder()->take(4)->get();
 
         //->orderBy('vins.nom','asc');
 
-        $datas->load( 'stock','condi',
+        $datas['new']->load( 'stock','condi',
+        'type','prod',
+        'cepa','cont',
+        'met','util',
+        'cotas','photos',
+        'notes','prixprods');
+
+        $datas['recom']->load( 'stock','condi',
         'type','prod',
         'cepa','cont',
         'met','util',

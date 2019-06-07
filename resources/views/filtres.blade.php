@@ -122,7 +122,7 @@ Gazzar - Catalogue
             <button type="button" class="btn btn-primary" disabled>Régions</button>
             <div class="btn-group" role="group" id="grpRegions">
                 <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Toutes les Régions
+                    Toutes les régions
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
@@ -220,7 +220,7 @@ Gazzar - Catalogue
                     Tous les cépages
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="cepageListe">
                     <a class="dropdown-item" href="#">Merlot</a>
                     <a class="dropdown-item" href="#">Cabernet-Sauvignon</a>
                     <a class="dropdown-item" href="#">Syrah</a>
@@ -234,7 +234,7 @@ Gazzar - Catalogue
                     Toutes les années
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="anneeListe">
                     <a class="dropdown-item" href="#">2014</a>
                     <a class="dropdown-item" href="#">2015</a>
                     <a class="dropdown-item" href="#">2016</a>
@@ -249,7 +249,7 @@ Gazzar - Catalogue
                     Tous les mets
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="metsList">
                     <a class="dropdown-item" href="#">Volaille</a>
                     <a class="dropdown-item" href="#">Fromage</a>
                     <a class="dropdown-item" href="#">Viande Rouge</a>
@@ -264,11 +264,11 @@ Gazzar - Catalogue
                     Toutes les contenances
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
-                    <a class="dropdown-item" href="#">0,75</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4,5</a>
-                    <a class="dropdown-item" href="#">6</a>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="LitreList">
+                    <a class="dropdown-item" href="#">0,75 L</a>
+                    <a class="dropdown-item" href="#">3 L</a>
+                    <a class="dropdown-item" href="#">4,5 L</a>
+                    <a class="dropdown-item" href="#">6 L</a>
                 </div>
             </div>
         </div> 
@@ -279,7 +279,7 @@ Gazzar - Catalogue
                     Toutes les notes
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="ratingList">
                     <a class="dropdown-item" href="#"><i class="fas fa-star"></i></a>
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-star"></i>

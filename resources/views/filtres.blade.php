@@ -91,7 +91,27 @@ Gazzar - Catalogue
                         <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
                     @endforeach 
                 */?>
-                    <a class="dropdown-item" href="catalogue">Tous les pays</a>
+                    @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
+                    <a class="dropdown-item" href="{{route("catalogue")}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'rouges'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/blancs') || Request::is('catalogue/blancs/asc') || Request::is('catalogue/blancs/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'blancs'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/roses') || Request::is('catalogue/roses/asc') || Request::is('catalogue/roses/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'roses'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/mousseux') || Request::is('catalogue/mousseux/asc') || Request::is('catalogue/mousseux/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'mousseux'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/bios') || Request::is('catalogue/bios/asc') || Request::is('catalogue/bios/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'bios'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/primeurs') || Request::is('catalogue/primeurs/asc') || Request::is('catalogue/primeurs/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'primeurs'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/promotions') || Request::is('catalogue/promotions/asc') || Request::is('catalogue/promotions/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'promotions'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/nouveautes') || Request::is('catalogue/nouveautes/asc') || Request::is('catalogue/nouveautes/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'nouveautes'])}}">Tous les pays</a>
+                    @elseif (Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'fins'])}}">Tous les pays</a>
+                    @endif
                     <a class="dropdown-item" href="#" value="France">France</a>
                     <a class="dropdown-item" href="#" value="Italie">Italie</a>
                     <a class="dropdown-item" href="#" value="Suisse">Suisse</a>
@@ -111,10 +131,36 @@ Gazzar - Catalogue
                         <a class="dropdown-item" href="#" value="{{$land["prod"]["region"]}}">{{$land["region"]["pays"]}}</a>
                         @endforeach 
                     */ ?>
-                    <a class="dropdown-item" href="catalogue">Toutes les régions</a>
-                    <a class="dropdown-item" href="#">Bourgogne</a>
-                    <a class="dropdown-item" href="#">Saxe</a>
-                    <a class="dropdown-item" href="#">Loire</a>
+                        @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
+                            <a class="dropdown-item" href="{{route("catalogue")}}">Tous les pays</a>
+                        @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'rouges'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/blancs') || Request::is('catalogue/blancs/asc') || Request::is('catalogue/blancs/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'blancs'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/roses') || Request::is('catalogue/roses/asc') || Request::is('catalogue/roses/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'roses'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/mousseux') || Request::is('catalogue/mousseux/asc') || Request::is('catalogue/mousseux/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'mousseux'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/bios') || Request::is('catalogue/bios/asc') || Request::is('catalogue/bios/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'bios'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/primeurs') || Request::is('catalogue/primeurs/asc') || Request::is('catalogue/primeurs/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'primeurs'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/promotions') || Request::is('catalogue/promotions/asc') || Request::is('catalogue/promotions/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'promotions'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/nouveautes') || Request::is('catalogue/nouveautes/asc') || Request::is('catalogue/nouveautes/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'nouveautes'])}}">Toutes les régions</a>
+                        @elseif (Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ["filter" => 'fins'])}}">Toutes les régions</a>
+                        @endif
+                            <a class="dropdown-item" href="#">Abruzzes</a>
+                            <a class="dropdown-item" href="#">Alsace</a>
+                            <a class="dropdown-item" href="#">Beaujolais</a>
+                            <a class="dropdown-item" href="#">Bordeaux</a>
+                            <a class="dropdown-item" href="#">Bourgogne</a>
+                            <a class="dropdown-item" href="#">Piémont</a>
+                            <a class="dropdown-item" href="#">Toscane</a>
+                            <a class="dropdown-item" href="#">Valais</a>
+                            <a class="dropdown-item" href="#">Vaud</a>
                 </div>
             </div>
         </div>

@@ -67,139 +67,85 @@ class Vin extends Model
 
         $results=Vin::all();
 
-        /*
-        $results->with(['stock' => function($q){
-                    $q->with(['condi' => function($q){
-                        $q->with(['type' => function($q) {
-                            $q->with(['prod' => function($q){
-                                $q->with(['cepa' => function($q){
-                                    $q->with(['cont' => function($q){
-                                        $q->with(['met' => function($q){
-                                            $q->with(['util' => function($q){
-                                                $q->with(['cotas' => function($q){
-                                                    $q->with(['photos' => function($q){
-                                                        $q->with(['notes' => function($q){
-                                                            $q->with(['comms' => function($q){
-                                                                $q->with(['prixprods' => function($q){
-                                                                    $q->orderBy('prix', 'asc');
-                                                                }])->orderBy('prix','asc');
-                                                            }])->orderBy('prix','asc');
-                                                        }])->orderBy('prix','asc');
-                                                    }])->orderBy('prix','asc');
-                                                }])->orderBy('prix','asc');
-                                            }])->orderBy('prix','asc');
-                                        }])->orderBy('prix','asc');
-                                    }])->orderBy('prix','asc');
-                                }])->orderBy('prix','asc');
-                            }])->orderBy('prix','asc');
-                        }])->orderBy('prix','asc');
-                    }])->orderBy('prix','asc');
-                }]);
-        */
+        if($order=='asc') {
+            $results = $results->sortBy(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
+        if($order=='desc'){
+            $results = $results->sortByDesc(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
 
-        /*$results->load(['prixprods',function($q){
-            $q->orderBy('prix','asc');
-        }]);
-        */
-
-        $results->load( 'stock','condi',
-                                'type','prod',
-                                'cepa','cont',
-                                'met','util',
-                                'cotas','photos',
-                                'notes', 'comms',
-                                'prixprods');
+        $results->load('stock','condi',
+            'type','prod',
+            'cepa','cont',
+            'met','util',
+            'cotas','photos',
+            'notes', 'comms',
+            'prixprods');
 
         return $results;
     }
 
-    public static function findRedWine(){
+    public static function findWineByTypeAndOrder($type, $order){
 
-        $results = Vin::whereHas('type', function($query) {
-            $query->where('label', 'like', 'Rouge');
-        })
-            //->with('type')
-            ->get();
+        $results = Vin::whereHas('type', function($query) use ($type){
+            $query->where('label', 'like', $type);
+        })->get();
 
+        if($order == 'asc') {
+            $results = $results->sortBy(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
+
+        if($order == 'desc') {
+            $results = $results->sortByDesc(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
         return $results;
     }
 
-    public static function findWhiteWine(){
-
-        $results = Vin::whereHas('type', function($query) {
-            $query->where('label', 'like', 'Blanc');
-        })
-            //->with('type')
-            ->get();
-
-        return $results;
-    }
-
-    public static function findRoseWine(){
-
-        $results = Vin::whereHas('type', function($query) {
-            $query->where('label', 'like', 'Rosé');
-        })
-            //->with('type')
-            ->get();
-
-        return $results;
-    }
-
-    public static function findMousseuxWine(){
-
-        $results = Vin::whereHas('type', function($query) {
-            $query->where('label', 'like', 'Mousseux');
-        })
-            //->with('type')
-            ->get();
-
-        return $results;
-    }
-
-    public static function findBio(){
+    public static function findWineByBooleanAndOrder($type,$order){
 
         $results = Vin::select('*')
-            ->where("estBio","=",1)
+            ->where($type,"=",1)
             ->get();
 
+        if($order == 'asc') {
+            $results = $results->sortBy(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
+
+        if($order == 'desc') {
+            $results = $results->sortByDesc(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
         return $results;
     }
 
-    public static function findPrimeur(){
-
-        $results = Vin::select('*')
-            ->where("estPrimeur","=",1)
-            ->get();
-
-        return $results;
-    }
-
-    public static function findPromotions(){
-
-        $results = Vin::select('*')
-            ->where("estPromo","=",1)
-            ->get();
-
-        return $results;
-    }
-
-    public static function findNouveautes(){
-
-        $results = Vin::select('*')
-            ->where("estNouveau","=",1)
-            ->get();
-
-        return $results;
-    }
-
-    public static function findFins(){
+    public static function findFins($order){
 
         $results = Vin::whereHas('stock', function($query) {
             $query->where('nbrUnite', '<=', 5);
-        })
-            //->with('type')
-            ->get();
+        })->get();
+
+        if($order == 'asc') {
+            $results = $results->sortBy(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
+
+        if($order == 'desc') {
+            $results = $results->sortByDesc(function ($vin) {
+                return $vin->prixprods[0]->prix;
+            });
+        }
 
         return $results;
     }

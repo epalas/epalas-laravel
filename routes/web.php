@@ -68,10 +68,16 @@ Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
 }]);
 
-Route::get('/catalogue', ['as' => 'cata','uses' => 'Catalogue@afficheCatalogue', ]);
+Route::get('/catalogue', ['as' => 'catalogue','uses' => 'Catalogue@afficheCatalogue', ]);
 
-Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
+Route::get('/catalogue/{order}', ['as' => 'catalogueOrder','uses' => 'Catalogue@afficheCatalogue'])
+    ->where(['order' => 'asc|desc']);
+
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogueFilter'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
+
+Route::get('/catalogue/{filtre}/{order}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogueFilterOrder'])
+    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins'], ['order' => 'asc|desc']);
 
 Route::get('/cart',['as' => 'cart', function (){
     return view('cart');

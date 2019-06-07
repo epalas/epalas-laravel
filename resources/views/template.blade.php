@@ -86,16 +86,16 @@
 
 
                         {{-- TODO Gestion de la navigation si dans le cata --}}
-                            <a class="dropdown-item" href="{{route('cata')}}">Tous les vins</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'rouges'])}}">Rouges</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'blancs'])}}">Blancs</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'roses'])}}">Rosés</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'mousseux'])}}">Mousseux</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'bios'])}}">Bio</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'primeurs'])}}">Primeurs</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'promotions'])}}">Promotions</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
-                            <a class="dropdown-item" href="{{route('catalogue', ['filtre' => 'fins'])}}">Fins de série</a>
+                            <a class="dropdown-item" href="{{route('catalogue')}}">Tous les vins</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}">Rouges</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}">Blancs</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'roses'])}}">Rosés</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}">Mousseux</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'bios'])}}">Bio</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}">Primeurs</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}">Promotions</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'fins'])}}">Fins de série</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('recommandations')}}">Recommendations</a>
                             <a class="dropdown-item" href="{{route('carton-decouverte')}}">Carton découverte</a>

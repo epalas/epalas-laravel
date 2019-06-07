@@ -8,67 +8,92 @@ use Illuminate\Support\Collection;
 
 class Catalogue extends Controller
 {
-    public function afficheCatalogue(){
+    public function afficheCatalogue($order = 'asc'){
 
-        $results = Vin::getData('asc');
+        $results = Vin::getData($order);
+
         return view('filtres')->with('results', $results);
 
     }
 
-    public function filtreCatalogue($filtre)
+    public function filtreCatalogue($filtre,$order = "asc")
     {
 
         switch ($filtre) {
             case "rouges":
-                $filtered_results = Vin::findRedWine();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByTypeAndOrder("Rouge", "asc");
+                }else{
+                    $filtered_results = Vin::findWineByTypeAndOrder("Rouge", "desc");
+                }
                 break;
 
             case "blancs":
-                $filtered_results = Vin::findWhiteWine();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByTypeAndOrder("Blanc","asc");
+                }else{
+                    $filtered_results = Vin::findWineByTypeAndOrder("Blanc", "desc");
+                }
                 break;
 
             case "roses":
-                $filtered_results = Vin::findRoseWine();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByTypeAndOrder("Rosé","asc");
+                }else{
+                    $filtered_results = Vin::findWineByTypeAndOrder("Rosé","desc");
+                }
                 break;
 
             case "mousseux":
-                $filtered_results = Vin::findMousseuxWine();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByTypeAndOrder("Mousseux","asc");
+                }else{
+                    $filtered_results = Vin::findWineByTypeAndOrder("Mousseux","desc");
+                }
                 break;
 
             case "bios":
-                $filtered_results = Vin::findBio();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estBio", "asc");
+                }else{
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estBio", "desc");
+                }
                 break;
 
             case "primeurs":
-                $filtered_results = Vin::findPrimeur();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estPrimeur","asc");
+                }else{
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estPrimeur", "desc");
+                }
                 break;
 
             case "promotions":
-                $filtered_results = Vin::findPromotions();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estPromo","asc");
+                }else{
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estPromo", "desc");
+                }
                 break;
 
             case "nouveautes":
-                $filtered_results = Vin::findNouveautes();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estNouveau","asc");
+                }else{
+                    $filtered_results = Vin::findWineByBooleanAndOrder("estNouveau", "desc");
+                }
                 break;
 
             case "fins":
-                $filtered_results = Vin::findFins();
-                return view('filtres')->with('results', $filtered_results);
+                if($order == "asc") {
+                    $filtered_results = Vin::findFins("asc");
+                }else{
+                    $filtered_results = Vin::findFins("desc");
+                }
                 break;
-
-
-
         }
 
-
+        return view('filtres')->with('results', $filtered_results);
 
     }
 }

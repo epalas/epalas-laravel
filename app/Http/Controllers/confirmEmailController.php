@@ -22,10 +22,8 @@ class confirmEmailController extends Controller
     $datas['cart'] = Cart::content();
     $datas['total'] = Cart::total();
 
-    return view('viewEmail')->with('datas', $datas);
-
     Mail::send('viewEmail', $datas, function($message) {
-        $message->to('epalas.agency@gmail.com')->subject('Confirmation de commande')->from('info@gazzar.ch','Gazzar Vins');    
+        $message->to(Auth::user()->email)->subject('Confirmation de commande')->from('info@gazzar.ch','Gazzar Vins');    
     });
 
     Cart::destroy();

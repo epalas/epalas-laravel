@@ -34,7 +34,9 @@ Route::get('/valeurs',['as' => 'valeurs', function () {
     return view('valeurs');
 }]);
 
-Route::get('/home',  ['as' => 'home','uses' => 'HomeController@index' ]);
+Route::get('/home', ['as' => 'home', function () {
+    return view('accueil2');
+}]);
 
 Route::get('/', function () {
     return view('accueil2');
@@ -68,16 +70,10 @@ Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
 }]);
 
-Route::get('/catalogue', ['as' => 'catalogue','uses' => 'Catalogue@afficheCatalogue', ]);
+Route::get('/catalogue', ['as' => 'cata','uses' => 'Catalogue@afficheCatalogue', ]);
 
-Route::get('/catalogue/{order}', ['as' => 'catalogueOrder','uses' => 'Catalogue@afficheCatalogue'])
-    ->where(['order' => 'asc|desc']);
-
-Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogueFilter'])
+Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogue'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins']);
-
-Route::get('/catalogue/{filtre}/{order}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogueFilterOrder'])
-    ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins'], ['order' => 'asc|desc']);
 
 Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
@@ -164,7 +160,3 @@ Route::get('empty', function(){ //PROVISOIRE
 
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
-
-Route::get('/recap_commande', function () {
-    return view('recap_commande');
-})->name('recap_commande');

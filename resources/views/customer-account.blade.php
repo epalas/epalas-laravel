@@ -7,12 +7,10 @@ Gazzar - Customer Account
 @section('contenu')
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
     <div class="col-6 col-sm-4 col-md-2 ml-5 mt-5">
       <img src="img/john-doe.jpg" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
     </div>
-    <div id="align-user"><h1>Bonjour {{ $x['prenom'] }} {{ $x['nom'] }} </h1></div>
-   </div>
+    <div class="col-12 col-sm-8" id="align-user"><h1>Bonjour {{ $x['prenom'] }} {{ $x['nom'] }} </h1></div>
   </div>
   {{-- DONNES PERSO--}}
   <div class="row rounded bg-white pt-3 mt-5">

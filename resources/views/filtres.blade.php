@@ -394,13 +394,21 @@ Gazzar - Catalogue
                               <i class="fas fa-star"></i>
                             @endfor
                           @endswitch
-                
-                            <form action="{{route('wishlist.store')}}" method="POST">
+                          
+                            @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                <form action="{{route('wishlist.store')}}" method="POST">
+                            @else
+                                <form action="{{route('wishlist.store')}}" method="POST">
+                            @endif
                             {{csrf_field()}}
                                 <input type="hidden" name="id" value="{{$result['id']}}">
                                 <input type="hidden" name="nom" value="{{$result['nom']}}">
                                 <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="fas fa-heart"></i></button>
+                                @else
                                 <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                                @endif
                             </form>
                         </p>
                     </div>

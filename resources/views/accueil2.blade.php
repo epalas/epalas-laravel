@@ -19,13 +19,13 @@ Gazzar - Accueil
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider2.jpg" alt="Second slide">
         <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{ route('recommandations') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Découvrer notre séléction de recommandations !</a>
+          <a href="{{ route('recommandations') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Découvrez notre séléction de recommandations !</a>
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider3.jpg" alt="Third slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{ route('carton-decouverte') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Tester notre carton découverte !</a>
+          <a href="{{ route('carton-decouverte') }}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Testez notre carton découverte !</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -74,20 +74,20 @@ Gazzar - Accueil
             <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
-                        <a href="produit/{{$result["id"]}}">
+                        <a href="produit/{{ $result['id'] }}">
+
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3">
-                                        <img class="wine-card" src="{{$result["photos"][0]['url']}}" alt="{{$result["photos"][0]['alt']}}">
+                                        <img class="wine-card" src="{{ asset($result["photos"][0]['url']) }}" alt="{{ $result["photos"][0]['alt'] }}">
                                     </div>
                                     <div class="col-9">
                                         <h4 class="card-title">{{$result["nom"]}}</h4>
                                         <p class="card-text">
                                         <p>{{$result["prod"]["region"]}} - {{$result["prod"]["pays"]}}</p>
                                         <p>{{$result["prod"]["nom"]}}</p>
-                                        <p>{{$result["cont"][0]["volume"]}}L / <span class="annee">{{$result["annee"]}}</span></p>
-                                        <span class="prix"><b>{{$result["prixprods"][0]["prix"]}}</b></span> <span>CHF</span>
-                                        </p>
+                                        <p>{{$result["cont"][0]["volume"]}} L / <span class="annee">{{ $result["annee"] }}</span></p>
+                                        <span class="prix"><b>{{ $result["prixprods"][0]["prix"] }}</b></span> <span>CHF</span>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +251,13 @@ Gazzar - Accueil
                             @endfor
                           @endswitch
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                        <form action="{{route('wishlist.store')}}" method="POST">
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                            </form>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ Gazzar | {{ $x['nom'] }}
     <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
     <div class="row">
       <div class="col-3">
-        <img src="{{ $x['photos'][0]['url'] }}" alt="test vin" class="img-fluid">
+        <img src="{{ asset($x['photos'][0]['url']) }}" alt="test vin" class="img-fluid">
       </div>
       <div class="col-9">
         <div id="titreProduit">
@@ -110,8 +110,8 @@ Gazzar | {{ $x['nom'] }}
           {{ $x['description'] }}
         </p>
         <hr>
-        <p><span class="bold">Degrès d'alcool :</span> {{ $x['alcool'] }} %</p>
-        <p><span class="bold">Cépages :</span> {{ $x['cepa'][0]['label'] }}</p>
+        <p><span class="bold">Degré d'alcool :</span> {{ $x['alcool'] }} %</p>
+        <p><span class="bold">Cépage(s) :</span> {{ $x['cepa'][0]['label'] }}</p>
         <p><span class="bold">Apogée :</span> {{ $x['apogee'] }}</p>
         <p><span class="bold">Température de conservation :</span> {{ $x['tempCons'] }}°C</p>
         <p><span class="bold">Température de service :</span> {{ $x['tempServ'] }}°C</p>
@@ -148,20 +148,21 @@ Gazzar | {{ $x['nom'] }}
             </div>
             <button type="submit" name="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
           </form>
-          <hr>
           @endif
-          @foreach($comments as $comment)
           <hr>
+          @foreach($comments as $comment)
+          <i class="fas fa-quote-left"></i>
           <div class="row">
-            <div class="mt-2 col-4 col-sm-3">
+            <div class="mt-2 col-auto col-md-5 col-lg-3">
               <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
               <p><time>{{ date('d.m.Y', strtotime($comment->date)) }}</time></p>
             </div>
-            <div class="mt-2 col-8 col-sm-9">
+            <div class="mt-2 col-8 col-md-7 col-lg-9">
               <p class="bold short-line">{{ $comment->titreComm }}</p>
               <p>{{ $comment->contenu }}</p>
             </div>
           </div>
+          <hr>
           @endforeach
         </div>
       </div>

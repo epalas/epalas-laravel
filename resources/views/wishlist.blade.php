@@ -24,23 +24,24 @@ Gazzar - Wishlist
             
             </div>
             <div>
+            	<hr>
                     <!-- PRODUCT -->
                     @foreach(Cart::instance('wishlist')->content() as $item)
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
                                 <a href="{{ route('produit', ['id' => $item->id ])}}">
-                                    <img class="img-fluid" src="/public/img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                    <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
                         </div>
-                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-5">
+                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-8">
                             <h4 class="product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
                             <h4 class="text-black">
-                                <small>{{$datas[$item->id-1]['description']}}</small> 
+                                <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                             </h4>
                         </div>
-                        <div class="col-12 col-sm-12 text-sm-center col-md-5 text-md-right row">
+                        <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">
                             <div class="col-2 col-sm-2 col-md-2 text-right">
-                                <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button type="submit" class="btn btn-outline-danger btn-xs">
@@ -54,6 +55,10 @@ Gazzar - Wishlist
                     <hr>
                     @endforeach
                     <!-- END PRODUCT -->
+                  <div class="mt-4 ml-4">
+                 <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
+            
+            </div>
                     @else 
                         <p>Pas d'éléments dans la wishlist.</p>
                     @endif

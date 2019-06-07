@@ -1,5 +1,6 @@
 /*$("#filter .btn-light").on('click', event => {
 
+
     if ($(event.currentTarget).hasClass("active")) {
     $(event.currentTarget).removeClass("active");
 
@@ -13,10 +14,10 @@
     $("#promo img").attr('src','img/pictos/promo.svg');
     $("#new img").attr('src','img/pictos/nouveau.svg');
     $("#end img").attr('src','img/pictos/fin.svg');
-        
+
    } else {
     $("#filter .active").removeClass("active");
-    $(event.currentTarget).addClass("active"); 
+    $(event.currentTarget).addClass("active");
     let alt = $(".active img").attr('alt');
 
     // remise à zéro
@@ -64,10 +65,12 @@ switch(alt) {
 }
 });
 */
+
 $(document).ready(function(){
     $('.card').hover(function(){
         $(this).toggleClass('red-magic');
-    }); 
+    });
 
 });
+
 

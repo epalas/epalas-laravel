@@ -160,3 +160,7 @@ Route::get('empty', function(){ //PROVISOIRE
 
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
+
+Route::get('/password', ['as' => 'password', function () {
+    return view('auth/passwords/reset');
+}])->middleware('auth');

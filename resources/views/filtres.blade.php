@@ -16,7 +16,6 @@ Gazzar - Catalogue
         <div class="btn-group-justified col-12" role="group" id="filter">
 
         @if (Request::is('catalogue/rouges'))
-
         <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
@@ -69,7 +68,7 @@ Gazzar - Catalogue
         <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
         @endif 
         @if (Request::is('catalogue/fins'))
-        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white active" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @else
         <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @endif 
@@ -100,7 +99,7 @@ Gazzar - Catalogue
         </div>
         <div class="btn-group mt-2" role="group" >
             <button type="button" class="btn btn-primary" disabled>Régions</button>
-            <div class="btn-group" role="group">
+            <div class="btn-group" role="group" id="grpRegions">
                 <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les Régions
                 </button>
@@ -108,9 +107,10 @@ Gazzar - Catalogue
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
                     <?php /* recherche en BD sur les régions disponibles 
                         @foreach($pays as $land)
-                        <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
+                        <a class="dropdown-item" href="#" value="{{$land["prod"]["region"]}}">{{$land["region"]["pays"]}}</a>
                         @endforeach 
                     */ ?>
+                    <a class="dropdown-item" href="catalogue">Toutes les régions</a>
                     <a class="dropdown-item" href="#">Bourgogne</a>
                     <a class="dropdown-item" href="#">Saxe</a>
                     <a class="dropdown-item" href="#">Loire</a>
@@ -118,16 +118,15 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Prix croissant</button>
-            <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" disabled>Prix</button>
+            <div class="btn-group" role="group" id="grpPrix">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Prix croissant
+                    Croissant
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
-                    <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
-                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
+                    <a class="dropdown-item" href="catalogue/asc">Croissant</a>
+                    <a class="dropdown-item" href="catalogue/desc">Décroissant</a>
                 </div>
             </div>
         </div>
@@ -135,7 +134,106 @@ Gazzar - Catalogue
     </div>
     <div id="row">
     <div class="col-10 mt-3">
-        <a href="#">Recherche avancée ></a>
+        <a href="#search-plus-btn" data-toggle="collapse">Recherche avancée <i class="fas fa-sort-down"></i></a>
+        <div id="search-plus-btn" class="collapse">
+            <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Cépages</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tous les cépages
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">Merlot</a>
+                    <a class="dropdown-item" href="#">Cabernet-Sauvignon</a>
+                    <a class="dropdown-item" href="#">Syrah</a>
+                </div>
+            </div>
+        </div>  
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Années</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les années
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">2014</a>
+                    <a class="dropdown-item" href="#">2015</a>
+                    <a class="dropdown-item" href="#">2016</a>
+                    <a class="dropdown-item" href="#">2017</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Mets</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tous les mets
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">Volaille</a>
+                    <a class="dropdown-item" href="#">Fromage</a>
+                    <a class="dropdown-item" href="#">Viande Rouge</a>
+                    <a class="dropdown-item" href="#">Gibier à plume</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Contenances</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les contenances
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#">0,75</a>
+                    <a class="dropdown-item" href="#">3</a>
+                    <a class="dropdown-item" href="#">4,5</a>
+                    <a class="dropdown-item" href="#">6</a>
+                </div>
+            </div>
+        </div> 
+           <div class="btn-group mt-2" role="group" >
+            <button type="button" class="btn btn-primary" disabled>Notes</button>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Toutes les notes
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
+                    <a class="dropdown-item" href="#"><i class="fas fa-star"></i></a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                   <a class="dropdown-item" href="#">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+
     </div>
     </div>
     </div>
@@ -219,8 +317,15 @@ Gazzar - Catalogue
                               <i class="fas fa-star"></i>
                             @endfor
                           @endswitch
+                
+                            <form action="{{route('wishlist.store')}}" method="POST">
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                            </form>
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
                     </div>
                 </div>
             </div>
@@ -251,7 +356,13 @@ Gazzar - Catalogue
         $('.carte_vins').each(function() {
                 $(this).hide();
                 $('#contenant > div').find("[data-region='" + region + "']").show();
+                $('#grpRegions button').text(region);
             });
+        });
+
+        $("#prixListe a").click( function() {
+        var prix = $(this).text();
+                $('#grpPrix button').text(prix);
         });
 
     });

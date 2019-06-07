@@ -11,6 +11,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fonts/font-awesome/css/fontawesome-all.min.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 </head>
 <body>
     <div class="container">
@@ -75,7 +76,7 @@
                     <a class="nav-link" href="{{route('home')}}">Accueil</a>
 
                 </li>
-                @if (Request::is('carton-decouverte') | Request::is('tous') | Request::is('rouge') | Request::is('blanc') | Request::is('rose') | Request::is('mousseux') | Request::is('bio') | Request::is('primeur') | Request::is('nouveautes') | Request::is('promotions') | Request::is('fin') | Request::is('recommandations'))
+                @if (Request::is('carton-decouverte') | Request::is('catalogue') | Request::is('catalogue/rouges') | Request::is('catalogue/blancs') | Request::is('catalogue/roses') | Request::is('catalogue/mousseux') | Request::is('catalogue/bios') | Request::is('catalogue/primeurs') | Request::is('catalogue/promotions') | Request::is('catalogue/nouveautes') | Request::is('catalogue/fins') | Request::is('recommandations'))
                 <li class="nav-item dropdown active">
                 @else
                  <li class="nav-item dropdown">
@@ -145,21 +146,27 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @if (Request::is('cart'))
-                    <li class="nav-item active" id="cart">
+                      <li class="nav-item active" id="cart">
                     @else
-                    <li class="nav-item" id="cart">
+                      <li class="nav-item" id="cart">
 
                     @endif 
-                    @if(Cart::count() > 0)
+                    @if(Cart::instance('default')->count() > 0)
 
-                         <a id="notifCart"  data-count="{{Cart::content()->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
+                      <a id="notifCart"  data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @else
-                    <a data-count="{{Cart::count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
+                      <a data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @endif
                     </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
-                    </li>
+                    @if(Cart::instance('wishlist')->count() > 0)
+                      <li class="nav-item">
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
+                      </li>
+                    @else
+                      <li class="nav-item">
+                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
+                      </li>
+                    @endif
                 </ul>
         </div>
     </div>

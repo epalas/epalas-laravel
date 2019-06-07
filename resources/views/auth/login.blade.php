@@ -10,6 +10,14 @@ Gazzar - Connexion
 <div class="container">
   <div class="row">
     <div class="space bg-white col-12 col-sm-8 offset-sm-2 rounded text-center">
+     
+    @if ( substr(url()->previous(),-4) == 'cart' && Auth::check() === false)
+     <div class="bg-secondary text-white rounded col-auto pt-3 pb-1 text-center">
+        <p><i class="fas fa-exclamation-triangle"></i> Vous devez être connecté pour valider votre commande</p>
+    </div>
+    @endif
+    
+
       <p class="mt-2">
         <a href="register">Vous n'avez pas encore de compte ? ></a>
       </p>

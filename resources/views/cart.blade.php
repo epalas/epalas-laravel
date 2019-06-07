@@ -19,13 +19,15 @@ Gazzar - Panier
       </div>
     </div> 
     @if (Cart::count() > 0)
-      <p>{{Cart::count()}} éléments dans votre panier</p>
+      
       
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
-                 <hr>
+                 <p>{{Cart::count()}} éléments dans votre panier</p>
+                
             
             </div>
+             <hr>
             <div>
                     <!-- PRODUCT -->
                     @foreach(Cart::content() as $item)
@@ -48,7 +50,7 @@ Gazzar - Panier
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <button type="submit" class=" mt-md-5 btn btn-outline-danger btn-xs">
-                                        <i class=" fa-2x fa fa-trash" aria-hidden="true"></i>
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>          
                                 </form>
                         </div>
@@ -57,22 +59,32 @@ Gazzar - Panier
                     @endforeach
 
                     <!-- END PRODUCT -->
-                    <div class="row justify-content-between">   
-                         <div class="pl-3">
-                             <a href="" class="btn btn-outline-primary pull-right">
-                                    Mettre à jour le panier</a>
-                                    <p class="mt-sm-2">{{Cart::count()}} éléments dans votre panier</p>
-                        </div>
-                        <div>
+                    <div class="row justify-content-between text-center">   
+                         <div class="mt-2 ml-4">
+                            <p>{{Cart::count()}} éléments dans votre panier</p>
+                            <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
+                         </div>
+
+
+                         <div>
                                 <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">
                                     Total: <b>{{Cart::subtotal()}} CHF</b><br>
                                     Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
                                 </div>
+                                @if(Auth::check())
                                 <div class="text-right mr-sm-5 mt-sm-3">
                                  <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
-                        </div>
+                                @else
+                                <div class="text-right mr-sm-5 mt-sm-3">
+                                 <a href="{{ route('login') }}" class="btn btn-success">Commander</a>
+                                </div>
+                                @endif
+                         </div>
+                            
                     </div>
+
+            </div>
                     @else 
                         <p>Pas d'éléments dans le panier.</p>
                     @endif

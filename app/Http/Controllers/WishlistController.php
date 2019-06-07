@@ -93,6 +93,8 @@ class WishlistController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::instance('wishlist')->remove($id);
+
+        return back();
     }
 }

@@ -68,7 +68,7 @@ Gazzar - Accueil
 
 
     <div class="row">
-        @foreach($datas as $result)
+        @foreach($datas['recom'] as $result)
         {{-- Template pour chaque card --}}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
             <div class="card h-100">
@@ -174,10 +174,10 @@ Gazzar - Accueil
   </div>  
 
     <div class="row">
-        @foreach($datas as $result)
+        @foreach($datas['new'] as $result)
         {{-- Template pour chaque card --}}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
-            <div id="cool" class="card h-100">
+            <div class="card h-100">
                 <div class="card-body p-3">
                     <div class="row" id="carte">
                         <a href="produit/{{$result["id"]}}">

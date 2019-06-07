@@ -89,7 +89,7 @@ Gazzar - Recap Commande
 	    		 <label for="facture"><i class="fa-4x fas fa-envelope"></i></label>
 	    		</div>
 	    		<div class="mt-5 col-sm-12 text-right"> 
-	    		 <button class=" btn-lg btn-primary mt-2" type="submit">Passer au paiement ></button>
+	    		 <a class="btn btn-primary mt-2" href="{{route('email')}}">confirmer la commande ></a>
 	    		</div> 
     		 </form>
  
@@ -131,6 +131,7 @@ Gazzar - Recap Commande
 	    	<div class="col-sm-12 text-right">	
 	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>
 	    	<h4>TOTAL CHF : {{Cart::total()}}</h4>
+			
 	      </div>
 	    </div>
     </div>

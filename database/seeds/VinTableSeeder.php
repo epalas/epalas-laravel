@@ -11,10 +11,10 @@ class VinTableSeeder extends Seeder {
         $i = rand(1, 2);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 1,
+            'idProd' => 9,
             'idType' => 1,
             'idStock' => $i,
-            'nom' => 'Syrah du Valais "Grand Métral"',
+            'nom' => 'Syrah du Valais « Grand Métral »',
             'annee' =>'2014',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 13,
@@ -30,7 +30,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 2,
+            'idProd' => 1,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'Chablis du Village',
@@ -49,7 +49,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 3,
+            'idProd' => 2,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'Nuits-St-Croix « Vendanges Tardives »',
@@ -68,7 +68,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 4,
+            'idProd' => 3,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Nuits-St-Georges',
@@ -87,7 +87,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 5,
+            'idProd' => 4,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Corton-Bressandes « Grand Cru »',
@@ -106,7 +106,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 5,
+            'idProd' => 3,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Nuits-St-Georges',
@@ -125,7 +125,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 4,
+            'idProd' => 2,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'MEURSAULT « Clos de Tavaux » ',
@@ -163,7 +163,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 3,
+            'idProd' => 10,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Les Pruliers',
@@ -182,7 +182,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 1,
+            'idProd' => 10,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'CHABLIS « Les Vieilles Vignes »',
@@ -201,7 +201,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 5,
+            'idProd' => 10,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'La Comme',
@@ -220,7 +220,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 3,
+            'idProd' => 8,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Château les Cruzelles',
@@ -239,7 +239,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 3,
+            'idProd' => 8,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Château Grand Corbin-Despagne',
@@ -258,10 +258,10 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 4,
+            'idProd' => 7,
             'idType' => 1,
             'idStock' => $i,
-            'nom' => '',
+            'nom' => 'Vignore Lovato',
             'annee' =>'2015',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 13.5,
@@ -277,7 +277,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 5,
+            'idProd' => 4,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'Château les Justices',
@@ -296,7 +296,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 2,
+            'idProd' => 6,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'Château Boyd-Cantenac',
@@ -334,7 +334,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 2,
+            'idProd' => 9,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Château Duhart-Milon Rothschild',
@@ -354,7 +354,7 @@ class VinTableSeeder extends Seeder {
         DB::table('vins')->insert([
             'idCondi' => 1,  
             'idProd' => 1,
-            'idType' => 2,
+            'idType' => 9,
             'idStock' => $i,
             'nom' => 'Château Respide-Médeville',
             'annee' =>'2015',
@@ -372,10 +372,10 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 2,
+            'idProd' => 10,
             'idType' => 1,
             'idStock' => $i,
-            'nom' => 'Ribera Del Duero DO "Reserva"',
+            'nom' => 'Ribera Del Duero DO « Reserva »',
             'annee' =>'2014',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 14,
@@ -391,7 +391,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 1,
+            'idProd' => 10,
             'idType' => 2,
             'idStock' => $i,
             'nom' => 'Château Smith Haut-Lafitte',
@@ -429,7 +429,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 3,
+            'idProd' => 6,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Barolo « Castelletto »',
@@ -448,7 +448,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 4,
+            'idProd' => 5,
             'idType' => 1,
             'idStock' => $i,
             'nom' => 'Langhe Nebbiolo DOC',
@@ -467,10 +467,10 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,  
-            'idProd' => 5,
+            'idProd' => 10,
             'idType' => 1,
             'idStock' => $i,
-            'nom' => 'Mount Hermon rouge',
+            'nom' => 'Castelo da Silva',
             'annee' =>'2014',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 13,
@@ -487,7 +487,7 @@ class VinTableSeeder extends Seeder {
         // roseys
         DB::table('vins')->insert([
             'idCondi' => 1,
-            'idProd' => 4,
+            'idProd' => 9,
             'idType' => 3,
             'idStock' => $i,
             'nom' => 'Oeil de Perdrix',
@@ -506,7 +506,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,
-            'idProd' => 2,
+            'idProd' => 9,
             'idType' => 3,
             'idStock' => $i,
             'nom' => 'Dôle Blanche',
@@ -525,7 +525,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,
-            'idProd' => 3,
+            'idProd' => 1,
             'idType' => 3,
             'idStock' => $i,
             'nom' => 'Rosé de Gamay VdP Romand',
@@ -563,10 +563,10 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,
-            'idProd' => 5,
+            'idProd' => 2,
             'idType' => 3,
             'idStock' => $i,
-            'nom' => 'Rosé de Gamay VdP Schwyz',
+            'nom' => 'Rosé de Gamay',
             'annee' =>'2017',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 13,
@@ -602,7 +602,7 @@ class VinTableSeeder extends Seeder {
         ]);
         DB::table('vins')->insert([
             'idCondi' => 1,
-            'idProd' => 2,
+            'idProd' => 1,
             'idType' => 4,
             'idStock' => $i,
             'nom' => 'Crémant Alsace',
@@ -700,7 +700,7 @@ class VinTableSeeder extends Seeder {
             'idProd' => 3,
             'idType' => 4,
             'idStock' => $i,
-            'nom' => 'Crémant Yverdon-les-Bains',
+            'nom' => 'Crémant Maurice',
             'annee' =>'2015',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus ipsum, hendrerit non purus at, egestas malesuada nibh. Donec tempus eros non interdum posuere. Mauris gravida mauris a turpis consectetur, a vulputate enim molestie.',
             'alcool' => 13,

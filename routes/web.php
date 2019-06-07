@@ -164,3 +164,7 @@ Route::get('empty', function(){ //PROVISOIRE
 
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
+
+Route::get('/recap_commande', function () {
+    return view('recap_commande');
+})->name('recap_commande');

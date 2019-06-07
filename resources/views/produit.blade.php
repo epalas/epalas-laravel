@@ -8,16 +8,16 @@ Gazzar | {{ $x['nom'] }}
 <div class="container mt-2">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent">
-      <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('home') }}">Accueil</a></li>
-      <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('cata') }}">Vins</a></li>
+      <li class="breadcrumb-item"><a class="text-secondary" href="{{route('home')}}">Accueil</a></li>
+      <li class="breadcrumb-item"><a class="text-secondary" href="{{route('catalogue')}}">Vins</a></li>
       @if($x['type']['label'] === 'Mousseux')
-        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogue', ['filtre' => 'mousseux']) }}">{{ $x['type']['label'] }}</a></li>
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'mousseux']) }}">{{ $x['type']['label'] }}</a></li>
       @elseif($x['type']['label'] === 'Rouge')
-        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogue', ['filtre' => 'rouges']) }}">{{ $x['type']['label'] }}s</a></li>
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'rouges']) }}">{{ $x['type']['label'] }}s</a></li>
       @elseif($x['type']['label'] === 'Rosé')
-        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogue', ['filtre' => 'roses']) }}">{{ $x['type']['label'] }}s</a></li>
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'roses']) }}">{{ $x['type']['label'] }}s</a></li>
       @elseif($x['type']['label'] === 'Blanc')
-        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogue', ['filtre' => 'blancs']) }}">{{ $x['type']['label'] }}s</a></li>
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'blancs']) }}">{{ $x['type']['label'] }}s</a></li>
       @endif
       <li class="breadcrumb-item active text-primary bold" aria-current="page">{{ $x['nom'] }}</li>
     </ol>

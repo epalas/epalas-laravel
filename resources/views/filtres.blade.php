@@ -15,63 +15,62 @@ Gazzar - Catalogue
     <div class="row mt-5 mb-4 mx-auto">
         <div class="btn-group-justified col-12" role="group" id="filter">
 
-        @if (Request::is('catalogue/rouges'))
-
-        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
+        @if (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
+                <a href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @else
-        <a href="{{route('catalogue', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white" id="red" ><img src="{{asset('img/pictos/vin.svg')}}" alt="Rouge"/><br/>Rouges</a>
 
         @endif 
 
-        @if (Request::is('catalogue/blancs'))
-        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</a>
+        @if(Request::is('catalogue/blancs') || Request::is('catalogue/blancs/asc') || Request::is('catalogue/blancs/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white active" id="white"><img src="{{asset('img/pictos/picto_color/white.svg')}}" alt="Blanc" /><br/>Blancs</a>
 
         @else
-        <a href="{{route('catalogue', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}" class="btn btn-light bg-white" id="white"><img src="{{asset('img/pictos/vin.svg')}}" alt="Blanc" /><br/>Blancs</a>
         @endif 
 
-        @if (Request::is('catalogue/roses'))
-        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</a>
+        @if (Request::is('catalogue/roses') || Request::is('catalogue/roses/asc') || Request::is('catalogue/roses/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'roses'])}}" class="btn btn-light bg-white active" id="rosy"><img src="{{asset('img/pictos/picto_color/rosy.svg')}}" alt="Rosé"/><br/>Rosés</a>
 
         @else
-        <a href="{{route('catalogue', ['filtre' => 'roses'])}}" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'roses'])}}" class="btn btn-light bg-white" id="rosy"><img src="{{asset('img/pictos/vin.svg')}}" alt="Rosé"/><br/>Rosés</a>
         @endif 
 
-        @if (Request::is('catalogue/mousseux'))
-        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
+        @if (Request::is('catalogue/mousseux') || Request::is('catalogue/mousseux/asc') || Request::is('catalogue/mousseux/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white active" id="mouss"><img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
 
         @else
-        <a href="{{route('catalogue', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
-        @endif 
+        <a href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}" class="btn btn-light bg-white" id="mouss"><img src="{{asset('img/pictos/mousseux.svg')}}" alt="Mousseux"/><br/>Mousseux</a>
+        @endif
 
-        @if (Request::is('catalogue/bios'))
-        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</a>
-
-        @else
-        <a href="{{route('catalogue', ['filtre' => 'bios'])}}" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</a>
-        @endif 
-
-        @if (Request::is('catalogue/primeurs'))
-        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</a>
+        @if(Request::is('catalogue/bios') || Request::is('catalogue/bios/asc') || Request::is('catalogue/bios/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'bios'])}}" class="btn btn-light bg-white active" id="bio"><img src="{{asset('img/pictos/picto_color/bio-green.svg')}}" alt="Bio"/><br/>Bio</a>
 
         @else
-        <a href="{{route('catalogue', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'bios'])}}" class="btn btn-light bg-white" id="bio"><img src="{{asset('img/pictos/bio.svg')}}" alt="Bio"/><br/>Bio</a>
         @endif 
-        @if (Request::is('catalogue/promotions'))
-        <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promotions</a>
+
+        @if(Request::is('catalogue/primeurs') || Request::is('catalogue/primeurs/asc') || Request::is('catalogue/primeurs/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white active" id="prim"><img src="{{asset('img/pictos/picto_color/primeur-color.svg')}}" alt="Primeur"/><br/>Primeurs</a>
+
         @else
-        <a href="{{route('catalogue', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promotions</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}" class="btn btn-light bg-white" id="prim"><img src="{{asset('img/pictos/primeur.svg')}}" alt="Primeur"/><br/>Primeurs</a>
         @endif 
-        @if (Request::is('catalogue/nouveautes'))
-        <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
+        @if(Request::is('catalogue/promotions') || Request::is('catalogue/promotions/asc') || Request::is('catalogue/promotions/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white active" id="promo"><img src="{{asset('img/pictos/picto_color/promo-red.svg')}}" alt="Promo"/><br/>Promotions</a>
         @else
-        <a href="{{route('catalogue', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}" class="btn btn-light bg-white" id="promo"><img src="{{asset('img/pictos/promo.svg')}}" alt="Promo"/><br/>Promotions</a>
         @endif 
-        @if (Request::is('catalogue/fins'))
-        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        @if(Request::is('catalogue/nouveautes') || Request::is('catalogue/nouveautes/asc') || Request::is('catalogue/nouveautes/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white active" id="new"><img src="{{asset('img/pictos/picto_color/new-red.svg')}}" alt="Nouveau"/><br/>Nouveautés</a>
         @else
-        <a href="{{route('catalogue', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés
+        @endif
+        @if(Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
+        <a href="{{route('catalogueFilter', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        @else
+        <a href="{{route('catalogueFilter', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @endif 
         </div>   
     </div>
@@ -126,8 +125,38 @@ Gazzar - Catalogue
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                     <?php /* recharge les articles en ASC ou DESC*/ ?>
-                    <a class="dropdown-item" href="catalogue/asc">Prix croissant</a>
-                    <a class="dropdown-item" href="catalogue/desc">Prix décroissant</a>
+                        @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'asc'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'desc'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'rouges'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'rouges'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/blancs') || Request::is('catalogue/blancs/asc') || Request::is('catalogue/blancs/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'blancs'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'blancs'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/roses') || Request::is('catalogue/roses/asc') || Request::is('catalogue/roses/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'roses'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'roses'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/mousseux') || Request::is('catalogue/mousseux/asc') || Request::is('catalogue/mousseux/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'mousseux'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'mousseux'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/bios') || Request::is('catalogue/bios/asc') || Request::is('catalogue/bios/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'bios'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'bios'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/primeurs') || Request::is('catalogue/primeurs/asc') || Request::is('catalogue/primeurs/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'primeurs'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'primeurs'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/promotions') || Request::is('catalogue/promotions/asc') || Request::is('catalogue/promotions/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'promotions'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'promotions'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/nouveautes') || Request::is('catalogue/nouveautes/asc') || Request::is('catalogue/nouveautes/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'nouveautes'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'nouveautes'])}}">Prix décroissant</a>
+                        @elseif (Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'fins'])}}">Prix croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'fins'])}}">Prix décroissant</a>
+                        @endif
+
                 </div>
             </div>
         </div>
@@ -231,7 +260,7 @@ Gazzar - Catalogue
 </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript'>
     $(document).ready(function(){
         

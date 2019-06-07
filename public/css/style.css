@@ -193,9 +193,9 @@ text-decoration: none;
 
 
 .red-magic > div  {
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+  background: rgb(248, 248, 248);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 
@@ -288,5 +288,9 @@ text-decoration: none;
         left:2px;
     }
 
-
-
+    .card:hover {
+        transform: translateY(-3px);
+    }
+    .card {
+        transition: 0.3s ease;
+    }

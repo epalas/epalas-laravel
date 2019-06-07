@@ -108,11 +108,13 @@ Gazzar - Recap Commande
 	      </div>	
 	    </div>
 	    <hr>
+		{{dd(Cart::content())}}
 	    @endforeach
 	    <div class="row">
 	    	<div class="col-sm-12 text-right">	
 	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>
 	    	<h4>TOTAL CHF : {{Cart::total()}}</h4>
+			
 	      </div>
 	    </div>
     </div>

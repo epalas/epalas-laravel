@@ -40,7 +40,7 @@ Gazzar - Customer Account
         <p>{{ $x['adresse'] }}<br>
            {{ $x['cp'] }} {{ $x['ville'] }}<br>
            {{ $x['pays'] }}</p> 
-        <p><a href="#">Changer mon mot de passe ></a></p>
+        <p><a href="{{route('password')}}">Changer mon mot de passe ></a></p>
       </div>
       <div class="col-12 col-sm-5 mt-5">
         <p class="bold">Adresse de livraison</p>

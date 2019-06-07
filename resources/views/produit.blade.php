@@ -5,12 +5,30 @@ Gazzar | {{ $x['nom'] }}
 @endsection
 
 @section('contenu')
+<div class="container mt-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent">
+      <li class="breadcrumb-item"><a class="text-secondary" href="{{route('home')}}">Accueil</a></li>
+      <li class="breadcrumb-item"><a class="text-secondary" href="{{route('catalogue')}}">Vins</a></li>
+      @if($x['type']['label'] === 'Mousseux')
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'mousseux']) }}">{{ $x['type']['label'] }}</a></li>
+      @elseif($x['type']['label'] === 'Rouge')
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'rouges']) }}">{{ $x['type']['label'] }}s</a></li>
+      @elseif($x['type']['label'] === 'Rosé')
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'roses']) }}">{{ $x['type']['label'] }}s</a></li>
+      @elseif($x['type']['label'] === 'Blanc')
+        <li class="breadcrumb-item"><a class="text-secondary" href="{{ route('catalogueFilter', ['filtre' => 'blancs']) }}">{{ $x['type']['label'] }}s</a></li>
+      @endif
+      <li class="breadcrumb-item active text-primary bold" aria-current="page">{{ $x['nom'] }}</li>
+    </ol>
+  </nav>
+</div>
 <div class="">
-  <div class="container mt-5">
-    <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
+  <div class="container mt-2">
+    {{--<a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>--}}
     <div class="row">
       <div class="col-3">
-        <img src="{{ asset($x['photos'][0]['url']) }}" alt="test vin" class="img-fluid">
+        <img src="{{ asset($x['photos'][0]['url']) }}" alt="{{ $x['photos'][0]['alt'] }}" class="img-fluid">
       </div>
       <div class="col-9">
         <div id="titreProduit">
@@ -24,8 +42,8 @@ Gazzar | {{ $x['nom'] }}
           </h2>
         </div>
         <p>
-          {{ $x['prod']['pays'] }}<br>
-          {{--Haut-Médoc<br>--}}
+          {{ $x['prod']['region'] }} - {{ $x['prod']['pays'] }}<br>
+          {{ $x['prod']['nom'] }}<br>
           {{ $x['cont'][0]['volume'] }} L<br>
         </p>
         <h2>{{ $x['prixprods'][0]['prix'] }} CHF</h2>
@@ -34,12 +52,12 @@ Gazzar | {{ $x['nom'] }}
           <form action="{{route('cart.store')}}" method="POST" class="col-12">
             {{csrf_field()}}
             <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
-              <option selected>6</option>
-              <option value="1">1</option>
+              <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option value="6">6</option>
             </select>
           
             <input type="hidden" name="id" value="{{ $x['id'] }}">
@@ -153,7 +171,8 @@ Gazzar | {{ $x['nom'] }}
           @foreach($comments as $comment)
           <i class="fas fa-quote-left"></i>
           <div class="row">
-            <div class="mt-2 col-auto col-md-5 col-lg-3">
+            <div class="mt-2 col-4 col-sm-3">
+              <img src="{{ asset('img/john-doe.jpg') }}" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
               <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
               <p><time>{{ date('d.m.Y', strtotime($comment->date)) }}</time></p>
             </div>

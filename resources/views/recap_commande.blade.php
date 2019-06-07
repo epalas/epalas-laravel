@@ -8,32 +8,7 @@ Gazzar - Recap Commande
 <div class="container pl-5 pb-3 pr-5  pt-5 bg-white rounded mt-5">
     <h1 class="mb-5">Shop</h1> 
 
-	<div class="row mb-5">
-	      <div class="col-0">
-	        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
-	      </div>   
-	      <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-	        <h2>Moyens de paiement</h2>
-	      </div>
-	      <div class="col-12 col-sm">
-	        <hr class="titre-point">  
-	      </div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			 <input type="checkbox" id="masterCard" name="subscribe" value="masterCard">
-    		 <label for="subscribeNews">Master Card</label>
-
-    		 <input type="checkbox" id="Visa" name="subscribe" value="masterCard">
-    		 <label for="subscribeNews">Visa</label>
-
-    		  <input type="checkbox" id="postCard" name="subscribe" value="masterCard">
-    		 <label for="subscribeNews">PostCard</label>
-
-    		  <input type="checkbox" id="facture" name="subscribe" value="masterCard">
-    		 <label for="subscribeNews">Facture</label>
-  		</div>
-    </div>
+	
     <div>
  	    <div class="row mb-5">
 	      <div class="col-0">
@@ -75,7 +50,50 @@ Gazzar - Recap Commande
         </div>   	
 
     	
-    </div> 
+    </div>
+
+	<div class="row mt-5">
+	      <div class="col-0">
+	        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
+	      </div>   
+	      <div class="col-10 col-sm-7 col-md-5 col-lg-3">
+	        <h2>Moyens de paiement</h2>
+	      </div>
+	      <div class="col-12 col-sm">
+	        <hr class="titre-point">  
+	      </div>
+	</div>
+			<form class="row mt-5 mb-5">
+
+				<div class="col-6 col-sm-3 text-center ">
+					<p class="bold">MasterCard</p> 
+				 <input type="radio" id="masterCard" name="paiement" value="mastercard">
+	    		 <label for="mastercard"><i class="fa-4x fab fa-cc-mastercard"></i></label>
+				</div> 
+
+				<div class="text-center col-6 col-sm-3"> 
+					<p class=" bold">Visa</p>   		 	
+	    		 <input type="radio" id="visa" name="paiement" value="visa">
+	    		 <label for="visa"><i class="fa-4x fab fa-cc-visa"></i></label>
+	    		</div>
+
+	    		<div class="col-sm-3 col-6 text-center ">
+	    			<p class="bold">PostCard</p> 
+	    		  <input type="radio" id="postcard" name="paiement" value="postcard">
+	    		  <label for="postcard"><i class="fa-4x fas fa-mail-bulk"></i></label>
+	    		</div>
+
+	    		<div class="col-sm-3 col-6 text-center">
+	    			<p class="bold">Facture</p> 
+	    		 <input type="radio" id="facture" name="paiement" value="facture">
+	    		 <label for="facture"><i class="fa-4x fas fa-envelope"></i></label>
+	    		</div>
+	    		<div class="mt-5 col-sm-12 text-right"> 
+	    		 <button class=" btn-lg btn-primary mt-2" type="submit">Passer au paiement ></button>
+	    		</div> 
+    		 </form>
+ 
+   
     
 
 
@@ -108,11 +126,13 @@ Gazzar - Recap Commande
 	      </div>	
 	    </div>
 	    <hr>
+		{{dd(Cart::content())}}
 	    @endforeach
 	    <div class="row">
 	    	<div class="col-sm-12 text-right">	
 	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>
 	    	<h4>TOTAL CHF : {{Cart::total()}}</h4>
+			
 	      </div>
 	    </div>
     </div>

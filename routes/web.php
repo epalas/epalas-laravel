@@ -67,7 +67,7 @@ Route::get('/blog', ['as' => 'blog', function () {
 Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
 }]);
-
+//Lucien tg//
 Route::get('/catalogue', ['as' => 'catalogue','uses' => 'Catalogue@afficheCatalogue', ]);
 
 Route::get('/catalogue/{order}', ['as' => 'catalogueOrder','uses' => 'Catalogue@afficheCatalogue'])

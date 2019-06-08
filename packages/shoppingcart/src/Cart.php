@@ -803,4 +803,16 @@ class Cart
 
         return number_format($value, $decimals, $decimalPoint, $thousandSeperator);
     }
+
+    public function filterHeart($var)
+    {
+        $content = Cart::instance('wishlist')->content();
+
+        foreach ($content as $value) {
+            if ($value->name === $var) {
+                return true;
+            }
+        }
+
+    }
 }

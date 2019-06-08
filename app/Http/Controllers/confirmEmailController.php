@@ -23,7 +23,7 @@ class confirmEmailController extends Controller
     $datas['total'] = Cart::total();
 
     Mail::send('viewEmail', $datas, function($message) {
-        $message->to(Auth::user()->email)->subject('Confirmation de commande')->from('info@gazzar.ch','Gazzar Vins');    
+        $message->to(Auth::user()->email)->subject('Confirmation de commande')->from('info@gazzar.ch','Gazzar Vins');
     });
 
     Cart::destroy();

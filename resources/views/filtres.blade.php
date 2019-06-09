@@ -69,7 +69,7 @@ Gazzar - Catalogue
         <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="btn btn-light bg-white" id="new"><img src="{{asset('img/pictos/nouveau.svg')}}" alt="Nouveau"/><br/>Nouveautés
         @endif
         @if(Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
-        <a href="{{route('catalogueFilter', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
+        <a href="{{route('catalogueFilter', ['filtre' => 'fins'])}}" class="btn btn-light bg-white active" id="fins"><img src="{{asset('img/pictos/picto_color/end-red.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @else
         <a href="{{route('catalogueFilter', ['filtre' => 'fins'])}}" class="btn btn-light bg-white" id="fins"><img src="{{asset('img/pictos/fin.svg')}}" alt="Fin de série"/><br/>Fins de série</a>
         @endif 
@@ -78,9 +78,9 @@ Gazzar - Catalogue
     <div id="row">
     <div class="col-12">
         <div class="btn-group mt-2" role="group">
-            <button type="button" class="btn btn-primary" disabled>Pays</button>
-            <div class="btn-group" role="group" id="grpPays">
-                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary">Pays</span>
+            <div class="btn-group mr-1" role="group" id="grpPays">
+                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les pays
                 </button>
 
@@ -119,9 +119,9 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Régions</button>
-            <div class="btn-group" role="group" id="grpRegions">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary">Régions</span>
+            <div class="btn-group mr-1" role="group" id="grpRegions">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les régions
                 </button>
 
@@ -165,9 +165,9 @@ Gazzar - Catalogue
             </div>
         </div>
         <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Prix</button>
-            <div class="btn-group" role="group" id="grpPrix">
-                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary">Prix</span>
+            <div class="btn-group mr-1" role="group" id="grpPrix">
+                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Croissant
                 </button>
 
@@ -214,9 +214,9 @@ Gazzar - Catalogue
         <a href="#search-plus-btn" data-toggle="collapse">Recherche avancée <i class="fas fa-sort-down"></i></a>
         <div id="search-plus-btn" class="collapse">
             <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Cépages</button>
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary">Cépages</span>
+                <div class="btn-group mr-1" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les cépages
                 </button>
 
@@ -228,9 +228,9 @@ Gazzar - Catalogue
             </div>
         </div>  
            <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Années</button>
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary">Années</span>
+                <div class="btn-group mr-1" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les années
                 </button>
 
@@ -243,9 +243,9 @@ Gazzar - Catalogue
             </div>
         </div> 
            <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Mets</button>
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary" disabled>Mets</span>
+                <div class="btn-group mr-1" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Tous les mets
                 </button>
 
@@ -258,9 +258,9 @@ Gazzar - Catalogue
             </div>
         </div> 
            <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Contenances</button>
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary" disabled>Contenances</span>
+                <div class="btn-group mr-1" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les contenances
                 </button>
 
@@ -273,9 +273,9 @@ Gazzar - Catalogue
             </div>
         </div> 
            <div class="btn-group mt-2" role="group" >
-            <button type="button" class="btn btn-primary" disabled>Notes</button>
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="btn btn-primary" disabled>Notes</span>
+                <div class="btn-group mr-1" role="group">
+                <button id="btnGroupDrop1"  type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Toutes les notes
                 </button>
 

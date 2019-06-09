@@ -48,7 +48,7 @@ class WishlistController extends Controller
         Cart::instance('wishlist')->add($request->id, $request->nom, 1, $request->prix)
         ->associate('App/Vin');
 
-        return redirect()->route('wishlist.index');
+        return redirect()->route('catalogue');
     }
 
 

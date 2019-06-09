@@ -70,6 +70,12 @@ $(document).ready(function(){
     $('.card').hover(function(){
         $(this).toggleClass('red-magic');
     });
+});
+
+$("#filter .active").on('click', event => {
+
+event.preventDefault();
+window.location.assign("/catalogue");  
 
 });
 

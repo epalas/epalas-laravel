@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#a51c2a">
 
     <title>@yield('titre')</title>
 
@@ -76,70 +77,152 @@
                     <a class="nav-link" href="{{route('home')}}">Accueil</a>
 
                 </li>
-                @if (Request::is('carton-decouverte') | Request::is('catalogue') | Request::is('catalogue/rouges') | Request::is('catalogue/blancs') | Request::is('catalogue/roses') | Request::is('catalogue/mousseux') | Request::is('catalogue/bios') | Request::is('catalogue/primeurs') | Request::is('catalogue/promotions') | Request::is('catalogue/nouveautes') | Request::is('catalogue/fins') | Request::is('recommandations'))
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
+                @if (Request::is('carton-decouverte') | Request::is('catalogue') | Request::is('catalogue/*') | Request::is('recommandations'))
+                <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                 @else
-                 <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                 @endif 
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos vins</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
                         {{-- TODO Gestion de la navigation si dans le cata --}}
-                            <a class="dropdown-item" href="{{route('catalogue')}}">Tous les vins</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}">Rouges</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}">Blancs</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'roses'])}}">Rosés</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}">Mousseux</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'bios'])}}">Bio</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}">Primeurs</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}">Promotions</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'fins'])}}">Fins de série</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('recommandations')}}">Recommendations</a>
-                            <a class="dropdown-item" href="{{route('carton-decouverte')}}">Carton découverte</a>
+                        @if (Request::is('catalogue') | Request::is('catalogue/asc') | Request::is('catalogue/dsc') )
+                        <a class="dropdown-item active" href="{{route('catalogue')}}">Tous les vins</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogue')}}">Tous les vins</a>
+                        @endif
+                        @if (Request::is('catalogue/rouges') | Request::is('catalogue/rouges/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}">Rouges</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}">Rouges</a>
+                        @endif
+                        @if (Request::is('catalogue/blancs') | Request::is('catalogue/blancs/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}">Blancs</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'blancs'])}}">Blancs</a>
+                        @endif
+                        @if (Request::is('catalogue/roses') | Request::is('catalogue/roses/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'roses'])}}">Rosés</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'roses'])}}">Rosés</a>
+                        @endif
+                        @if (Request::is('catalogue/mousseux') | Request::is('catalogue/mousseux/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}">Mousseux</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'mousseux'])}}">Mousseux</a>
+                        @endif
+                        @if (Request::is('catalogue/bios') | Request::is('catalogue/bios/*') )
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'bios'])}}">Bio</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'bios'])}}">Bio</a>
+                        @endif
+                        @if (Request::is('catalogue/primeurs') | Request::is('catalogue/primeurs/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}">Primeurs</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'primeurs'])}}">Primeurs</a>
+                        @endif
+                        @if (Request::is('catalogue/promotions') | Request::is('catalogue/promotions/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}">Promotions</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}">Promotions</a>
+                        @endif
+                        @if (Request::is('catalogue/nouveautes') | Request::is('catalogue/nouveautes/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}">Nouveautés</a>
+                        @endif
+                        @if (Request::is('catalogue/fins') | Request::is('catalogue/fins/*'))
+                        <a class="dropdown-item active" href="{{route('catalogueFilter', ['filtre' => 'fins'])}}">Fins de série</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('catalogueFilter', ['filtre' => 'fins'])}}">Fins de série</a>
+                        @endif
+
+                        <div class="dropdown-divider"></div>
+                        @if (Request::is('recommandations'))
+                        <a class="dropdown-item active" href="{{route('recommandations')}}">Recommendations</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('recommandations')}}">Recommendations</a>
+                        @endif
+                        @if (Request::is('carton-decouverte'))
+                        <a class="dropdown-item active" href="{{route('carton-decouverte')}}">Carton découverte</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('carton-decouverte')}}">Carton découverte</a>
+                        @endif
 
                     </div>
                 </li>
+                <li class="nav-item dropdown">
                 @if (Request::is('blog') | Request::is('galerie') | Request::is('presse') | Request::is('newsletter'))
-                <li class="nav-item dropdown active">
+                <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                 @else
-                 <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
                 @endif    
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actualités</a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
-                            <a class="dropdown-item" href="{{route('galerie')}}">Galerie</a>
-                            <a class="dropdown-item" href="{{route('presse')}}">Presse</a>
-                            <a class="dropdown-item" href="{{route('newsletter')}}">Newsletter</a>
+                        @if (Request::is('blog'))
+                        <a class="dropdown-item active" href="{{route('blog')}}">Blog</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('blog')}}">Blog</a>
+                        @endif
+                        @if (Request::is('galerie'))
+                        <a class="dropdown-item active" href="{{route('galerie')}}">Galerie</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('galerie')}}">Galerie</a>
+                        @endif
+                        @if (Request::is('presse'))
+                        <a class="dropdown-item active" href="{{route('presse')}}">Presse</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('presse')}}">Presse</a>
+                        @endif
+                        @if (Request::is('newsletter'))
+                        <a class="dropdown-item active" href="{{route('newsletter')}}">Newsletter</a>
+                        @else
+                        <a class="dropdown-item" href="{{route('newsletter')}}">Newsletter</a>
+                        @endif                        
 
                         </div>
                 </li>
+                <li class="nav-item dropdown">
                 @if (Request::is('valeurs') | Request::is('cgv'))
-                <li class="nav-item dropdown active">
+                <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
                 @else
-                 <li class="nav-item dropdown">
-                @endif   
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A propos</a>
+                @endif   
+
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                        @if (Request::is('valeurs'))
+                        <a class="dropdown-item active" href="{{route('valeurs')}}">Nos valeurs</a>
+                        @else
                         <a class="dropdown-item" href="{{route('valeurs')}}">Nos valeurs</a>
+                        @endif
+                        @if (Request::is('cgv'))
+                        <a class="dropdown-item active" href="{{route('cgv')}}">Conditions générales de ventes</a>
+                        @else
                         <a class="dropdown-item" href="{{route('cgv')}}">Conditions générales de ventes</a>
+                        @endif    
                         
                     </div>
                 </li>
+                <li class="nav-item dropdown">
                 @if (Request::is('contact') | Request::is('map'))
-                <li class="nav-item dropdown active">
+                <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
                 @else
-                 <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a> 
                 @endif 
-                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                        @if (Request::is('contact'))
+                        <a class="dropdown-item active" href="{{route('contact')}}">Formulaire de contact</a>
+                        @else
                         <a class="dropdown-item" href="{{route('contact')}}">Formulaire de contact</a>
+                        @endif
+                        @if (Request::is('map'))
+                        <a class="dropdown-item active" href="{{route('map')}}">Où nous trouver ?</a>
+                        @else
                         <a class="dropdown-item" href="{{route('map')}}">Où nous trouver ?</a>
+                        @endif   
 
                     </div>
                 </li>
@@ -149,24 +232,25 @@
                       <li class="nav-item active" id="cart">
                     @else
                       <li class="nav-item" id="cart">
-
                     @endif 
-                    @if(Cart::instance('default')->count() > 0)
 
+                    @if(Cart::instance('default')->count() > 0)
                       <a id="notifCart"  data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @else
                       <a data-count="{{Cart::instance('default')->count()}}" class="nav-link" href="{{route('cart.index')}}"><i  class="fas fa-shopping-cart"></i></a>
                     @endif
                     </li>
-                    @if(Cart::instance('wishlist')->count() > 0)
-                      <li class="nav-item">
-                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
-                      </li>
+                    @if (Request::is('wishlist'))
+                      <li class="nav-item active" id="wishlist">
                     @else
-                      <li class="nav-item">
-                           <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
-                      </li>
+                      <li class="nav-item" id="wishlist">
+                    @endif 
+                    @if(Cart::instance('wishlist')->count() > 0)
+                    <a class="nav-link" href="{{route('wishlist.index')}}"><i class="fas fa-heart"></i></a>
+                    @else
+                    <a class="nav-link" href="{{route('wishlist.index')}}"><i class="far fa-heart"></i></a>
                     @endif
+                    </li>
                 </ul>
         </div>
     </div>

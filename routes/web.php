@@ -82,6 +82,8 @@ Route::get('/catalogue/{filtre}', ['uses' =>'Catalogue@filtreCatalogue', 'as' =>
 Route::get('/catalogue/{filtre}/{order}', ['uses' =>'Catalogue@filtreCatalogue', 'as' => 'catalogueFilterOrder'])
     ->where(['filtre' => 'rouges|blancs|roses|mousseux|bios|primeurs|nouveautes|promotions|fins'], ['order' => 'asc|desc']);
 
+Route::post('/carton-decouverte', ['uses' => 'cartonController@addToCart', 'as' => 'carton']);
+
 Route::get('/cart',['as' => 'cart', function (){
     return view('cart');
 }]);

@@ -17,7 +17,7 @@
             <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
           </div>
           <div class="col col-sm-8">
-            <h2>Osez testez de nouvelles saveurs</h2>
+            <h2>Osez tester de nouvelles saveurs</h2>
           </div>
           <div class="col-12 col-xl-3">
             <hr class="titre-point">
@@ -26,7 +26,14 @@
           {{--
             Audric essaie de faire du front-end
           --}}
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisinci</p>
+          <p>Vous n'arrivez pas à vous décider parmi toutes les bouteilles du catalogue ? Rassurez-vous, vous êtes bien au bon endroit.</p>
+          <p>Le principe du carton découverte est assez simple, renseignez-nous :</p>
+          <ul>
+            <li>Une quantité de bouteilles</li>
+            <li>Un prix maximum pour le carton</li>
+            <li>Le(s) type(s) de vin désiré(s)</li>
+          </ul>
+          <p>Gazzar et le hasard s'occuperont ensuite du reste pour vous offrir une découverte de qualité.   </p>
           <div class="input-group">
 
             <form action="{{route('carton')}}" method="post">
@@ -39,10 +46,10 @@
                 <option value="12">12</option>
               </select>
 
-              <label for="prixMax">Prix maximum(CHF)</label>
-              <input type="number" name="prixMax" value="CHF">
+              <label for="prixMax">Prix maximum</label>
+              <input type="number" name="prixMax" value="CHF" placeholder="300 CHF" min="150">
 
-              <p>Séléctionnez ci-dessous le(s) type(s) de vin que ne vous désirez pas dans votre carton découverte :</p>
+              <p>Séléctionnez ci-dessous le(s) type(s) de vin que vous désirez dans votre carton découverte :</p>
 
               <div>
                 <input type="checkbox" id="rouge" name="rouge">
@@ -77,25 +84,28 @@
           <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
         </div>
         <div class="col col-sm-3">
-          <h2>Contenu</h2>
+          <h2>Tarification</h2>
         </div>
         <div class="col-12 col-xl-8">
           <hr class="titre-point">
         </div>
+        <p>Carton découverte à <strong>3</strong> bouteilles :</p>
         <ul>
-          <li>Dézaley Grand Cru "La Gueniettaz", Chasselas 70cl</li>
-          <li>St-Saphorin "Le Roc Noir", Chasselas 70cl</li>
-          <li>Chardonne "Viognier", 70cl</li>
-          <li>Saphorin "Cornalis", Assemblage 70cl</li>
-          <li>Dôle de Salquenen, 75cl</li>
-          <li>Aphrodine, Petite Arvine, 75cl</li>
+          <li>Prix minimum/maximum : 75 CHF / 750 CHF</li>
         </ul>
-
+        <p>Carton découverte à <strong>6</strong> bouteilles :</p>
+        <ul>
+          <li>Prix minimum/maximum : 150 CHF / 1'500 CHF</li>
+        </ul>
+        <p>Carton découverte à <strong>12</strong> bouteilles :</p>
+        <ul>
+          <li>Prix minimum/maximum : 300 CHF / 3'000 CHF</li>
+        </ul>
       </div>
     </div>
-
     <div class="col-8 col-md-6 pt-5">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit volupt</p>
+      <p>Le prix moyen des bouteilles est calculé en fonction du prix maximum et de la quantité saisie pour le carton découverte. Le format des bouteilles est de 75cl.</p>
+      <p>Afin de conserver le mystère autour de son contenu, le récapitulatif des bouteilles est uniquement consultable à la livraison.</p>
     </div>
   </div>
   </div>

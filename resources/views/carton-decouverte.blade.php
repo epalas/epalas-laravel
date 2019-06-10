@@ -30,10 +30,10 @@
           <p>Le principe du carton découverte est assez simple, renseignez-nous :</p>
           <ul>
             <li>Une quantité de bouteilles</li>
-            <li>Un prix maximum pour le carton</li>
+            <li>Une limite de prix</li>
             <li>Le(s) type(s) de vin désiré(s)</li>
           </ul>
-          <p>Gazzar et le hasard s'occuperont ensuite du reste pour vous offrir une découverte de qualité.   </p>
+          <p>Gazzar et le hasard s'occuperont ensuite du reste pour vous offrir une découverte de qualité.</p>
           <div class="input-group">
 
             <form action="{{route('carton')}}" method="post">
@@ -46,8 +46,8 @@
                 <option value="12">12</option>
               </select>
 
-              <label for="prixMax">Prix maximum</label>
-              <input type="number" name="prixMax" value="CHF" placeholder="300 CHF" min="150">
+              <label for="prixMax">Limite de prix</label>
+              <input type="number" name="prixMax" value="CHF" placeholder="300" min="150"> CHF
 
               <p>Séléctionnez ci-dessous le(s) type(s) de vin que vous désirez dans votre carton découverte :</p>
 
@@ -104,7 +104,7 @@
       </div>
     </div>
     <div class="col-8 col-md-6 pt-5">
-      <p>Le prix moyen des bouteilles est calculé en fonction du prix maximum et de la quantité saisie pour le carton découverte. Le format des bouteilles est de 75cl.</p>
+      <p>Le prix moyen des bouteilles est calculé en fonction de la limite de prix et de la quantité saisie pour le carton découverte. Le format des bouteilles est de 75cl.</p>
       <p>Afin de conserver le mystère autour de son contenu, le récapitulatif des bouteilles est uniquement consultable à la livraison.</p>
     </div>
   </div>

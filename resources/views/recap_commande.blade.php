@@ -111,10 +111,12 @@ Gazzar - Recap Commande
 	    </div>
 	 	@foreach(Cart::content() as $item)
 	    <div class="row">
-	      <div class="col-sm-4 text-center">	
+	      <div class="col-sm-4 text-center">
 	    	<h4>{{$item->name}}</h4>
-	    	<h4>{{$datas[$item->id-1]['prod']['region']}} - {{$datas[$item->id-1]['prod']['pays']}}</h4>
-	    	<p>{{$datas[$item->id-1]['titre']}}</p>
+			  @if(isset($datas[$item->id-1]->options["quantity"]))
+				<h4>{{$datas[$item->id-1]['prod']['region']}} - {{$datas[$item->id-1]['prod']['pays']}}</h4>
+				<p>{{$datas[$item->id-1]['titre']}}</p>
+			  @endif
 	      </div>
 
 	      <div class="col-sm-4 text-center">	

@@ -20,7 +20,7 @@ Gazzar - Recommendation
   </div>  
   <div class="row">
     <div class="col-12">
-    <p>Puisque la maison Gazzar privilégie le goût avant-tout, vous trouverez sur cette page une séléction de vins de grande qualité. N'hésiter pas à vous laisser surprendre par vos papilles, que ce soit pour un diner entre amis ou un apéro bien arosé après le boulot ; ces vins ne vous laisseront pas indéfférent ! Lancer vous dans l'aventure !</p>
+    <p>Puisque la maison Gazzar privilégie le goût avant-tout, vous trouverez sur cette page une séléction de vins de grande qualité. N'hésiter pas à vous laisser surprendre par vos papilles, que ce soit pour un diner entre amis ou un apéro bien arosé après le boulot ; ces vins ne vous laisseront pas indéfférent ! Lancez vous dans l'aventure !</p>
     </div>
   </div>
 
@@ -102,7 +102,21 @@ Gazzar - Recommendation
                             @endfor
                           @endswitch
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                        @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @else
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @endif
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
+                                @else
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
+                                @endif
+                        </form>
                     </div>
                 </div>
             </div>

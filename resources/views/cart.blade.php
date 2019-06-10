@@ -33,14 +33,32 @@ Gazzar - Panier
                     @foreach(Cart::content() as $item)
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-2 text-center">
+                            @if(isset($item->options["quantity"]))
+                                @if($item->options["quantity"] == 3)
+                                    <img class="img-fluid" src="img/carton3.jpg"  alt="Carton de 3 vins" height="30rem">
+                                @elseif($item->options["quantity"] == 6)
+                                    <img class="img-fluid" src="img/carton6.jpg"  alt="Carton de 6 vins" height="30rem">
+                                @elseif($item->options["quantity"] == 12)
+                                    <img class="img-fluid" src="img/carton12.jpg"  alt="Carton de 12 vins" height="30rem">
+                                @endif
+                            @else
                                 <a href="{{ route('produit', ['id' => $item->id ])}}">
                                     <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
                                 </a>
+                            @endif
+
                         </div>
                         <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-8">
-                            <h4 class="mt-md-5 product-name"><strong><a href="{{ route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
-                            <h4>
-                                <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
+                            @if(isset($item->options["quantity"]))
+                                <h4 class="mt-md-5 product-name"><strong>{{$item->name}}</strong></h4>
+                                <h4>
+                                <small class="text-dark">Un carton de découverte où chaque article est soigneusement sélectionné aléatoirement en fonction de vos critères.</small>
+                            @else
+                                <h4 class="mt-md-5 product-name"><strong><a href="{{route('produit', ['id' => $item->id ])}}">{{$item->name}}</a></strong></h4>
+                                <h4>
+                                    <small class="text-dark">{{$datas[$item->id-1]['description']}}</small>
+                            @endif
+
                                 <p>{{$item->qty}} x {{$item->price}}.-</p>
                                 <p class="text-right">Sous-total : {{$item->qty * $item->price}} .-</p>
                             </h4>

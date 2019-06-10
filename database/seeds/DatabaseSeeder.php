@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $this->call(CepaTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        $this->call(CartonTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $this->call(TypeTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $this->call(ProdTableSeeder::class);
@@ -36,6 +38,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ContvinTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $this->call(FavoTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        $this->call(CartonvinTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         $this->call(MetvinTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=0');

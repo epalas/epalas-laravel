@@ -29,6 +29,10 @@ class Vin extends Model
         return $this->belongsToMany('App\Cepa', 'assembs','idVin', 'idCepa');
     }
 
+    public function carton() {
+        return $this->belongsToMany('App\Carton', 'cartonvins','idVin', 'idCarton');
+    }
+
     public function cont() {
         return $this->belongsToMany('App\Cont','contvins', 'idVin','idCont');
     }
@@ -67,6 +71,9 @@ class Vin extends Model
 
         $results=Vin::all();
 
+
+
+        //dd($results);
         if($order=='asc') {
             $results = $results->sortBy(function ($vin) {
                 return $vin->prixprods[0]->prix;
@@ -78,13 +85,13 @@ class Vin extends Model
             });
         }
 
-        $results->load('stock','condi',
+        $results->load( 'stock','condi',
             'type','prod',
-            'cepa','cont',
-            'met','util',
-            'cotas','photos',
-            'notes', 'comms',
-            'prixprods');
+            'cepa','carton',
+            'cont', 'met',
+            'util', 'cotas',
+            'photos', 'notes',
+            'comms', 'prixprods');
 
         return $results;
     }

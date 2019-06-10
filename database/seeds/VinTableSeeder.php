@@ -714,5 +714,6 @@ class VinTableSeeder extends Seeder {
             'estPromo' => 0,
             'estNouveau' => 1
         ]);
+
     }
 }

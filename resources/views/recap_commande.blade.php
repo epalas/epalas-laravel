@@ -33,7 +33,7 @@ Gazzar - Recap Commande
 	        </div>
 
 	        <div class="col-sm-6">
-			  <button data-toggle="collapse" data-target="#form-livraison" class="btn btn-primary mt-2" type="submit">Adresse de livraison différente</button>
+			  <button data-toggle="collapse" data-target="#form-livraison" class="btn btn-primary mt-2 mb-2 float-right" type="submit">Adresse de livraison différente</button>
 			
 		        <form class="collapse" id="form-livraison"class="col-sm-6" method="POST">
 				  <input name="rue" type="text" class="form-control mt-2" placeholder="Rue">
@@ -41,7 +41,7 @@ Gazzar - Recap Commande
 	              <input name="ville" type="text" class="form-control mt-2" placeholder="Ville">
 	              <input name="pays" type="text" class="form-control mt-2" placeholder="Pays">
 				  <div>
-				    <button class="btn btn-primary mt-2" type="submit">Enregistrer</button>
+				    <button class="btn btn-primary mt-2 float-right" type="submit">Enregistrer</button>
 				  </div>
 				</form>
 			</div>
@@ -68,25 +68,25 @@ Gazzar - Recap Commande
 				<div class="col-6 col-sm-3 text-center ">
 					<p class="bold">MasterCard</p> 
 				 <input type="radio" id="masterCard" name="paiement" value="mastercard">
-	    		 <label for="mastercard"><i class="fa-4x fab fa-cc-mastercard"></i></label>
+	    		 <label for="mastercard"><i class="fa-4x fab fa-cc-mastercard align-middle"></i></label>
 				</div> 
 
 				<div class="text-center col-6 col-sm-3"> 
 					<p class=" bold">Visa</p>   		 	
 	    		 <input type="radio" id="visa" name="paiement" value="visa">
-	    		 <label for="visa"><i class="fa-4x fab fa-cc-visa"></i></label>
+	    		 <label for="visa"><i class="fa-4x fab fa-cc-visa align-middle"></i></label>
 	    		</div>
 
 	    		<div class="col-sm-3 col-6 text-center ">
 	    			<p class="bold">PostCard</p> 
 	    		  <input type="radio" id="postcard" name="paiement" value="postcard">
-	    		  <label for="postcard"><i class="fa-4x fas fa-mail-bulk"></i></label>
+	    		  <label for="postcard"><i class="fa-4x fas fa-mail-bulk align-middle"></i></label>
 	    		</div>
 
 	    		<div class="col-sm-3 col-6 text-center">
 	    			<p class="bold">Facture</p> 
 	    		 <input type="radio" id="facture" name="paiement" value="facture">
-	    		 <label for="facture"><i class="fa-4x fas fa-envelope"></i></label>
+	    		 <label for="facture"><i class="fa-4x fas fa-envelope align-middle"></i></label>
 	    		</div>
 	    		<div class="mt-5 col-sm-12 text-right"> 
 	    		 <a class="btn btn-primary mt-2" href="{{route('email')}}">confirmer la commande ></a>
@@ -131,9 +131,8 @@ Gazzar - Recap Commande
 	    @endforeach
 	    <div class="row">
 	    	<div class="col-sm-12 text-right">	
-	    	<h6>TOTAl hors taxe : {{Cart::subtotal()}}</h6>
-	    	<h4>TOTAL CHF : {{Cart::total()}}</h4>
-			
+	    	<h6>Total hors taxe : <span class="ml-3">{{Cart::subtotal()}}<span> CHF</h6>
+	    	<h6 class="annee">TOTAL : <span class="ml-3">{{Cart::total()}}<span> CHF</h6>
 	      </div>
 	    </div>
     </div>

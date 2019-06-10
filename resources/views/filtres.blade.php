@@ -418,35 +418,5 @@ Gazzar - Catalogue
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type='text/javascript'>
-    $(document).ready(function(){
-        
-        // liste déroulante pays
-        $("#paysListe a").click( function() {
-        var pays = $(this).text();
-            $('.carte_vins').each(function() {
-                $(this).hide();
-                $('#contenant > div').find("[data-pays='" + pays + "']").show();
-                $('#grpPays button').text(pays);
-            });
-        });
-
-        //liste déroulante region
-        $("#regionListe a").click( function() {
-        var region = $(this).text();
-        $('.carte_vins').each(function() {
-                $(this).hide();
-                $('#contenant > div').find("[data-region='" + region + "']").show();
-                $('#grpRegions button').text(region);
-            });
-        });
-
-        $("#prixListe a").click( function() {
-        var prix = $(this).text();
-                $('#grpPrix button').text(prix);
-        });
-
-    });
-    </script>
 @endsection
 

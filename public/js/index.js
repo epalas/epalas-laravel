@@ -79,4 +79,32 @@ window.location.assign("/catalogue");
 
 });
 
+// page filtres
+$(document).ready(function(){
+        
+    // liste déroulante pays
+    $("#paysListe a").click( function() {
+    var pays = $(this).text();
+        $('.carte_vins').each(function() {
+            $(this).hide();
+            $('#contenant > div').find("[data-pays='" + pays + "']").show();
+            $('#grpPays button').text(pays);
+        });
+    });
 
+    //liste déroulante region
+    $("#regionListe a").click( function() {
+    var region = $(this).text();
+    $('.carte_vins').each(function() {
+            $(this).hide();
+            $('#contenant > div').find("[data-region='" + region + "']").show();
+            $('#grpRegions button').text(region);
+        });
+    });
+
+    $("#prixListe a").click( function() {
+    var prix = $(this).text();
+            $('#grpPrix button').text(prix);
+    });
+
+});

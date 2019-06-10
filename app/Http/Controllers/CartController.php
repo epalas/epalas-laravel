@@ -50,7 +50,7 @@ class CartController extends Controller
         Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
             ->associate('App/Vin');
 
-        return redirect()->route('cart.index');
+        return redirect()->route('catalogue');
     }
 
     /**

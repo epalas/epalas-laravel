@@ -68,7 +68,7 @@ Gazzar - Accueil
 
 
     <div class="row">
-        @foreach($datas as $result)
+        @foreach($datas['recom'] as $result)
         {{-- Template pour chaque card --}}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
             <div class="card h-100">
@@ -145,7 +145,21 @@ Gazzar - Accueil
                             @endfor
                           @endswitch
                         </p>
-                        <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                        @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @else
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @endif
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$result['id']}}">
+                                <input type="hidden" name="nom" value="{{$result['nom']}}">
+                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                                @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
+                                @else
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
+                                @endif
+                        </form>
                     </div>
                 </div>
             </div>
@@ -174,7 +188,7 @@ Gazzar - Accueil
   </div>  
 
     <div class="row">
-        @foreach($datas as $result)
+        @foreach($datas['new'] as $result)
         {{-- Template pour chaque card --}}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
             <div class="card h-100">
@@ -251,13 +265,21 @@ Gazzar - Accueil
                             @endfor
                           @endswitch
                         </p>
-                        <form action="{{route('wishlist.store')}}" method="POST">
+                        @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @else
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @endif
                             {{csrf_field()}}
                                 <input type="hidden" name="id" value="{{$result['id']}}">
                                 <input type="hidden" name="nom" value="{{$result['nom']}}">
                                 <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
-                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
-                            </form>
+                                @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
+                                @else
+                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
+                                @endif
+                        </form>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,9 @@ Route::get('/valeurs',['as' => 'valeurs', function () {
     return view('valeurs');
 }]);
 
-Route::get('/home',  ['as' => 'home','uses' => 'HomeController@index' ]);
+Route::get('/home', ['as' => 'home', function () {
+    return view('accueil2');
+}]);
 
 Route::get('/', function () {
     return view('accueil2');
@@ -68,6 +70,7 @@ Route::get('/galerie', ['as' => 'galerie', function () {
     return view('galerie');
 }]);
 
+//Lucien tg//
 Route::get('/catalogue', ['as' => 'catalogue','uses' => 'Catalogue@afficheCatalogue', ]);
 
 Route::get('/catalogue/{order}', ['as' => 'catalogueOrder','uses' => 'Catalogue@afficheCatalogue'])
@@ -150,6 +153,8 @@ Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
 
 Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
 
+//Route::post('/wishlist', 'WishlistController@redirectHome')->name('wishlist.home'); retourne un bug, regarder avec Elisa
+
 Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
 
 Route::get('/recap', 'RecapCommController@index')->name('recap.index');
@@ -167,6 +172,10 @@ Route::get('empty', function(){ //PROVISOIRE
 // commentaires
 Route::post('/produit', 'CommentController@store')->name('comment.store');
 
-Route::get('/recap_commande', function () {
-    return view('recap_commande');
-})->name('recap_commande');
+//email
+Route::get('/confirmation', 'confirmEmailController@sendEmail')->name('email');
+
+Route::get('/password', ['as' => 'password', function () {
+    return view('auth/passwords/reset');
+}])->middleware('auth');
+

@@ -51,6 +51,13 @@ class WishlistController extends Controller
         return redirect()->route('catalogue');
     }
 
+    public function redirectHome(Request $request)
+    {
+        Cart::instance('wishlist')->add($request->id, $request->nom, 1, $request->prix)
+        ->associate('App/Vin');
+
+        return redirect()->route('home');
+    }
 
     /**
      * Store a newly created resource in storage.

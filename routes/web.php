@@ -151,6 +151,8 @@ Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
 
 Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
 
+//Route::post('/wishlist', 'WishlistController@redirectHome')->name('wishlist.home'); retourne un bug, regarder avec Elisa
+
 Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
 
 Route::get('/recap', 'RecapCommController@index')->name('recap.index');

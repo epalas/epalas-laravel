@@ -24,9 +24,8 @@ Gazzar - Galerie Photo
         <a href=" {{route('image', ['id' => $i])}}" class="d-block mb-4 h-100">
               <img class="img-fluid img-thumbnail zoom" src="img/galerie/galerie{{$i}}.jpg" alt="">
             </a>
-           
       </div>
        @endfor
- </div>      
+    </div>
 </div>
 @endsection

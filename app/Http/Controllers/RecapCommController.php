@@ -22,10 +22,9 @@ class RecapCommController extends Controller
         'cepa','cont',
         'met','util',
         'cotas','photos',
-        'notes','prixprods');  
-           // dd($datas);
+        'notes','prixprods');
+
         return view('recap_commande')->with('datas', $datas);
-        
     }
 
     /**

@@ -15,10 +15,7 @@ class RecommController extends Controller
      */
     public function index()
     {
-
         $datas=Vin::inRandomOrder()->take(10)->get();
-
-        //->orderBy('vins.nom','asc');
 
         $datas->load( 'stock','condi',
         'type','prod',

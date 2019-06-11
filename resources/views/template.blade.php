@@ -20,7 +20,6 @@
 
         <a href="{{route('home')}}"><img class="ml-3 mt-3" src="{{ asset('img/gazzar-logo.svg') }}" alt="Logo Gazzar" id="logo-top"></a>
 
-
             <div class="col-lg-6 mt-3">
               <div class="row">
 
@@ -41,9 +40,7 @@
                     <a href="{{ route('deconnexion') }}">Se déconnecter</a>
               @else 
 
-      
               <div class="col-sm-8">
-                        
                             <a href="{{ route('register') }}">Créer un compte</a>
                             <span> | </span>
                             <a href="{{ route('login') }}">Connexion</a>

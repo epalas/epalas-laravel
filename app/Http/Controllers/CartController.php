@@ -47,7 +47,6 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-
         Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
             ->associate('App/Vin');
 
@@ -97,7 +96,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-
         return back();
     } 
 }

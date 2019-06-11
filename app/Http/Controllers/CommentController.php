@@ -16,9 +16,6 @@ class CommentController extends Controller
 
     public function store(Request $request)
     {
-        //$cancer = $request->request->get('titre');
-        //dd($cancer);
-
         $comment = new Comm();
         $comment->idVin = $request->request->get('idVin');
         $comment->idUtil = Auth::user()->id;

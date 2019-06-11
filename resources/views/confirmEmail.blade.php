@@ -4,8 +4,6 @@
 Gazzar - Connexion
 @endsection
 
-
-
 @section('contenu')
 <div class="container">
   <div class="row">

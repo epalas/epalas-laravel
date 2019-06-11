@@ -19,13 +19,10 @@ Gazzar - Panier
       </div>
     </div> 
     @if (Cart::count() > 0)
-      
-      
+
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
                  <p>{{Cart::count()}} éléments dans votre panier</p>
-                
-            
             </div>
              <hr>
             <div>
@@ -64,13 +61,13 @@ Gazzar - Panier
                             </h4>
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">                        
-                                <form class="col-12 text-center text-sm-right col-sm-2 col-md-2" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
-                                    <button type="submit" class=" mt-md-5 btn btn-outline-danger btn-xs">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </button>          
-                                </form>
+                            <form class="col-12 text-center text-sm-right col-sm-2 col-md-2" action="{{route('cart.destroy', $item->rowId)}}" method="POST">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
+                                <button type="submit" class=" mt-md-5 btn btn-outline-danger btn-xs">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <hr>
@@ -82,37 +79,32 @@ Gazzar - Panier
                             <p>{{Cart::count()}} éléments dans votre panier</p>
                             <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
                          </div>
-
-
                          <div>
-                                <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">
-                                    Total: <b>{{Cart::subtotal()}} CHF</b><br>
-                                    Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
-                                </div>
-                                @if(Auth::check())
+                            <div class=" mr-sm-5 text-right pull-right" style="margin: 5px">
+                                Total: <b>{{Cart::subtotal()}} CHF</b><br>
+                                Total (TVA 7,7%): <b>{{Cart::total()}} CHF</b>
+                            </div>
+                            @if(Auth::check())
                                 <div class="text-right mr-sm-5 mt-sm-3">
-                                 <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
+                                    <a href="{{ route('recap.index') }}" class="btn btn-success">Commander</a>
                                 </div>
-                                @else
+                            @else
                                 <div class="text-right mr-sm-5 mt-sm-3">
-                                 <a href="{{ route('login') }}" class="btn btn-success">Commander</a>
+                                     <a href="{{ route('login') }}" class="btn btn-success">Commander</a>
                                 </div>
-                                @endif
+                            @endif
                          </div>
-                            
                     </div>
-
             </div>
-                    @else 
-                        <p>Pas d'éléments dans le panier.</p>
-                    @endif
+                @else
+                    <p>Pas d'éléments dans le panier.</p>
+                @endif
                 </div>
 </div>
 @endsection
 <script>
         (function(){
             const classname = document.querySelectorAll('.quantity')
-
             Array.from(classname).forEach(function(element) {
                 element.addEventListener('change', function(){
                     alert('change');

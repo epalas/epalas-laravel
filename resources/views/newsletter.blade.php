@@ -19,6 +19,7 @@ Gazzar - Newsletter
             <form action="{{route('confNews')}}" method="POST">
               {{csrf_field()}}
               <input name="newsletter" type="email" class="form-control" placeholder="Adresse E-mail">
+
               <button type="submit" class="btn btn-primary mr-auto mt-3 mb-5">S'inscrire</button>
             </form> 
           </div>       

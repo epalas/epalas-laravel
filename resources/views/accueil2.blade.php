@@ -100,67 +100,72 @@ Gazzar - Accueil
                         
                           @switch($result['notes'][0]['nbrEtoiles'])
                             @case(1)
-                            @for ($i = 0; $i < 1; $i++)
-                                <i class="fas fa-star"></i>
-                            @endfor
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            @break
+                                @for ($i = 0; $i < 1; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                @break
 
                             @case(2)
-                            @for ($i = 0; $i < 2; $i++)
-                              <i class="fas fa-star"></i>
-                            @endfor
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
-                            @break
+                                @for ($i = 0; $i < 2; $i++)
+                                  <i class="fas fa-star"></i>
+                                @endfor
+                                  <i class="far fa-star"></i>
+                                  <i class="far fa-star"></i>
+                                  <i class="far fa-star"></i>
+                                @break
 
                             @case(3)
-                            @for ($i = 0; $i < 3; $i++)
-                              <i class="fas fa-star"></i>
-                            @endfor
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
-                            @break
+                                @for ($i = 0; $i < 3; $i++)
+                                  <i class="fas fa-star"></i>
+                                @endfor
+                                  <i class="far fa-star"></i>
+                                  <i class="far fa-star"></i>
+                                @break
 
                             @case(4)
-                            @for ($i = 0; $i < 4; $i++)
-                              <i class="fas fa-star"></i>
-                            @endfor
-                              <i class="far fa-star"></i>
-                            @break
+                                @for ($i = 0; $i < 4; $i++)
+                                  <i class="fas fa-star"></i>
+                                @endfor
+                                  <i class="far fa-star"></i>
+                                @break
 
                             @case(5)
-                            @for ($i = 0; $i < 5; $i++)
-                              <i class="fas fa-star"></i>
-                            @endfor
-                            @break
+                                @for ($i = 0; $i < 5; $i++)
+                                  <i class="fas fa-star"></i>
+                                @endfor
+                                @break
 
-                            @default
-                            @for ($i = 0; $i < 5; $i++)
-                              <i class="fas fa-star"></i>
-                            @endfor
+                                @default
+                                @for ($i = 0; $i < 5; $i++)
+                                  <i class="fas fa-star"></i>
+                                @endfor
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                        @foreach(Cart::instance('wishlist')->content() as $item)
-                          <form action="{{route('wishlist.destroy , $item->rowId')}}" method="POST">
-                        @endforeach  
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif
                             {{csrf_field()}}
-                                <input type="hidden" name="id" value="{{$result['id']}}">
-                                <input type="hidden" name="nom" value="{{$result['nom']}}">
-                                <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
-                                @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
-                                @else
-                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
-                                @endif
+                            <input type="hidden" name="id" value="{{$result['id']}}">
+                            <input type="hidden" name="nom" value="{{$result['nom']}}">
+                            <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
+                            @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
+                                  <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
+                            @else
+                                  <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
+                            @endif
                         </form>
                     </div>
                 </div>
@@ -169,13 +174,11 @@ Gazzar - Accueil
 @endforeach
     </div>
 
-
 <div class="row">
   <div class="col-auto ml-auto">
     <a class="btn btn-primary mt-3 mb-5" href="{{ route('recommandations') }}">En savoir plus</a>
   </div>
 </div>
-
 
   <div class="row">
     <div class="col-0">
@@ -268,7 +271,14 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                          <form action="{{route('wishlist.store')}}" method="POST">
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif
@@ -277,9 +287,9 @@ Gazzar - Accueil
                                 <input type="hidden" name="nom" value="{{$result['nom']}}">
                                 <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
                                 @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
+                                  <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
                                 @else
-                                <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
+                                  <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
                                 @endif
                         </form>
                     </div>
@@ -294,8 +304,6 @@ Gazzar - Accueil
     <a class="btn btn-primary mt-3 mb-5" href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}">En savoir plus</a>
   </div>
 </div>
-  
-
 
 </div>
 @endsection

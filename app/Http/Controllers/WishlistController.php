@@ -44,11 +44,11 @@ class WishlistController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         Cart::instance('wishlist')->add($request->id, $request->nom, 1, $request->prix)
         ->associate('App/Vin');
 
-        return redirect()->route('catalogue');
+        return back();
     }
 
     public function redirectHome(Request $request)

@@ -70,7 +70,11 @@ Gazzar | {{ $x['nom'] }}
             <input type="hidden" name="id" value="{{ $x['id'] }}">
             <input type="hidden" name="nom" value="{{ $x['nom'] }}">
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
+            @if(Cart::instance('wishlist')->filterHeart($x['nom']) === true)
+            <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="fas fa-heart"></i></button>
+            @else
             <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
+            @endif
           </form>
           </div>
         </div>

@@ -146,9 +146,14 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                        @foreach(Cart::instance('wishlist')->content() as $item)
-                          <form action="{{route('wishlist.destroy , $item->rowId')}}" method="POST">
-                        @endforeach  
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif
@@ -268,7 +273,14 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                          <form action="{{route('wishlist.store')}}" method="POST">
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif

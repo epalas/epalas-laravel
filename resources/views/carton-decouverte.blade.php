@@ -60,7 +60,7 @@
           <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
         </div>
         <div class="col col-xl-5">
-          <h2>Passer commande !</h2>
+          <h2>Passez commande !</h2>
         </div>
         <div class="col-12 col-xl-6">
           <hr class="titre-point">

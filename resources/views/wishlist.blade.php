@@ -37,15 +37,21 @@ Gazzar - Wishlist
                             <h4 class="text-black">
                                 <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                             </h4>
-                            <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option selected value="6">6</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
+                            <form action="{{route('cart.store')}}" method="post">
+                                {{csrf_field()}}
+                                <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option selected value="6">6</option>
+                                </select>
+                                <input type="hidden" name="id" value="{{ $item->id }}">
+                                <input type="hidden" name="nom" value="{{ $item->name }}">
+                                <input type="hidden" name="prix" value="{{ $item->price }}">
+                                <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
+                            </form>
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">
                             <div class="col-2 col-sm-2 col-md-2 text-right">

@@ -105,7 +105,7 @@ Route::delete('/cart/{item}', 'CartController@destroy')->name('cart.destroy');
 //Wishlist
 Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
 
-Route::post('/wishlist', 'WishlistController@store')->name('wishlist.store');
+Route::post('/wishlist', 'WishListController@store')->name('wishlist.store');
 
 Route::delete('/wishlist/{item}', 'WishlistController@destroy')->name('wishlist.destroy');
 

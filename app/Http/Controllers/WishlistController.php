@@ -115,4 +115,13 @@ class WishlistController extends Controller
 
         return back();
     }
+
+    public function destroyFromWishlist($id, $request)
+    {
+        Cart::instance('wishlist')->remove($id);
+        Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
+            ->associate('App/Vin');
+
+        return back();
+    }
 }

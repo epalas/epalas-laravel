@@ -390,7 +390,7 @@ Gazzar - Catalogue
                               <i class="fas fa-star"></i>
                             @endfor
                           @endswitch
-                          
+                        </p>
                             @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
                                 <form action="{{route('wishlist.store')}}" method="POST">
                             @else
@@ -406,7 +406,6 @@ Gazzar - Catalogue
                                 <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
                                 @endif
                             </form>
-                        </p>
                     </div>
                 </div>
             </div>

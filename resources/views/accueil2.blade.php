@@ -29,13 +29,13 @@ Gazzar - Accueil
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="img/slider4.jpg" alt="Second slide">
+      <img class="d-block w-100" src="img/slider4.png" alt="Second slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jetez un oeil aux nouveautés !</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="img/slider1.jpg" alt="Third slide">
+      <img class="d-block w-100" src="img/biotest.png" alt="Third slide">
       <div class="carousel-caption d-none d-md-block mb-5">
           <a href="{{route('catalogueFilter', ['filtre' => 'bios'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Envie d'étancher votre soif de vins bio ?</a>
       </div>

@@ -46,7 +46,6 @@ Route::get('/', function () {
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
 
-
 //Carton découverte
 Route::get('/carton-decouverte', function () {
     return view('carton-decouverte');

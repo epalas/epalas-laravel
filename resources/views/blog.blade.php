@@ -41,7 +41,7 @@
       </div>
       <div class="col-sm-9">
         <a href="#"><h3 class="titres-articles">Différentes définitions de l’astringence</h3></a>
-        <p><i>07 janvier 2019</i></p>
+        <p><i>02 janvier 2019</i></p>
         <p>L’astringence est un mot qui présente une connotation négative dans le vocabulaire courant. Or il n’y a pas de grands vins rouges qui ne présente une astringence subtile. Alors l’astringence, c’est quoi exactement ? </p>
       </div>
     </div>

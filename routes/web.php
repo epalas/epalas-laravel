@@ -41,7 +41,7 @@ Route::get('/home', ['as' => 'home', function () {
 }]);
 
 Route::get('/', function () {
-    return view('accueil2');
+    return redirect('home');
 });
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);
@@ -143,6 +143,12 @@ Route::get('/customer', 'UtilController@index')->name('customer')->middleware('a
 Route::get('/password', ['as' => 'password', function () {
     return view('auth/passwords/reset');
 }])->middleware('auth');
+
+
+//envoie newsletter
+Route::post('/confNews', ['as' => 'confNews', function () {
+    return view('envoie_newsletter');
+}]);
 
 //Email confirmation
 Route::get('/confirmation', 'confirmEmailController@sendEmail')->name('email');

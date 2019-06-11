@@ -20,7 +20,8 @@ Gazzar - Recommendation
   </div>  
   <div class="row">
     <div class="col-12">
-    <p>La maison Gazzar privilégie le goût avant-tout, vous trouverez ainsi sur cette page une séléction parmis nos vins de grande qualité. N'hésitez pas à vous laisser surprendre par vos papilles, que ce soit pour un diner entre amis ou un apéro ; faites nous confiance, ces vins ne vous laisseront pas indifférent. </p>
+    <p>La maison Gazzar privilégie le goût avant-tout, vous trouverez sur cette page une séléction de nos meilleurs vins. N'hésitez pas à vous laisser surprendre par vos papilles, que ce soit pour un diner entre amis ou à l'occasion d'un apéro. 
+    <br/><br/>Faites nous confiance, ces vins ne vous laisseront pas indifférent. </p>
     </div>
   </div>
 

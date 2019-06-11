@@ -64,16 +64,28 @@ Gazzar | {{ $x['nom'] }}
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
             <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
           </form>
-          <form action="{{route('wishlist.store')}}" method="POST" class="col-12">
-          {{csrf_field()}}
-            <input type="hidden" name="id" value="{{ $x['id'] }}">
-            <input type="hidden" name="nom" value="{{ $x['nom'] }}">
-            <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
+
             @if(Cart::instance('wishlist')->filterHeart($x['nom']) === true)
-            <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="fas fa-heart"></i></button>
-            @else
-            <button type="submit" class="btn btn-outline-primary col-12 col-sm-12 col-md-2 col-lg-1 mb-2"><i class="far fa-heart"></i></button>
-            @endif
+                                <?php
+                                $id = $x['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
+                        @else
+                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @endif
+                            {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$x['id']}}">
+                                <input type="hidden" name="nom" value="{{$x['nom']}}">
+                                <input type="hidden" name="prix" value="{{$x["prixprods"][0]["prix"]}}">
+                                @if(Cart::instance('wishlist')->filterHeart($x['nom']) === true)
+                                  <button type="submit" class="btn btn-outline-primary ml-3 mt-3"><i class="fas fa-heart"></i></button>
+                                @else
+                                  <button type="submit" class="btn btn-outline-primary ml-3 mt-3"><i class="far fa-heart"></i></button>
+                                @endif
           </form>
           </div>
         </div>

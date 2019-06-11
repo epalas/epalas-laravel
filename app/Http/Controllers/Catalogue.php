@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 
 class Catalogue extends Controller
 {
+    //Affiche le catalogue, par défaut par ordre asc
     public function afficheCatalogue($order = 'asc'){
 
         $results = Vin::getData($order);
@@ -16,9 +17,9 @@ class Catalogue extends Controller
 
     }
 
+    //Affiche le catalogue filtré
     public function filtreCatalogue($filtre,$order = "asc")
     {
-
         switch ($filtre) {
             case "rouges":
                 if($order == "asc") {
@@ -92,8 +93,6 @@ class Catalogue extends Controller
                 }
                 break;
         }
-
         return view('filtres')->with('results', $filtered_results);
-
     }
 }

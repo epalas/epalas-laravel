@@ -65,20 +65,17 @@ class Vin extends Model
         return $this->hasMany('App\Comm', 'idVin', 'id');
     }
 
-    /* Bordel de Audric */
-
+    //Obtenir toutes les données relatives aux vins stockés en BD
     public static function getData($order){
 
         $results=Vin::all();
 
-
-
-        //dd($results);
         if($order=='asc') {
             $results = $results->sortBy(function ($vin) {
                 return $vin->prixprods[0]->prix;
             });
         }
+
         if($order=='desc'){
             $results = $results->sortByDesc(function ($vin) {
                 return $vin->prixprods[0]->prix;
@@ -96,6 +93,7 @@ class Vin extends Model
         return $results;
     }
 
+    //Trouve un ou plusieurs vin(s) par type et selon un ordre
     public static function findWineByTypeAndOrder($type, $order){
 
         $results = Vin::whereHas('type', function($query) use ($type){
@@ -116,6 +114,7 @@ class Vin extends Model
         return $results;
     }
 
+    //Trouve un ou plusieurs vin(s) en fonction d'un boolean et selon un ordre
     public static function findWineByBooleanAndOrder($type,$order){
 
         $results = Vin::select('*')
@@ -136,6 +135,7 @@ class Vin extends Model
         return $results;
     }
 
+    //Trouve un ou plusieurs vin(s) si ils sont en fins de série
     public static function findFins($order){
 
         $results = Vin::whereHas('stock', function($query) {

@@ -24,8 +24,6 @@ Gazzar - Customer Account
         <hr class="titre-point">  
     </div>
      {{-- Données a changer par des variables--}}
-       
-   
       <div class="col-sm-6 ml-sm-5 mt-sm-5">
         <p class="bold">{{ $x['prenom'] }} {{ $x['nom'] }}</p> 
       </div>

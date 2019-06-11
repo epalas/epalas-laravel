@@ -21,7 +21,6 @@ Gazzar - Wishlist
     @if (Cart::instance('wishlist')->count() > 0)      
             <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
-            
             </div>
             <div>
             	<hr>
@@ -66,7 +65,6 @@ Gazzar - Wishlist
                     <!-- END PRODUCT -->
                   <div class="mt-4 ml-4">
                  <a href="catalogue"><button  type="button" class="btn btn-primary mr-auto mt-3 mb-5">Revenir au catalogue</button></a>
-            
             </div>
                     @else 
                         <p>Pas d'éléments dans la wishlist.</p>

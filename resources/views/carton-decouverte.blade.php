@@ -23,9 +23,6 @@
             <hr class="titre-point">
           </div>
 
-          {{--
-            Audric essaie de faire du front-end
-          --}}
           <p>Vous n'arrivez pas à vous décider parmi toutes les bouteilles du catalogue ? Rassurez-vous, vous êtes bien au bon endroit.</p>
           <p>Le principe du carton découverte est assez simple, renseignez-nous :</p>
           <ul>

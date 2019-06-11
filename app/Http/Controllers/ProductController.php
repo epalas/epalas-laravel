@@ -15,8 +15,6 @@ class ProductController extends Controller
 
         $comments = Comm::findWinesComm($id);
 
-//        dd(str_replace($request->url(), $x->nom, $request->fullUrl()));
-
         return view('produit')->with(['x' => $x, 'comments' => $comments]);
     }
 }

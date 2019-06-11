@@ -8,7 +8,6 @@ Gazzar - Recap Commande
 <div class="container pl-5 pb-3 pr-5  pt-5 bg-white rounded mt-5">
     <h1 class="mb-5">Shop</h1> 
 
-	
     <div>
  	    <div class="row mb-5">
 	      <div class="col-0">
@@ -45,13 +44,8 @@ Gazzar - Recap Commande
 				  </div>
 				</form>
 			</div>
-
-
-        </div>   	
-
-    	
+        </div>
     </div>
-
 	<div class="row mt-5">
 	      <div class="col-0">
 	        <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
@@ -92,11 +86,6 @@ Gazzar - Recap Commande
 	    		 <a class="btn btn-primary mt-2" href="{{route('email')}}">confirmer la commande ></a>
 	    		</div> 
     		 </form>
- 
-   
-    
-
-
     <div>
 	    <div class="row mb-5 mt-5">
 	      <div class="col-0">

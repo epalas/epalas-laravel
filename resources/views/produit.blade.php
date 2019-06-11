@@ -169,19 +169,20 @@ Gazzar | {{ $x['nom'] }}
             </div>
             <button type="submit" name="submit" class="btn btn-primary justifiy-content-end">Envoyer</button>
           </form>
-          @endif
           <hr>
+          @endif
           @foreach($comments as $comment)
-          <i class="fas fa-quote-left"></i>
           <div class="row">
-            <div class="mt-2 col-4 col-sm-3">
-              <img src="{{ asset('img/john-doe.jpg') }}" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
-              <p class="bold short-line">{{ $comment->prenom }} {{ $comment->nom }}</p>
-              <p><time>{{ date('d.m.Y', strtotime($comment->date)) }}</time></p>
+            <div class="col-4 col-sm-3 border-right">
+              <img src="{{ $comment->urlPhoto }}" alt="Image utilisateur" class="img-fluid rounded-circle border mb-4" width="50rem">
+              <p class="mt-n3 mb-n2"><span class="bold">{{ $comment->prenom }} {{ $comment->nom }}<br></span>
+              <time >{{ date('d.m.Y', strtotime($comment->date)) }}</time>
+              </p>
+              
             </div>
             <div class="mt-2 col-8 col-md-7 col-lg-9">
               <p class="bold short-line">{{ $comment->titreComm }}</p>
-              <p>{{ $comment->contenu }}</p>
+              <i>« {{ $comment->contenu }} »</i>
             </div>
           </div>
           <hr>

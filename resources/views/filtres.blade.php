@@ -405,9 +405,9 @@ Gazzar - Catalogue
                                 <input type="hidden" name="nom" value="{{$result['nom']}}">
                                 <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
                                 @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                                        <button type="submit" class="btn btn-outline-primary mr-n5"><i class="fas fa-heart"></i></button>
+                                        <button type="submit" class="btn btn-outline-primary mr-3"><i class="fas fa-heart"></i></button>
                                 @else
-                                        <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                                        <button type="submit" class="btn btn-outline-primary mr-3"><i class="far fa-heart"></i></button>
                                 @endif
                             </form>
                     </div>

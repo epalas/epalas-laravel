@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use Illuminate\Http\Request;
 use App\Vin;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -16,6 +17,7 @@ class WishlistController extends Controller
     public function index()
     {
         $datas=Vin::all();
+        $photos = Photo::all();
 
         $datas->load( 'stock','condi',
         'type','prod',
@@ -24,7 +26,7 @@ class WishlistController extends Controller
         'cotas','photos',
         'notes','prixprods');  
 
-        return view('wishlist')->with('datas', $datas);
+        return view('wishlist')->with(['datas' => $datas, 'photos' => $photos]);
     }
 
     /**

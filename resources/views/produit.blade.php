@@ -25,7 +25,6 @@ Gazzar | {{ $x['nom'] }}
 </div>
 <div class="">
   <div class="container mt-2">
-    {{--<a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>--}}
     <div class="row">
       <div class="col-3">
         <img src="{{ asset($x['photos'][0]['url']) }}" alt="{{ $x['photos'][0]['alt'] }}" class="img-fluid">

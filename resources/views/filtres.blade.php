@@ -82,11 +82,10 @@ Gazzar - Catalogue
 
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="paysListe">
-                <?php /* recherche en BD sur les pays disponibles
+                <?php /* TODO : recherche en BD sur les pays disponibles
                     @foreach($pays as $land)
                         <a class="dropdown-item" href="#" value="{{$land["prod"]["pays"]}}">{{$land["prod"]["pays"]}}</a>
-                    @endforeach 
-                */?>
+                    @endforeach */?>
                     @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
                     <a class="dropdown-item" href="{{route("catalogue")}}">Tous les pays</a>
                     @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
@@ -122,11 +121,10 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="regionListe">
-                    <?php /* recherche en BD sur les régions disponibles 
+                    <?php /*TODO : recherche en BD sur les régions disponibles
                         @foreach($pays as $land)
                         <a class="dropdown-item" href="#" value="{{$land["prod"]["region"]}}">{{$land["region"]["pays"]}}</a>
-                        @endforeach 
-                    */ ?>
+                        @endforeach */?>
                         @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
                             <a class="dropdown-item" href="{{route("catalogue")}}">Tous les pays</a>
                         @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
@@ -168,7 +166,6 @@ Gazzar - Catalogue
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
-                    <?php /* recharge les articles en ASC ou DESC*/ ?>
                         @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
                             <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'asc'])}}">Prix croissant</a>
                             <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'desc'])}}">Prix décroissant</a>
@@ -401,9 +398,9 @@ Gazzar - Catalogue
                                 <input type="hidden" name="nom" value="{{$result['nom']}}">
                                 <input type="hidden" name="prix" value="{{$result["prixprods"][0]["prix"]}}">
                                 @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="fas fa-heart"></i></button>
+                                        <button type="submit" class="btn btn-outline-primary mr-n5"><i class="fas fa-heart"></i></button>
                                 @else
-                                <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
+                                        <button type="submit" class="btn btn-outline-primary mr-n5"><i class="far fa-heart"></i></button>
                                 @endif
                             </form>
                         </p>
@@ -415,8 +412,5 @@ Gazzar - Catalogue
     </div>
 </div>
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 @endsection
 

@@ -23,9 +23,8 @@ class CartController extends Controller
         'met','util',
         'cotas','photos',
         'notes','prixprods');  
-           // dd($datas);
+
         return view('cart')->with('datas', $datas);
-        
     }
 
     /**
@@ -46,7 +45,6 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        
         Cart::add($request->id, $request->nom, $request->inputCart, $request->prix)
             ->associate('App/Vin');
 
@@ -96,7 +94,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-
         return back();
     } 
 }

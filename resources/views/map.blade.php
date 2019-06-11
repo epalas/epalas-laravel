@@ -33,7 +33,7 @@ Gazzar - Contact
       <div class="text-primary">
       <i class="fas fa-envelope"></i>
      </div>
-      <p><a href="mailto:elie@gazzar.ch">elie@gazzar.ch</a></p>
+      <p><a href="mailto:info@gazzar.ch">info@gazzar.ch</a></p>
 
     </div>
     <div class="col-6">
@@ -50,8 +50,5 @@ Gazzar - Contact
     
   </div>
 </div>
-
-
-
 
 @endsection

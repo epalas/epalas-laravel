@@ -43,7 +43,7 @@ Gazzar - Panier
                                 @endif
                             @else
                                 <a href="{{ route('produit', ['id' => $item->id ])}}">
-                                    <img class="img-fluid" src="img/imgCart/{{$item->id}}.png"  alt="" height="30rem">
+                                    <img class="img-fluid" src="{{ asset($photos[$item->id]['url']) }}"  alt="" height="30rem">
                                 </a>
                             @endif
 

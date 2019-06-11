@@ -52,12 +52,12 @@ Gazzar | {{ $x['nom'] }}
           <form action="{{route('cart.store')}}" method="POST" class="col-12">
             {{csrf_field()}}
             <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
-              <option selected value="1">1</option>
+              <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-              <option value="6">6</option>
+              <option selected value="6">6</option>
             </select>
           
             <input type="hidden" name="id" value="{{ $x['id'] }}">
@@ -122,6 +122,7 @@ Gazzar | {{ $x['nom'] }}
             @endfor
           @endswitch
         </p>
+        <p><span class="bold">Disponibilité :</span> {{ $x['stock']['nbrUnite'] }} bouteilles en stock </p>
         <p><span class="bold">Cotation :</span> {{ $x['cotas'][0]['note'] }} / {{ $x['cotas'][0]['echelle'] }} {{ $x['cotas'][0]['nom'] }}</p>
         <hr>
         <p>
@@ -135,7 +136,6 @@ Gazzar | {{ $x['nom'] }}
         <p><span class="bold">Température de service :</span> {{ $x['tempServ'] }}°C</p>
         <p><span class="bold">Mets d'accompagnement :</span> {{ $x['met'][0]['label'] }}</p>
         <hr>
-        <p><span class="bold">Disponibilité :</span> {{ $x['stock']['nbrUnite'] }} bouteilles en stock </p>
         @if(Auth::check())
           <div class="row">
             <div class="input-group-prepend col-1">

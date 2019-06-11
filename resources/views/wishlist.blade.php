@@ -37,7 +37,7 @@ Gazzar - Wishlist
                             <h4 class="text-black">
                                 <small class="text-dark">{{$datas[$item->id-1]['description']}}</small> 
                             </h4>
-                            <form action="{{route('cart.store')}}" method="post">
+                            <form action="{{ route('cart.store') }}" method="post">
                                 {{csrf_field()}}
                                 <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
                                     <option value="1">1</option>

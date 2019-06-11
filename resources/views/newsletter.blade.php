@@ -16,8 +16,10 @@ Gazzar - Newsletter
           {{-- formulaire pour envoie de l'adresse mail--}}
           <div class="row">
             <div class="col-6 offset-3 mt-1">
-            <form>
-              <input name="newsletter" type="email" class="form-control" placeholder="Adresse e-mail">
+            <form action="{{route('confNews')}}" method="POST">
+              {{csrf_field()}}
+              <input name="newsletter" type="email" class="form-control" placeholder="Adresse E-mail">
+
               <button type="submit" class="btn btn-primary mr-auto mt-3 mb-5">S'inscrire</button>
             </form> 
           </div>       

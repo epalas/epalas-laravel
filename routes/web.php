@@ -145,6 +145,12 @@ Route::get('/password', ['as' => 'password', function () {
     return view('auth/passwords/reset');
 }])->middleware('auth');
 
+
+//envoie newsletter
+Route::post('/confNews', ['as' => 'confNews', function () {
+    return view('envoie_newsletter');
+}]);
+
 //Email confirmation
 Route::get('/confirmation', 'confirmEmailController@sendEmail')->name('email');
 

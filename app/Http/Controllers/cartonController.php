@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CartonDRequest;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class cartonController extends Controller
 {
-    public function addToCart(Request $request){
+    public function addToCart(CartonDRequest $request){
 
         $prix = $request->input('prixMax');
 

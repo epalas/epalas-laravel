@@ -146,7 +146,9 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                          <form action="{{route('wishlist.store')}}" method="POST">
+                        @foreach(Cart::instance('wishlist')->content() as $item)
+                          <form action="{{route('wishlist.destroy , $item->rowId')}}" method="POST">
+                        @endforeach  
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif

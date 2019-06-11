@@ -392,9 +392,17 @@ Gazzar - Catalogue
                           @endswitch
                           
                             @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                                <form action="{{route('wishlist.store')}}" method="POST">
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                             @else
                                 <form action="{{route('wishlist.store')}}" method="POST">
+                                
                             @endif
                             {{csrf_field()}}
                                 <input type="hidden" name="id" value="{{$result['id']}}">

@@ -81,12 +81,13 @@
                 <div class="input-group col-12 mb-2">
 
               <label for="prixMax" class="mt-1">Limite de prix</label>
-              <input type="number" class="form-control col-12 col-xl-3 ml-2" name="prixMax" value="CHF" placeholder="300" min="150">
+              <input type="number" class="form-control col-12 col-xl-3 ml-2" name="prixMax" value="CHF" placeholder="300" min="150" max="3000">
                 <div class="input-group-append">
                   <span class="input-group-text">CHF</span>
+                </div>
               </div>
               </div>
-              </div>
+              <span class="alert-warning">{{$errors->first('prixMax')}}</span>
               <p>Séléctionnez ci-dessous le(s) type(s) de vin que vous désirez dans votre carton découverte :</p>
               <div class="row">
               <div class="col-2">
@@ -108,8 +109,9 @@
                 <input type="checkbox" id="mousseux" name="mousseux">
                 <img src="{{asset('img/pictos/picto_color/champain.svg')}}" alt="picto vin rouge" width="20rem">
                 <label for="horns">Mousseux</label>
-              </div>              
+              </div>
               <button type="submit" class="btn btn-primary mt-3 mb-5 ml-4">Commander</button>
+                <span class="alert-warning">{{$errors->first('noType')}}</span>
               </div>          
           </form>
     </div>

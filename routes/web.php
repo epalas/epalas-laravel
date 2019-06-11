@@ -41,7 +41,7 @@ Route::get('/home', ['as' => 'home', function () {
 }]);
 
 Route::get('/', function () {
-    return view('accueil2');
+    return redirect('home');
 });
 
 Route::get('home', [ 'uses'=> 'HomeController@index', 'as'=>'home']);

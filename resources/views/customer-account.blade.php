@@ -8,7 +8,14 @@ Gazzar - Customer Account
 <div class="container">
   <div class="row">
     <div class="col-6 col-sm-4 col-md-2 ml-5 mt-5">
+      <form action="#" class="form-control-file">
+      <div class="cont">
       <img src="{{ $x['urlPhoto'] }}" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid border rounded-circle">
+      <div class="overlay rounded-circle">
+         <a href=""><i class="fas fa-camera-retro fa-2x text-white text"></i></a>
+      </div>
+      </div>
+    </form>
     </div>
 
     

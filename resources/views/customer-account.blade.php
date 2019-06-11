@@ -10,6 +10,8 @@ Gazzar - Customer Account
     <div class="col-6 col-sm-4 col-md-2 ml-5 mt-5">
       <img src="{{ $x['urlPhoto'] }}" alt="Photo d'un homme d'un charisme a en faire rougir plus d'une" class="img-fluid rounded-circle">
     </div>
+
+    
     <div class="col-12 col-sm-8" id="align-user"><h1>Bonjour {{ $x['prenom'] }} {{ $x['nom'] }} </h1></div>
   </div>
   {{-- DONNES PERSO--}}

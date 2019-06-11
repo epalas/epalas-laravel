@@ -13,7 +13,7 @@ Gazzar - Accueil
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/slider5.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Profiter des promotions du moments !</a>
+          <a href="{{route('catalogueFilter', ['filtre' => 'promotions'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Profitez des promotions du moment !</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -31,7 +31,7 @@ Gazzar - Accueil
     <div class="carousel-item">
       <img class="d-block w-100" src="img/slider4.jpg" alt="Second slide">
       <div class="carousel-caption d-none d-md-block mb-5">
-          <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jeter un oeil aux nouveautés !</a>
+          <a href="{{route('catalogueFilter', ['filtre' => 'nouveautes'])}}" class="link-slider p-4 btn-lg btn-primary mr-auto mt-3 mb-5">Jetez un oeil aux nouveautés !</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -59,7 +59,7 @@ Gazzar - Accueil
       <img src="img/point.svg" alt="Point du logo" width="25rem" id="point">
     </div>   
     <div class="col col-sm-6 col-md-5 col-xl-3">
-      <h2>Nos recommendations</h2>
+      <h2>Nos recommandations</h2>
     </div>
     <div class="col-12 col-sm">
       <hr class="titre-point">  
@@ -146,7 +146,14 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                          <form action="{{route('wishlist.store')}}" method="POST">
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif
@@ -264,7 +271,14 @@ Gazzar - Accueil
                           @endswitch
                         </p>
                         @if(Cart::instance('wishlist')->filterHeart($result['nom']) === true)
-                          <form action="{{route('wishlist.store')}}" method="POST">
+                                <?php
+                                $id = $result['nom'];
+                                $item = Cart::search(function ($cart, $key) use($id) {
+                                        return $cart->name == $id;
+                                    })->first();
+                                ?>
+                                <form action="{{route('wishlist.destroy', $item->rowId)}}" method="POST">
+                                {{method_field('DELETE')}}
                         @else
                           <form action="{{route('wishlist.store')}}" method="POST">
                         @endif

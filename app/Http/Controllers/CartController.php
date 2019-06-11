@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Photo;
 use App\Vin;
+use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
@@ -16,15 +17,16 @@ class CartController extends Controller
     public function index()
     {
         $datas=Vin::all();
+        $photos = Photo::all();
 
         $datas->load( 'stock','condi',
         'type','prod',
         'cepa','cont',
         'met','util',
         'cotas','photos',
-        'notes','prixprods');  
+        'notes','prixprods');
 
-        return view('cart')->with('datas', $datas);
+        return view('cart')->with(['datas' => $datas, 'photos' => $photos]);
     }
 
     /**

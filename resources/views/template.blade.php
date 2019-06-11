@@ -18,12 +18,12 @@
     <div class="container">
         <div class="row justify-content-between">
 
-        <a href="{{route('home')}}"><img class="ml-3 mt-3" src="{{ asset('img/gazzar-logo.svg') }}" alt="Logo Gazzar" id="logo-top"></a>
+        <a href="{{route('home')}}"><img class="ml-3 mt-4" src="{{ asset('img/gazzar-logo.svg') }}" alt="Logo Gazzar" id="logo-top"></a>
 
             <div class="col-lg-6 mt-3">
               <div class="row">
 
-                <div class="col-sm-4 mt-sm-5 langues text-sm-right">        
+                <div class="col-sm-4 mt-sm-5 pt-sm-1 langues text-sm-right">        
                   <a class="active" href="#">FR</a>             
                   <span> | </span>
                   <a href="#">DE</a>

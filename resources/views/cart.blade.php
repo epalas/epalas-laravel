@@ -32,15 +32,15 @@ Gazzar - Panier
                         <div class="col-12 col-sm-12 col-md-2 text-center">
                             @if(isset($item->options["quantity"]))
                                 @if($item->options["quantity"] == 3)
-                                    <img class="img-fluid" src="img/carton3.jpg"  alt="Carton de 3 vins" height="30rem">
+                                    <img class="img-fluid" src="img/carton3.jpg"  alt="Carton de 3 vins" width="150rem">
                                 @elseif($item->options["quantity"] == 6)
-                                    <img class="img-fluid" src="img/carton6.jpg"  alt="Carton de 6 vins" height="30rem">
+                                    <img class="img-fluid" src="img/carton6.jpg"  alt="Carton de 6 vins" width="150rem">
                                 @elseif($item->options["quantity"] == 12)
-                                    <img class="img-fluid" src="img/carton12.jpg"  alt="Carton de 12 vins" height="30rem">
+                                    <img class="img-fluid" src="img/carton12.jpg"  alt="Carton de 12 vins" width="150rem">
                                 @endif
                             @else
                                 <a href="{{ route('produit', ['id' => $item->id ])}}">
-                                    <img class="img-fluid" src="{{ asset($photos[$item->id]['url']) }}"  alt="" height="30rem">
+                                    <img class="img-fluid" src="{{ asset($photos[$item->id]['url']) }}"  alt="" width="100rem">
                                 </a>
                             @endif
 

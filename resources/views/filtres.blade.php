@@ -162,40 +162,46 @@ Gazzar - Catalogue
             <span class="btn btn-primary">Prix</span>
             <div class="btn-group mr-1" role="group" id="grpPrix">
                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle bg-white border-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @if(Request::is('*/asc'))
                     Croissant
+                    @elseif(Request::is('*/desc'))
+                    Décroissant
+                    @else
+                    Croissant
+                    @endif
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" id="prixListe">
                         @if(Request::is('catalogue') || Request::is('catalogue/asc') || Request::is('catalogue/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'asc'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'desc'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'asc'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueOrder', ['order' => 'desc'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'rouges'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'rouges'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'rouges'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'rouges'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/blancs') || Request::is('catalogue/blancs/asc') || Request::is('catalogue/blancs/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'blancs'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'blancs'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'blancs'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'blancs'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/roses') || Request::is('catalogue/roses/asc') || Request::is('catalogue/roses/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'roses'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'roses'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'roses'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'roses'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/mousseux') || Request::is('catalogue/mousseux/asc') || Request::is('catalogue/mousseux/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'mousseux'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'mousseux'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'mousseux'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'mousseux'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/bios') || Request::is('catalogue/bios/asc') || Request::is('catalogue/bios/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'bios'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'bios'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'bios'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'bios'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/primeurs') || Request::is('catalogue/primeurs/asc') || Request::is('catalogue/primeurs/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'primeurs'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'primeurs'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'primeurs'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'primeurs'])}}">Cécroissant</a>
                         @elseif (Request::is('catalogue/promotions') || Request::is('catalogue/promotions/asc') || Request::is('catalogue/promotions/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'promotions'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'promotions'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'promotions'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'promotions'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/nouveautes') || Request::is('catalogue/nouveautes/asc') || Request::is('catalogue/nouveautes/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'nouveautes'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'nouveautes'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'nouveautes'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'nouveautes'])}}">Décroissant</a>
                         @elseif (Request::is('catalogue/fins') || Request::is('catalogue/fins/asc') || Request::is('catalogue/fins/desc'))
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'fins'])}}">Prix croissant</a>
-                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'fins'])}}">Prix décroissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'asc', "filter" => 'fins'])}}">Croissant</a>
+                            <a class="dropdown-item" href="{{route('catalogueFilterOrder', ['order' => 'desc', "filter" => 'fins'])}}">Décroissant</a>
                         @endif
                 </div>
             </div>

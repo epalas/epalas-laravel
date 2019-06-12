@@ -282,7 +282,7 @@
             
            
           {{-- logo --}}
-          <div class="col-2 text-right">
+          <div class="text-center text-sm-right col-sm-10 col-md-2 text-right">
             <a href="{{route('home')}}"><img id="logo-bottom" class="col-lg-2 mt-3" src="{{ asset('img/logo_gazzar_white.svg') }}" alt="Logo Gazzar en blanc"></a>
           </div>
         </div>

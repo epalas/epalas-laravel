@@ -336,3 +336,7 @@ text-decoration: none;
   text-align: center;
 
 }
+
+.hidden {
+  display: none;
+}

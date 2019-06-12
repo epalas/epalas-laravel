@@ -79,6 +79,15 @@ window.location.assign("/catalogue");
 
 });
 
+$("#send").on('click', event => {
+
+event.preventDefault();
+$('#advertise').removeClass('hidden');
+
+});
+
+
+
 // page filtres
 $(document).ready(function(){
         

@@ -54,7 +54,7 @@ Gazzar - Contact
     <button id="send" type="submit" class="btn btn-primary mr-auto">Envoyer</button>
   
         <div id="advertise" class="bg-secondary text-white rounded col-auto mt-3 pt-3 pb-1 text-center hidden">
-          <p>Merci pour votre demande. Nous allons la traiter dans les plus bref délais.</p>
+          <p>Merci pour votre demande. Nous allons la traiter dans les plus brefs délais.</p>
         </div>
     
   </form>

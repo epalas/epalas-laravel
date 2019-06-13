@@ -25,13 +25,14 @@ L'équipe est composée des six étudiants suivants :
 - Elisa Biver
 
 ## Installation
-1. Créez une base de données appelée <i>epalas</i> sur votre gestionnaire SQL
-2. Placez-vous dans le dossier du projet (<code>cd chemin/vers/epalas-laravel</code>) 
-3. Lancez la commande <code>composer install</code> et ensuite <code>composer update</code>
-4. Renommez le fichier <code>.env.example</code> en <code>.env</code>
-5. Entrez les variables d'accès dans le fichier <code>.env</code> pour pouvoir accéder votre base de données
-6. Lancez la commande <code>php artisan migrate:install</code>
-7. Lancez la commande <code>php artisan migrate</code> pour l'installation des tables
-8. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation
-9. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
-10. Lancez la commande <code>php artisan db:seed</code>
+1. Clonez ce répositoire dans votre machine
+2. Créez une base de données appelée <i>epalas</i> sur votre gestionnaire SQL
+3. Placez-vous dans le dossier du projet (<code>cd chemin/vers/epalas-laravel</code>) 
+4. Lancez la commande <code>composer install</code> et ensuite <code>composer update</code>
+5. Renommez le fichier <code>.env.example</code> en <code>.env</code>
+6. Entrez les variables d'accès dans le fichier <code>.env</code> pour pouvoir accéder votre base de données
+7. Lancez la commande <code>php artisan migrate:install</code>
+8. Lancez la commande <code>php artisan migrate</code> pour l'installation des tables
+9. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation
+10. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
+11. Lancez la commande <code>php artisan db:seed</code>

@@ -36,3 +36,5 @@ L'équipe est composée des six étudiants suivants :
 9. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation
 10. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
 11. Lancez la commande <code>php artisan db:seed</code>
+
+<p align="center"><img width="50px" height="30" src=""></p>

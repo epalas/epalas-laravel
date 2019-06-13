@@ -1,4 +1,4 @@
-<p align="center"><img width="250px" height="150" src="http://pingouin1.heig-vd.ch/epalas/img/gazzar-logo.svg"></p>
+<p align="center"><img src="https://github.com/epalas/epalas-laravel/blob/master/public/img/epalas-agency-logo.png"></p>
 
 ## A propos du projet
 
@@ -36,5 +36,3 @@ L'équipe est composée des six étudiants suivants :
 9. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation
 10. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
 11. Lancez la commande <code>php artisan db:seed</code>
-
-<p align="center"><img src="https://github.com/epalas/epalas-laravel/blob/master/public/img/epalas-agency-logo.png"></p>

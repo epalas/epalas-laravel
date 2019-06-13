@@ -25,12 +25,12 @@ L'équipe est composée des six étudiants suivants :
 - Elisa Biver
 
 ## Installation
-1. Clonez ce répositoire dans votre machine
-2. Créez une base de données appelée <i>epalas</i> sur votre gestionnaire SQL
+1. Clonez ce répositoire sur votre machine
+2. Créez une base de données nommée <i>epalas</i> sur votre gestionnaire SQL (MAMP, easyPHP, etc.)
 3. Placez-vous dans le dossier du projet (<code>cd chemin/vers/epalas-laravel</code>) 
 4. Lancez la commande <code>composer install</code> et ensuite <code>composer update</code>
 5. Renommez le fichier <code>.env.example</code> en <code>.env</code>
-6. Entrez les variables d'accès dans le fichier <code>.env</code> pour pouvoir accéder votre base de données
+6. Entrez vos variables d'accès dans le fichier <code>.env</code> pour accéder à votre base de données
 7. Lancez la commande <code>php artisan migrate:install</code>
 8. Lancez la commande <code>php artisan migrate</code> pour l'installation des tables
 9. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation

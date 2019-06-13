@@ -66,27 +66,28 @@ switch(alt) {
 });
 */
 
+// hover cart vin
 $(document).ready(function(){
     $('.card').hover(function(){
         $(this).toggleClass('red-magic');
     });
 });
 
+// filtre cliqué
 $("#filter .active").on('click', event => {
 
 event.preventDefault();
-window.location.assign("/catalogue");  
+window.location.href = $('#filter').data('href');
 
 });
 
+// formulaire contact
 $("#send").on('click', event => {
 
 event.preventDefault();
 $('#advertise').removeClass('hidden');
 
 });
-
-
 
 // page filtres
 $(document).ready(function(){

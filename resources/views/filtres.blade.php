@@ -13,7 +13,7 @@ Gazzar - Catalogue
 
 <div class="container">
     <div class="row mt-5 mb-4 mx-auto">
-        <div class="btn-group-justified col-12" role="group" id="filter">
+        <div class="btn-group-justified col-12" role="group" id="filter" data-href="{{route('catalogue')}}">
 
         @if (Request::is('catalogue/rouges') || Request::is('catalogue/rouges/asc') || Request::is('catalogue/rouges/desc'))
             <a href="{{route('catalogueFilter', ['filtre' => 'rouges'])}}" class="btn btn-light bg-white active" id="red" ><img src="{{asset('img/pictos/picto_color/red.svg')}}" alt="Rouge"/><br/>Rouges</a>

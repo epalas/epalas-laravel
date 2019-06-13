@@ -37,4 +37,4 @@ L'équipe est composée des six étudiants suivants :
 10. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
 11. Lancez la commande <code>php artisan db:seed</code>
 
-<p align="center"><img width="50px" height="30" src=""></p>
+<p align="center"><img width="50px" height="30" src="epalas-laravel/public/img/epalas-agency-logo.png"></p>

@@ -1,72 +1,37 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img width="250px" height="150" src="http://pingouin1.heig-vd.ch/epalas/img/gazzar-logo.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## A propos du projet
 
-## About Laravel
+Ce dossier contient le projet développé dans le cadre du cours Projet d'Articulation qui fait partie intégrante du 
+cursus de la formation [Bachelor en Ingénierie des Médias](https://heig-vd.ch/formations/bachelor/filieres/ingenierie-des-medias) 
+à la [HEIG-VD](https://heig-vd.ch). Il prend place à la fin de la 2ème année. Ce dernier consiste à développer un prototype 
+d’application web d’e-commerce dans le domaine de la vente de vin.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ce type de projet est l’occasion de mettre en pratique les diverses connaissances et compétences acquises lors des deux 
+premières années du cursus ; que ce soit au niveau de la technique, de la communication ou encore du management. 
+Pour mener à bien ce projet, une équipe d’étudiants composée de 6 personnes s'est chargée des tâches effectuées. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Celle-ci est scindée en deux sous-équipes de 3 : une équipe « front-end » s’occupant du design et de l’expérience utilisateur 
+une équipe « back-end » s’occupant des requêtes client-serveur et de la base de données
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+En ce qui concerne l’aspect lié à la gestion de projet, un étudiant a endossé le rôle de chef de projet secondé par un chef de projet remplaçant en cas de mésaventure. 
 
-## Learning Laravel
+L'équipe est composée des six étudiants suivants :
+- Adrien Lestuzzi
+- Audric Dubuis
+- Pedro Garcia
+- Lucien Pochon
+- Steve Maibach
+- Elisa Biver
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Installation
+1. Créez une base de données appelée <i>epalas</i> sur votre gestionnaire SQL
+2. Placez-vous dans le dossier du projet (<code>cd chemin/vers/epalas-laravel</code>) 
+3. Lancez la commande <code>composer install</code> et ensuite <code>composer update</code>
+4. Renommez le fichier <code>.env.example</code> en <code>.env</code>
+5. Entrez les variables d'accès dans le fichier <code>.env</code> pour pouvoir accéder votre base de données
+6. Lancez la commande <code>php artisan migrate:install</code>
+7. Lancez la commande <code>php artisan migrate</code> pour l'installation des tables
+8. Lancez la commande <code>php artisan key:generate</code> pour la génération de votre clé d'utilisation
+9. Lancez la commande <code>composer dump-autoload</code> pour rafraîchir la gestion des classes
+10. Lancez la commande <code>php artisan db:seed</code>

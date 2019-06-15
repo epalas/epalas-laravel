@@ -37,7 +37,7 @@ Gazzar - Wishlist
                             <h4 class="text-black">
                                 <small class="text-dark">{{$datas[$item->id-1]['description']}}</small>
                             </h4>
-                            <form action="{{ route('cart.store') }}" method="post" id="formCart">
+                            <form action="{{ route('cart.store') }}" method="post" class="formCart">
                                 {{csrf_field()}}
                                 <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
                                     <option value="1">1</option>
@@ -50,7 +50,7 @@ Gazzar - Wishlist
                                 <input type="hidden" name="id" value="{{ $item->id }}">
                                 <input type="hidden" name="nom" value="{{ $item->name }}">
                                 <input type="hidden" name="prix" value="{{ $item->price }}">
-                                <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2" id="addCart">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
+                                <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2 addCart">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
                             </form>
                         </div>
                         <div class="col-12 col-sm-12 text-sm-center col-md-2 text-md-right row">

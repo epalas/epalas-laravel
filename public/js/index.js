@@ -90,7 +90,7 @@ $('#advertise').removeClass('hidden');
 });
 
 // panier
-$("#addCart").on('click', event => {
+$(".addCart").on('click', event => {
 
  event.preventDefault();
  let btn = $(event.currentTarget); 
@@ -98,7 +98,7 @@ $("#addCart").on('click', event => {
         btn.addClass("btn-success");
         btn.removeClass("btn-primary");
         btn.html("<i class='fas fa-check'></i>");
-        setTimeout(() => $('#formCart').submit(), 1000);
+        setTimeout(() => $('.formCart').submit(), 1000);
 
 });
 

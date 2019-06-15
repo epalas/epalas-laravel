@@ -89,6 +89,19 @@ $('#advertise').removeClass('hidden');
 
 });
 
+// panier
+$("#addCart").on('click', event => {
+
+ event.preventDefault();
+ let btn = $(event.currentTarget); 
+       
+        btn.addClass("btn-success");
+        btn.removeClass("btn-primary");
+        btn.html("<i class='fas fa-check'></i>");
+        setTimeout(() => $('#formCart').submit(), 1000);
+
+});
+
 // page filtres
 $(document).ready(function(){
         

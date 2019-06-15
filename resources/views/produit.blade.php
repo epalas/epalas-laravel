@@ -6,6 +6,7 @@ Gazzar | {{ $x['nom'] }}
 
 @section('contenu')
 <div class="container mt-2">
+  <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent">
       <li class="breadcrumb-item"><a class="text-secondary" href="{{route('home')}}">Accueil</a></li>

@@ -6,9 +6,10 @@ Gazzar | {{ $x['nom'] }}
 
 @section('contenu')
 <div class="container mt-2">
-  <a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a>
+  
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent">
+      <li class="ml-n3 mr-3 mt-n2"><a href="{{ url()->previous() }}" class="btn btn-primary" role="button"><</a></li>   
       <li class="breadcrumb-item"><a class="text-secondary" href="{{route('home')}}">Accueil</a></li>
       <li class="breadcrumb-item"><a class="text-secondary" href="{{route('catalogue')}}">Vins</a></li>
       @if($x['type']['label'] === 'Mousseux')
@@ -49,7 +50,7 @@ Gazzar | {{ $x['nom'] }}
         <h2>{{ $x['prixprods'][0]['prix'] }} CHF</h2>
         <div class="row mt-4">
           <div class="input-group">
-          <form action="{{route('cart.store')}}" method="POST" class="col-12">
+          <form action="{{route('cart.store')}}" method="POST" class="col-12" id="formCart">
             {{csrf_field()}}
             <select class="custom-select col-12 col-sm-12 col-md-2 col-lg-2 mb-2 mr-2" name="inputCart" id="inputCart">
               <option value="1">1</option>
@@ -63,7 +64,7 @@ Gazzar | {{ $x['nom'] }}
             <input type="hidden" name="id" value="{{ $x['id'] }}">
             <input type="hidden" name="nom" value="{{ $x['nom'] }}">
             <input type="hidden" name="prix" value="{{ $x['prixprods'][0]['prix'] }}">
-            <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
+            <button type="submit" class="btn btn-primary col-12 col-sm-12 col-md-4 col-lg-3 mb-2 mr-2" id="addCart">Ajouter au panier<i class="fas fa-shopping-cart"></i></button>
           </form>
 
             @if(Cart::instance('wishlist')->filterHeart($x['nom']) === true)
